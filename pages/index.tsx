@@ -8,9 +8,10 @@ const Home = () => {
   const theme = useTheme()
   const hello = 'Hello'
   return (
-    <>
+    <div>
       <HeaderBar />
-    </>
+      <p>hello world</p>
+    </div>
   )
 }
 

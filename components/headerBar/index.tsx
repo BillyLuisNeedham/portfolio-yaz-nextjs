@@ -48,4 +48,4 @@ const HeaderBar: React.FC<Props> = (props: Props) => {
     )
 }
 
-export default AppBar
+export default HeaderBar

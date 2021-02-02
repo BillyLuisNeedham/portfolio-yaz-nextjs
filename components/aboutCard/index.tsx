@@ -3,6 +3,7 @@ import { Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import NavBar from './navBar'
+import { NavRoutes } from '../../utils/constants/navRoutes'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,23 +17,29 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-interface Props {}
+interface IAboutCardProps {
+  activeRoute: NavRoutes
+  onNavigateCallback: (navRoutes: NavRoutes) => void
+}
 
-const AboutCard: React.FC<Props> = (props: Props) => {
+const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
   const classes = useStyles()
   const spacer = () => <Box p={1} />
+  function navToRoute(navRoutes: NavRoutes) {
+    // TODO update with call when built out
+    console.log(`navToRoute clicked: ${navRoutes}`)
+  }
+
 
   return (
-    <Box className={classes.root}>
-      <Box display="flex" justifyContent="flex-start" m={1} p={1}>
+    <Box className={classes.root} p={1} >
+      <Box display="flex" justifyContent="flex-start">
         <Typography variant="body1">Logo</Typography>
       </Box>
       <Box
         display="flex"
         flexDirection="column"
         alignItems="center"
-        m={1}
-        p={1}
       >
         <Typography variant="h4">Profile pic</Typography>
         {spacer()}
@@ -45,14 +52,14 @@ const AboutCard: React.FC<Props> = (props: Props) => {
         display="flex"
         flexDirection="column"
         justifyContent="flex-start"
-        m={1}
-        p={1}
       >
         <Typography variant="body1">
           email <b>address</b>
         </Typography>
         {spacer()}
-        <NavBar />
+        <NavBar 
+         activeRoute={activeRoute}
+         onNavigateCallback={navToRoute} />
       </Box>
       <Box className={classes.footer}>
         <Typography variant="body1">Social Media</Typography>

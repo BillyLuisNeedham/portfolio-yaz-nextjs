@@ -5,6 +5,7 @@ import HeaderBar from '../components/headerBar'
 import Link from 'next/link'
 import AboutCard from '../components/aboutCard'
 import Box from '@material-ui/core/Box'
+import { NavRoutes } from '../utils/constants/navRoutes'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,12 +21,18 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Home = () => {
   const classes = useStyles()
+  function navigateToRoute(navRoutes: NavRoutes) {
+    console.log(`navigate to navRoute ${navRoutes}`)
+  }
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3} className={classes.container}>
         <Grid item xs className={classes.container}>
-          <AboutCard />
+          <AboutCard 
+          onNavigateCallback={navigateToRoute}
+          activeRoute={NavRoutes.Work}
+          />
         </Grid>
         <Grid item xs={6}>
           <p>hello world</p>

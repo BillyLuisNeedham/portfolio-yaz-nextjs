@@ -30,6 +30,21 @@ const NavBar: React.FC<INavBarProps> = ({ activeRoute }) => {
         active={activeRoute === NavRoutes.Work}
         onClickCallback={() => navigateToRoute(NavRoutes.Work)}
       />
+      <NavText
+        text={NavRoutes[NavRoutes.Contact]}
+        active={activeRoute === NavRoutes.Contact}
+        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
+      />
+      <NavText
+        text={NavRoutes[NavRoutes.Work]}
+        active={activeRoute === NavRoutes.Work}
+        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
+      />
+      <NavText
+        text={NavRoutes[NavRoutes.Work]}
+        active={activeRoute === NavRoutes.Work}
+        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
+      />
     </Box>
   )
 }

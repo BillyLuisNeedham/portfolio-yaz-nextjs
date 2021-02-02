@@ -2,10 +2,13 @@ import React from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
+import { NavRoutes } from '../../../../utils/constants/navRoutes'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
+    root: {
+      marginBottom: '5px'
+    },
     pinkLine: {
       height: '1px',
       width: '130px',
@@ -34,7 +37,7 @@ const NavText: React.FC<INavTextProps> = ({
   const classes = useStyles()
 
   return (
-    <div>
+    <div className={classes.root}>
       <Typography
         variant="h6"
         className={active ? classes.activeText : null}

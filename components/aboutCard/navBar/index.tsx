@@ -3,6 +3,8 @@ import NavText from './navText/index'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import { NavRoutes } from '../../../utils/constants/navRoutes'
+import { $enum } from 'ts-enum-util'
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,24 +28,24 @@ const NavBar: React.FC<INavBarProps> = ({ activeRoute }) => {
   return (
     <Box>
       <NavText
-        text={NavRoutes[NavRoutes.Work]}
+        text="Work"
         active={activeRoute === NavRoutes.Work}
         onClickCallback={() => navigateToRoute(NavRoutes.Work)}
       />
       <NavText
-        text={NavRoutes[NavRoutes.Contact]}
+        text="Contact"
         active={activeRoute === NavRoutes.Contact}
-        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
+        onClickCallback={() => navigateToRoute(NavRoutes.Contact)}
       />
       <NavText
-        text={NavRoutes[NavRoutes.Work]}
-        active={activeRoute === NavRoutes.Work}
-        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
+        text="About Me"
+        active={activeRoute === NavRoutes.AboutMe}
+        onClickCallback={() => navigateToRoute(NavRoutes.AboutMe)}
       />
       <NavText
-        text={NavRoutes[NavRoutes.Work]}
-        active={activeRoute === NavRoutes.Work}
-        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
+        text="Résumé"
+        active={activeRoute === NavRoutes.Resume}
+        onClickCallback={() => navigateToRoute(NavRoutes.Resume)}
       />
     </Box>
   )

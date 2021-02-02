@@ -3,6 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
+import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -24,17 +25,24 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={0} className={classes.container}>
-        <Grid item xs className={classes.container}>
-          <AboutCard 
-          onNavigateCallback={navigateToRoute}
-          activeRoute={NavRoutes.Work}
+      //TODO SORT OUT STYLING
+      {/* <Grid container spacing={0} className={classes.container}>
+        <Grid item xs className={classes.container}> */}
+      <Box display="flex">
+        <Box flex={1}>
+          <AboutCard
+            onNavigateCallback={navigateToRoute}
+            activeRoute={NavRoutes.Work}
           />
-        </Grid>
-        <Grid item xs={6}>
+        </Box>
+        <Box flex={3}>
+          {/* </Grid> */}
+          {/* <Grid item xs={6}> */}
           <p>hello world</p>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
+      {/* </Grid> */}
+      {/* </Grid> */}
     </div>
   )
 }

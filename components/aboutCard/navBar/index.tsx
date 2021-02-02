@@ -2,6 +2,7 @@ import React from 'react'
 import NavText from './navText/index'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
+import { NavRoutes } from '../../../utils/constants/navRoutes'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,22 +14,21 @@ interface INavBarProps {
   activeRoute: NavRoutes
 }
 
-enum NavRoutes {
-  Work,
-  Contact,
-  AboutMe,
-  Resume,
-}
+
 
 const NavBar: React.FC<INavBarProps> = ({ activeRoute }) => {
   const classes = useStyles()
+
+  function navigateToRoute(route: NavRoutes) {
+    console.log(`route clicked: ${route}`)
+  }
 
   return (
     <Box>
       <NavText
         text={NavRoutes[NavRoutes.Work]}
         active={activeRoute === NavRoutes.Work}
-        onClickCallback={() => console.log('route clicked')}
+        onClickCallback={() => navigateToRoute(NavRoutes.Work)}
       />
     </Box>
   )

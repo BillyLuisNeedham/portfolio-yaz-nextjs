@@ -35,7 +35,11 @@ const NavText: React.FC<INavTextProps> = ({
 
   return (
     <div>
-      <Typography variant="h6" className={active ? classes.activeText : null}>
+      <Typography
+        variant="h6"
+        className={active ? classes.activeText : null}
+        onClick={onClickCallback}
+      >
         {text}
       </Typography>
       <Divider

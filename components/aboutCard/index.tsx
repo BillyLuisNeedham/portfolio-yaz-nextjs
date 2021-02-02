@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+import NavBar from './navBar'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -51,7 +52,7 @@ const AboutCard: React.FC<Props> = (props: Props) => {
           email <b>address</b>
         </Typography>
         {spacer()}
-        <Typography variant="body1">nav components</Typography>
+        <NavBar />
       </Box>
       <Box className={classes.footer}>
         <Typography variant="body1">Social Media</Typography>

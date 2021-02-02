@@ -32,7 +32,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
 
 
   return (
-    <Box className={classes.root} p={1} >
+    <Box className={classes.root} p={1} borderRight={1} >
       <Box display="flex" justifyContent="flex-start">
         <Typography variant="body1">Logo</Typography>
       </Box>

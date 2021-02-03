@@ -43,4 +43,4 @@ const bottomsUpTheme = createMuiTheme({
   }
 })
 
-export { theme };
+export { theme, bottomsUpTheme };

@@ -2,7 +2,7 @@ import React from "react";
 import sinon from "sinon";
 import faker from "faker";
 import { render, cleanup } from "@testing-library/react";
-import { Button } from "../index";
+import { Button } from "..";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "../../../theme";
 import MuiButton from "@material-ui/core/Button";

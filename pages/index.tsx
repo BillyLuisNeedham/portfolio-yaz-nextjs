@@ -4,15 +4,16 @@ import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
+import CaseStudyCard from '../components/caseStudyCard'
 
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
       flexGrow: 1,
-      minHeight: '100vh',
+      minHeight: '90vh',
     },
     container: {
-      minHeight: '95vh',
+      minHeight: '90vh',
     },
   })
 )
@@ -23,11 +24,9 @@ const Home = () => {
     console.log(`navigate to navRoute ${navRoutes}`)
   }
 
+  //TODO SORT OUT STYLING
   return (
     <div className={classes.root}>
-      //TODO SORT OUT STYLING
-      {/* <Grid container spacing={0} className={classes.container}>
-        <Grid item xs className={classes.container}> */}
       <Box display="flex">
         <Box flex={1}>
           <AboutCard
@@ -35,14 +34,10 @@ const Home = () => {
             activeRoute={NavRoutes.Work}
           />
         </Box>
-        <Box flex={3}>
-          {/* </Grid> */}
-          {/* <Grid item xs={6}> */}
-          <p>hello world</p>
+        <Box flex={2} m={2}>
+          <CaseStudyCard title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
         </Box>
       </Box>
-      {/* </Grid> */}
-      {/* </Grid> */}
     </div>
   )
 }

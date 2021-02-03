@@ -5,6 +5,7 @@ import AboutCard from '../components/aboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
 import CaseStudyCard from '../components/caseStudyCard'
+import { bottomsUpTheme } from '../theme'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -35,7 +36,7 @@ const Home = () => {
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCard title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
+          <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
         </Box>
       </Box>
     </div>

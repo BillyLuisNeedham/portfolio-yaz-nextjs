@@ -19,7 +19,7 @@ const theme = createMuiTheme({
   },
 
   typography: {
-    body1:{
+    body1: {
       color: '#EA02B3'
     }
   }
@@ -40,7 +40,12 @@ const bottomsUpTheme = createMuiTheme({
       primary: '#525252',
       secondary: '#EF3D4C'
     }
-  }
+  },
+
+  typography: {
+    fontFamily: 'Abril Fatface',
+    h5: {}
+  },
 })
 
 export { theme, bottomsUpTheme };

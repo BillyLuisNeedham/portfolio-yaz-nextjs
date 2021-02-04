@@ -11,10 +11,10 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       flexGrow: 1,
-      minHeight: '90vh',
+      minHeight: '100vh',
     },
     container: {
-      minHeight: '90vh',
+      minHeight: '100vh',
     },
   })
 )

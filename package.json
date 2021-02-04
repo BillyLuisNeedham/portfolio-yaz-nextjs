@@ -34,11 +34,18 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-standard": "^4.0.1",
     "faker": "^4.1.0",
+    "husky": "^4.2.3",
     "jest": "^25.5.4",
     "prettier": "^2.2.1",
     "sinon": "^9.0.2",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
   },
   "eslintConfig": {
     "env": {

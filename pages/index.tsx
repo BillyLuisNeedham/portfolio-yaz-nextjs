@@ -11,10 +11,10 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       flexGrow: 1,
-      minHeight: '90vh',
+      minHeight: '100vh',
     },
     container: {
-      minHeight: '90vh',
+      minHeight: '100vh',
     },
   })
 )
@@ -24,7 +24,7 @@ const Home = () => {
   function navigateToRoute(navRoutes: NavRoutes) {
     console.log(`navigate to navRoute ${navRoutes}`)
   }
-
+  //TODO NEW TEST
   //TODO SORT OUT STYLING
   return (
     <div className={classes.root}>

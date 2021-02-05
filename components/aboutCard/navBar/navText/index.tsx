@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
-import { NavRoutes } from '../../../../utils/constants/navRoutes'
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,6 +28,8 @@ interface INavTextProps {
   active: boolean
   onClickCallback: () => void
 }
+
+
 
 const NavText: React.FC<INavTextProps> = ({
   text,

@@ -3,7 +3,6 @@ import NavText from './navText'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import { NavRoutes } from '../../../utils/constants/navRoutes'
-import { $enum } from 'ts-enum-util'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

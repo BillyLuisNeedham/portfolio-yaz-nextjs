@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import NavBar from './navBar'
 import { NavRoutes } from '../../utils/constants/navRoutes'
+import Image from 'next/image'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,6 +14,10 @@ const useStyles = makeStyles((theme: Theme) =>
     footer: {
       position: 'absolute',
       bottom: 0,
+    },
+    picture:{
+      boxShadow: '-20px -20px 0px -6px #402837',
+      borderRadius: 50,
     },
   })
 )
@@ -41,7 +46,16 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
         flexDirection="column"
         alignItems="center"
       >
-        <Typography variant="h4">Profile pic</Typography>
+        <Box className={classes.picture}>
+          <Image 
+            className={classes.picture}
+            src="/Profile_Image2.png"
+            alt="Profile picture of Yazmin Leigh"
+            layout="intrinsic"
+            width={248}
+            height={271}
+            />
+        </Box >
         {spacer()}
         <Typography variant="h5">subtitle</Typography>
         {spacer()}

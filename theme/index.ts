@@ -44,8 +44,30 @@ const bottomsUpTheme = createMuiTheme({
 
   typography: {
     fontFamily: 'Abril Fatface',
-    h5: {}
+
   },
+})
+
+const psdsTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#87ABA9'
+    },
+    secondary: {
+      main: '#E17200'
+    },
+    background: {
+      default: '#FCFFFD'
+    },
+    text: {
+      primary: '#7A7A7A',
+    }
+
+  },
+
+  typography: {
+    fontFamily: 'Playfair Display'
+  }
 })
 
 export { theme, bottomsUpTheme };

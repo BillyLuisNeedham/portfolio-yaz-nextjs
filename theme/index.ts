@@ -66,7 +66,22 @@ const psdsTheme = createMuiTheme({
   },
 
   typography: {
-    fontFamily: 'Playfair Display'
+    fontFamily: 'Roboto',
+    h1: {
+      fontFamily: 'Playfair Display'
+    }, 
+    h2: {
+      fontFamily: 'Playfair Display'
+    },
+    h3: {
+      fontFamily: 'Playfair Display'
+    },
+    h4: {
+      fontFamily: 'Playfair Display'
+    },
+    h5: {
+      fontFamily: 'Playfair Display'
+    },
   }
 })
 

@@ -11,7 +11,13 @@ interface Props {
   screenWidth: number
 }
 
-const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image, screenWidth }) => {  
+const CaseStudyCard: React.FC<Props> = ({
+  title,
+  subtitle,
+  theme,
+  image,
+  screenWidth,
+}) => {
   const useStyles = makeStyles({
     root: {
       flexGrow: 1,
@@ -30,54 +36,70 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image, screenW
       color: theme.palette.background.default,
     },
     textContainer: {
-      marginBottom: theme.spacing(1)
-    }
+      marginBottom: theme.spacing(1),
+    },
   })
-
-  const mobileLayout: Boolean = screenWidth < MIN_LANDSCAPE_MOBILE_WIDTH
-  
   const classes = useStyles()
+
+  const useMobileLayout: Boolean = screenWidth < MIN_LANDSCAPE_MOBILE_WIDTH
+
+  const titleComponent: ReactNode = (
+    <Typography variant="h5" className={classes.text}>
+      {title}
+    </Typography>
+  )
+
+  const desktopLayout: ReactNode = (
+    <Grid container direction="row" spacing={1}>
+      <Grid
+        container
+        direction="column"
+        justify="space-around"
+        alignItems="center"
+        xs
+        className={classes.column}
+      >
+        <Grid item>
+          <Box className={classes.textContainer}>{titleComponent}</Box>
+          <Typography variant="body2" className={classes.text}>
+            {subtitle}
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        xs
+        className={classes.column}
+      >
+        <Grid item>{image}</Grid>
+      </Grid>
+    </Grid>
+  )
+
+  const mobileLayout: ReactNode = (
+    <Grid 
+    container 
+    direction="column"
+    justify="center"
+    alignItems="center">
+      <Grid item>
+        {image}
+      </Grid>
+      <Grid item>
+        {titleComponent}
+      </Grid>
+    </Grid>
+  )
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Paper className={classes.paper}>
-      
-    
           <Box p={1}>
-      {mobileLayout ? null :
-            <Grid container direction="row" spacing={1}>
-              <Grid
-                container
-                direction="column"
-                justify="space-around"
-                alignItems="center"
-                xs
-                className={classes.column}
-              >
-                <Grid item>
-                  <Box className={classes.textContainer}>
-                    <Typography variant="h5" className={classes.text}>
-                      {title}
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2" className={classes.text}>
-                    {subtitle}
-                  </Typography>
-                </Grid>
-              </Grid>
-              <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="center"
-                xs
-                className={classes.column}
-              >
-                <Grid item>{image}</Grid>
-              </Grid>
-            </Grid>
-}
+            {useMobileLayout ? mobileLayout : desktopLayout}
           </Box>
         </Paper>
       </div>

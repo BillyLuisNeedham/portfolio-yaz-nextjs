@@ -18,6 +18,12 @@ const useStyles = makeStyles(() =>
     container: {
       minHeight: '90vh',
     },
+    mobile:{
+      display: 'flex',
+      flexDirection:'column',
+      justifyContent: 'space-around',
+      height: 'auto',
+    }
   })
 )
 
@@ -41,13 +47,22 @@ const Home = () => {
   //TODO SORT OUT STYLING
   return (
     (widowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
-    ?<div className={classes.root}>
-    <Box display="flex">
+    ?<div className={classes.mobile}>
       <MobileNavBar
         onNavigateCallback={navigateToRoute}
         activeRoute={NavRoutes.Work}
       />
-    
+    <Box>
+      <Box>
+          <AboutCard
+            widowWidth={widowWidth}
+            onNavigateCallback={navigateToRoute}
+            activeRoute={NavRoutes.Work}
+          />
+        </Box>
+        <Box>
+          <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
+        </Box>
     </Box>
   </div>
 
@@ -56,6 +71,7 @@ const Home = () => {
       <Box display="flex">
         <Box flex={1}>
           <AboutCard
+            widowWidth={widowWidth}
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}
           />

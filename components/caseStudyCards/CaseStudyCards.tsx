@@ -42,10 +42,10 @@ export const CaseStudyCards: React.FC<Props> = ({ screenWidth }) => {
         screenWidth={screenWidth}
         image={
           <Image
-            src="/assets/images/bottomsUp/3_phone_mockup.png"
+            src="/assets/images/psds/case_study.png"
             alt="3 phones displaying bottoms up card"
-            height={125}
-            width={150}
+            height={155}
+            width={155}
           />
         }
         theme={psdsTheme}

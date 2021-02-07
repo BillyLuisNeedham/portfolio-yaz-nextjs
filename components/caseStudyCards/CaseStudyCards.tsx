@@ -22,7 +22,7 @@ export const CaseStudyCards: React.FC<Props> = ({ screenWidth }) => {
 
   return (
     <div className={classes.root}>
-      <Link href="/case-studies/bottoms-up">
+      <Link href="/case-studies/bottoms-up" style={{ textDecoration: 'none' }}>
         <CaseStudyCard
           screenWidth={screenWidth}
           image={
@@ -39,7 +39,10 @@ export const CaseStudyCards: React.FC<Props> = ({ screenWidth }) => {
         />
       </Link>
       <Box p={1} />
-      <Link href="/case-studies/plain-sailing-driving-school">
+      <Link
+        href="/case-studies/plain-sailing-driving-school"
+        style={{ textDecoration: 'none' }}
+      >
         <CaseStudyCard
           screenWidth={screenWidth}
           image={

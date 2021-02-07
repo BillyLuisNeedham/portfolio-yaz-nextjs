@@ -37,43 +37,33 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
 
 
   return (
-    <Box className={classes.root} p={1} borderRight={1} >
+    <Box className={classes.root} p={1} borderRight={1}>
       <Box display="flex" justifyContent="flex-start">
         <Typography variant="body1">Logo</Typography>
       </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-      >
+      <Box display="flex" flexDirection="column" alignItems="center">
         <Box className={classes.picture}>
-          <Image 
+          <Image
             className={classes.picture}
-            src="/Profile_Image2.png"
+            src="/assets/images/Profile_Image2.png"
             alt="Profile picture of Yazmin Leigh"
             layout="intrinsic"
             width={248}
             height={271}
-            />
-        </Box >
+          />
+        </Box>
         {spacer()}
         <Typography variant="h5">subtitle</Typography>
         {spacer()}
         <Typography variant="body1">body text</Typography>
         {spacer()}
       </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="flex-start"
-      >
+      <Box display="flex" flexDirection="column" justifyContent="flex-start">
         <Typography variant="body1">
           email <b>address</b>
         </Typography>
         {spacer()}
-        <NavBar 
-         activeRoute={activeRoute}
-         onNavigateCallback={navToRoute} />
+        <NavBar activeRoute={activeRoute} onNavigateCallback={navToRoute} />
       </Box>
       <Box className={classes.footer}>
         <Typography variant="body1">Social Media</Typography>

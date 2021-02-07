@@ -1,5 +1,5 @@
 import React from 'react'
-import NavText from '../aboutCard/navBar/navText'
+import NavText from '../aboutCard/navBar/navText/NavText'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button';

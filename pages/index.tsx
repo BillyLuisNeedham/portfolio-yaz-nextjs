@@ -6,7 +6,8 @@ import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
 import CaseStudyCard from '../components/caseStudyCard'
 import { bottomsUpTheme } from '../theme'
-import MobileNavBar from '../components/mobileNavBar'
+import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
+import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../utils/constants/dimens'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -39,8 +40,7 @@ const Home = () => {
 
   //TODO SORT OUT STYLING
   return (
-// 400 needs changing with what ever is chosen
-    (widowWidth < 400)
+    (widowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
     ?<div className={classes.root}>
     <Box display="flex">
       <MobileNavBar

@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import { Box, Paper, Typography, Grid, ThemeProvider } from '@material-ui/core'
-import Image from 'next/image'
+import { MIN_LANDSCAPE_MOBILE_WIDTH } from '../../utils/constants/dimens'
 
 interface Props {
   title: string
@@ -11,7 +11,7 @@ interface Props {
   screenWidth: number
 }
 
-const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
+const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image, screenWidth }) => {  
   const useStyles = makeStyles({
     root: {
       flexGrow: 1,
@@ -34,13 +34,18 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
     }
   })
 
+  const mobileLayout: Boolean = screenWidth < MIN_LANDSCAPE_MOBILE_WIDTH
+  
   const classes = useStyles()
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <Paper className={classes.paper}>
+      
+    
           <Box p={1}>
+      {mobileLayout ? null :
             <Grid container direction="row" spacing={1}>
               <Grid
                 container
@@ -72,6 +77,7 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
                 <Grid item>{image}</Grid>
               </Grid>
             </Grid>
+}
           </Box>
         </Paper>
       </div>

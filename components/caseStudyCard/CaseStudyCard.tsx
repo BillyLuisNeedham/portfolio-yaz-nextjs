@@ -8,6 +8,7 @@ interface Props {
   subtitle: string
   theme: Theme
   image: ReactNode
+  screenWidth: number
 }
 
 const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {

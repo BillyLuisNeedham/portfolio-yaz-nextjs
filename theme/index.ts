@@ -23,7 +23,7 @@ const theme = createMuiTheme({
       color: '#EA02B3'
     }
   }
-});
+})
 
 const bottomsUpTheme = createMuiTheme({
   palette: {

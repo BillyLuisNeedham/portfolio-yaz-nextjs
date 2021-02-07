@@ -25,7 +25,7 @@ const useStyles = makeStyles(() =>
 
 const Home = () => {
 
-  const [widowWidth, setWindowWidth]= useState(0)
+  const [windowWidth, setWindowWidth]= useState(0)
 
   const classes = useStyles()
   function navigateToRoute(navRoutes: NavRoutes) {
@@ -40,7 +40,7 @@ const Home = () => {
 
   //TODO SORT OUT STYLING
   return (
-    (widowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
+    (windowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
     ?<div className={classes.root}>
     <Box display="flex">
       <MobileNavBar

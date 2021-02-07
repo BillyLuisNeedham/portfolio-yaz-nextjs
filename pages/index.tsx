@@ -44,9 +44,9 @@ const Home = () => {
               <Image
                 src='/assets/images/bottomsUp/3_phone_mockup.png'
                 alt='3 phones displaying bottoms up card'
-                layout='intrinsic'
+                height={125}
                 width={150}
-                height={150}
+                
                 />
             }
             theme={bottomsUpTheme}

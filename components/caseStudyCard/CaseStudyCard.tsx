@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import { Box, Paper, Typography, Grid, ThemeProvider } from '@material-ui/core'
 import Image from 'next/image'
@@ -7,7 +7,7 @@ interface Props {
   title: string
   subtitle: string
   theme: Theme
-  image: any
+  image: ReactNode
   
 }
 

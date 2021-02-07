@@ -1,6 +1,7 @@
 import React from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import { Box, Paper, Typography, Grid, ThemeProvider } from '@material-ui/core'
+import Image from 'next/image'
 
 interface Props {
   title: string
@@ -25,6 +26,9 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
     column: {
       minHeight: '150px',
     },
+    text: {
+      color: theme.palette.background.default
+    }
   })
 
   const classes = useStyles()
@@ -44,8 +48,8 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
                 className={classes.column}
               >
                 <Grid item>
-                  <Typography variant="h5">{title}</Typography>
-                  <Typography variant="subtitle1">{subtitle}</Typography>
+                  <Typography variant="h5" className={classes.text} >{title}</Typography>
+                  <Typography variant="body1" className={classes.text} >{subtitle}</Typography>
                 </Grid>
               </Grid>
               <Grid

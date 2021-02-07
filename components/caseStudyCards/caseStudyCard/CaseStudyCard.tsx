@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import { Box, Paper, Typography, Grid, ThemeProvider } from '@material-ui/core'
-import { MIN_LANDSCAPE_MOBILE_WIDTH } from '../../utils/constants/dimens'
+import { MIN_LANDSCAPE_MOBILE_WIDTH } from '../../../utils/constants/dimens'
 
 interface Props {
   title: string

@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard/AboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
-import CaseStudyCard from '../components/caseStudyCard/CaseStudyCard'
+import CaseStudyCard from '../components/caseStudyCards/caseStudyCard/CaseStudyCard'
 import { bottomsUpTheme } from '../theme'
 import Image from 'next/image'
 

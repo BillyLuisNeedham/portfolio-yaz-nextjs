@@ -70,4 +70,4 @@ const psdsTheme = createMuiTheme({
   }
 })
 
-export { theme, bottomsUpTheme };
+export { theme, bottomsUpTheme, psdsTheme };

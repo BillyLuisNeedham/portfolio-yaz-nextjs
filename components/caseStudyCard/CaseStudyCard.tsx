@@ -61,7 +61,7 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
                 className={classes.column}
               >
                 <Grid item>
-                  <img alt={image} src={image} />
+                  {image}
                 </Grid>
               </Grid>
             </Grid>

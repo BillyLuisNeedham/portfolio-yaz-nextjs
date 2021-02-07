@@ -6,6 +6,9 @@ import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
 import CaseStudyCard from '../components/caseStudyCard/CaseStudyCard'
 import { bottomsUpTheme } from '../theme'
+import Image from 'next/image'
+const bottomsUpCardImg = require('../assets/images/bottomsUp/3_phone_mockup.png')
+
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -36,7 +39,20 @@ const Home = () => {
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
+          <CaseStudyCard
+            theme={bottomsUpTheme}
+            title="Bottoms Up!"
+            subtitle="End to end project for a Udacity course."
+            image={
+              <Image
+                src={bottomsUpCardImg}
+                alt="3 phones showing bottomsUp designs"
+                layout="intrinsic"
+                width={248}
+                height={271}
+              />
+            }
+          />
         </Box>
       </Box>
     </div>

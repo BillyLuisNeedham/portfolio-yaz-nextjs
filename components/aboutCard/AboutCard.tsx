@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import NavBar from './navBar'
+import NavBar from './navBar/NavBar'
 import { NavRoutes } from '../../utils/constants/navRoutes'
 import Image from 'next/image'
 

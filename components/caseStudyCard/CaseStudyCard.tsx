@@ -8,7 +8,6 @@ interface Props {
   subtitle: string
   theme: Theme
   image: ReactNode
-  
 }
 
 const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
@@ -21,13 +20,16 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
       margin: 'auto',
       textAlign: 'center',
       minHeight: '150px',
-      backgroundColor: theme.palette.primary.main
+      backgroundColor: theme.palette.primary.main,
     },
     column: {
       minHeight: '150px',
     },
     text: {
-      color: theme.palette.background.default
+      color: theme.palette.background.default,
+    },
+    textContainer: {
+      marginBottom: theme.spacing(1)
     }
   })
 
@@ -36,7 +38,7 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <Paper className={classes.paper} >
+        <Paper className={classes.paper}>
           <Box p={1}>
             <Grid container direction="row" spacing={1}>
               <Grid
@@ -48,8 +50,14 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
                 className={classes.column}
               >
                 <Grid item>
-                  <Typography variant="h5" className={classes.text} >{title}</Typography>
-                  <Typography variant="body1" className={classes.text} >{subtitle}</Typography>
+                  <Box className={classes.textContainer}>
+                    <Typography variant="h5" className={classes.text}>
+                      {title}
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" className={classes.text}>
+                    {subtitle}
+                  </Typography>
                 </Grid>
               </Grid>
               <Grid
@@ -60,9 +68,7 @@ const CaseStudyCard: React.FC<Props> = ({ title, subtitle, theme, image }) => {
                 xs
                 className={classes.column}
               >
-                <Grid item>
-                  {image}
-                </Grid>
+                <Grid item>{image}</Grid>
               </Grid>
             </Grid>
           </Box>

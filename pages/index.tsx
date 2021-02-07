@@ -31,7 +31,7 @@ const useStyles = makeStyles(() =>
 
 const Home = () => {
 
-  const [widowWidth, setWindowWidth]= useState(0)
+  const [windowWidth, setWindowWidth]= useState(0)
 
   const classes = useStyles()
   function navigateToRoute(navRoutes: NavRoutes) {
@@ -46,7 +46,7 @@ const Home = () => {
 
   //TODO SORT OUT STYLING
   return (
-    (widowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
+    (windowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
     ?<div className={classes.mobile}>
       <MobileNavBar
         onNavigateCallback={navigateToRoute}
@@ -55,7 +55,7 @@ const Home = () => {
     <Box>
       <Box>
           <AboutCard
-            widowWidth={widowWidth}
+            windowWidth={windowWidth}
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}
           />
@@ -71,7 +71,7 @@ const Home = () => {
       <Box display="flex">
         <Box flex={1}>
           <AboutCard
-            widowWidth={widowWidth}
+            windowWidth={windowWidth}
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}
           />

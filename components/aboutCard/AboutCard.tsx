@@ -24,12 +24,12 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 interface IAboutCardProps {
-  widowWidth: number
+  windowWidth: number
   activeRoute: NavRoutes
   onNavigateCallback: (navRoutes: NavRoutes) => void
 }
 
-const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, widowWidth }) => {
+const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
   const classes = useStyles()
   const spacer = () => <Box p={1} />
   function navToRoute(navRoutes: NavRoutes) {
@@ -40,7 +40,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, widowWidth }) => {
 
   return (
     
-     (widowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
+     (windowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
       ? //mobile page
       <Box p={4} borderRight={1} >
         <Box
@@ -77,13 +77,13 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, widowWidth }) => {
       <Box className={classes.root} p={1} borderRight={1} >
         <Box display="flex" justifyContent="flex-start">
         <Image
-                      src="/Logo_Grey.png"
-                      alt="Logo Yazmin Leigh"
-                      layout="intrinsic"
-                      width={37}
-                      height={48}
-                      quality={100}
-                      />
+          src="/Logo_Grey.png"
+          alt="Logo Yazmin Leigh"
+          layout="intrinsic"
+          width={37}
+          height={48}
+          quality={100}
+          />
         </Box>
         <Box
           display="flex"

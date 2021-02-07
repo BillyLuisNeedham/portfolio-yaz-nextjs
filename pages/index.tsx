@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard/AboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
-import CaseStudyCard from '../components/caseStudyCards/caseStudyCard/CaseStudyCard'
+import { CaseStudyCards } from '../components/caseStudyCards/CaseStudyCards'
 import { bottomsUpTheme } from '../theme'
 import Image from 'next/image'
 
@@ -54,20 +54,7 @@ const Home = () => {
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCard
-            screenWidth={screenWidth}
-            image={
-              <Image
-                src="/assets/images/bottomsUp/3_phone_mockup.png"
-                alt="3 phones displaying bottoms up card"
-                height={125}
-                width={150}
-              />
-            }
-            theme={bottomsUpTheme}
-            title="Bottoms Up!"
-            subtitle="End to end project for a Udacity course."
-          />
+          <CaseStudyCards screenWidth={screenWidth} />
         </Box>
       </Box>
     </div>

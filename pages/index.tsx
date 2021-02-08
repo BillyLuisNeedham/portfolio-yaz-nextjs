@@ -8,6 +8,7 @@ import CaseStudyCard from '../components/caseStudyCard'
 import { bottomsUpTheme } from '../theme'
 import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
 import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../utils/constants/dimens'
+import CaseStudyDivider from '../components/CaseStudyDivider/CaseStudyDivider'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -77,7 +78,11 @@ const Home = () => {
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
+          {
+          //TODO restore to cards when done building
+}
+          {/* <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." /> */}
+          <CaseStudyDivider title="Test Title" />
         </Box>
       </Box>
     </div>

@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import CaseStudyDivider from './CaseStudyDivider'
 
+
 describe('<CaseStudyDivider />', () => {
   const testTitle = 'test title'
   const wrapper = <CaseStudyDivider title={testTitle} />

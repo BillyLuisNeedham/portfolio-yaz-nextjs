@@ -22,4 +22,5 @@ describe('<CaseStudyDivider />', () => {
 
     expect(titleFinder).toBeInTheDocument() 
   })
+
 })

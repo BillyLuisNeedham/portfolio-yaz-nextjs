@@ -1,6 +1,12 @@
 import { Typography } from '@material-ui/core'
 import React from 'react'
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {},
+  })
+)
 interface Props {
   title: string
 }

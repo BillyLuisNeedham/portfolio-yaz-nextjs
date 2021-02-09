@@ -79,7 +79,7 @@ const Home = () => {
           />
         </Box>
         <Box>
-          <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
+          <CaseStudyCards screenWidth={screenWidth} />
         </Box>
     </Box>
   </div>

@@ -52,7 +52,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
           <Box className={classes.picture}>
             <Image 
               className={classes.picture}
-              src="/Profile_Image2.png"
+              src="/assets/images/Profile_Image2.png"
               alt="Profile picture of Yazmin Leigh"
               layout="intrinsic"
               width={248}
@@ -94,7 +94,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
           <Box className={classes.picture}>
             <Image 
               className={classes.picture}
-              src="/Profile_Image2.png"
+              src="/assets/images/Profile_Image2.png"
               alt="Profile picture of Yazmin Leigh"
               layout="intrinsic"
               width={248}

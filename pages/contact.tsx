@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
-import { Grid, TextField, Typography } from '@material-ui/core'
+import { Box, Grid, TextField, Typography } from '@material-ui/core'
 import { generalStrings } from '../public/assets/strings/general'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+    },
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    item: {
+      margin: theme.spacing(1),
     },
   })
 )
@@ -34,27 +42,33 @@ const ContactPage: React.FC<Props> = ({}) => {
 
   return (
     <div className={classes.root}>
-      <Grid container>
+      <Grid container className={classes.container} direction="column">
         <Grid item>
           <Typography variant="h5">
             {generalStrings.contactPageHeader}
           </Typography>
-          <Typography variant="body2">{generalStrings.nameString}</Typography>
+        </Grid>
+        <Grid item className={classes.item}>
           <TextField
+            label={generalStrings.nameString}
             name="name"
             variant="outlined"
             onChange={handleInputChange}
             value={state.name}
           />
-          <Typography variant="body2">{generalStrings.email}</Typography>
+        </Grid>
+        <Grid item className={classes.item}>
           <TextField
+            label={generalStrings.email}
             name="email"
             variant="outlined"
             onChange={handleInputChange}
             value={state.email}
           />
-          <Typography variant="body2">{generalStrings.message}</Typography>
+        </Grid>
+        <Grid item className={classes.item}>
           <TextField
+            label={generalStrings.message}
             name="message"
             variant="outlined"
             onChange={handleInputChange}

@@ -6,14 +6,17 @@ import NavBar from './navBar/NavBar'
 import { NavRoutes } from '../../utils/constants/navRoutes'
 import Image from 'next/image'
 import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../../utils/constants/dimens'
+import Footer from '../Footer/Footer'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      minHeight: '90vh',
+      minHeight: '100vh',
+      display:'flex',
+      flexDirection:"column",
+      justifyContent:'space-around'
     },
     footer: {
-      position: 'absolute',
       bottom: 0,
     },
     picture:{
@@ -122,8 +125,9 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
             onNavigateCallback={navToRoute} />
           </Box>
           <Box className={classes.footer}>
-            <Typography variant="body1">Social Media</Typography>
+            <Footer/>
           </Box>
+          
       </Box>
       
   )

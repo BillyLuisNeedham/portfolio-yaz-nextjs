@@ -23,7 +23,7 @@ const theme = createMuiTheme({
       color: '#EA02B3'
     }
   }
-});
+})
 
 const bottomsUpTheme = createMuiTheme({
   palette: {
@@ -44,8 +44,45 @@ const bottomsUpTheme = createMuiTheme({
 
   typography: {
     fontFamily: 'Abril Fatface',
-    h5: {}
+
   },
 })
 
-export { theme, bottomsUpTheme };
+const psdsTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#87ABA9'
+    },
+    secondary: {
+      main: '#E17200'
+    },
+    background: {
+      default: '#FCFFFD'
+    },
+    text: {
+      primary: '#7A7A7A',
+    }
+
+  },
+
+  typography: {
+    fontFamily: 'Roboto',
+    h1: {
+      fontFamily: 'Playfair Display'
+    }, 
+    h2: {
+      fontFamily: 'Playfair Display'
+    },
+    h3: {
+      fontFamily: 'Playfair Display'
+    },
+    h4: {
+      fontFamily: 'Playfair Display'
+    },
+    h5: {
+      fontFamily: 'Playfair Display'
+    },
+  }
+})
+
+export { theme, bottomsUpTheme, psdsTheme };

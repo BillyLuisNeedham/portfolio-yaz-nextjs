@@ -24,7 +24,8 @@ const Footer =() =>{
             className={classes.button} 
             aria-label="linkedIn" 
             color="secondary" 
-            href="https://www.linkedin.com/">
+            href="https://www.linkedin.com/"
+            target="_blank">
                 <Image 
                 src="/assets/SVG/iconfinder_1_Linkedin_unofficial_colored_svg_5296501.svg"
                 width={40}
@@ -34,7 +35,8 @@ const Footer =() =>{
             <IconButton 
             className={classes.button} 
             aria-label="instagram" 
-            href="https://www.instagram.com/">
+            href="https://www.instagram.com/"
+            target="_blank">
                 <Image 
                 src="/assets/SVG/iconfinder_1_Instagram_colored_svg_1_5296765.svg"
                 width={40}

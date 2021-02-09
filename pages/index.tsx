@@ -1,11 +1,13 @@
+
 import React, { useEffect, useState } from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard/AboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
-import CaseStudyCard from '../components/caseStudyCard'
+import { CaseStudyCards } from '../components/caseStudyCards/CaseStudyCards'
 import { bottomsUpTheme } from '../theme'
+import Image from 'next/image'
 import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
 import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../utils/constants/dimens'
 
@@ -34,6 +36,22 @@ const Home = () => {
   const [windowWidth, setWindowWidth]= useState(0)
 
   const classes = useStyles()
+
+  const [screenWidth, setScreenWidth] = useState<number | undefined>(undefined)
+
+  function handleResize(): void {
+    setScreenWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize)
+
+      handleResize()
+      return () => window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
   function navigateToRoute(navRoutes: NavRoutes) {
     console.log(`navigate to navRoute ${navRoutes}`)
   }
@@ -77,7 +95,7 @@ const Home = () => {
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCard theme={bottomsUpTheme} title="Bottoms Up!" subtitle="End to end project for a Udacity course." />
+          <CaseStudyCards screenWidth={screenWidth} />
         </Box>
       </Box>
     </div>

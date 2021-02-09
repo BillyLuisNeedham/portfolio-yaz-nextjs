@@ -39,6 +39,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
 
 
   return (
+
     
      (windowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
       ? //mobile page

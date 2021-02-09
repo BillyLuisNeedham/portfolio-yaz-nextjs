@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     item: {
+      width: '90%',
       margin: theme.spacing(1),
     },
   })
@@ -55,6 +56,7 @@ const ContactPage: React.FC<Props> = ({}) => {
             variant="outlined"
             onChange={handleInputChange}
             value={state.name}
+            fullWidth
           />
         </Grid>
         <Grid item className={classes.item}>

@@ -10,8 +10,11 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       height: '100px',
     },
-    conatiner: { 
-      // TODO write out
+    container: {
+      height: '100px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     title: {
       color: theme.palette.background.default,
@@ -27,7 +30,7 @@ const CaseStudyDivider: React.FC<Props> = ({ title }) => {
 
   return (
     <div data-testid="CaseStudyDivider" className={classes.root}>
-      <Box className={classes.conatiner} >
+      <Box className={classes.container} >
         <Typography variant="h4" className={classes.title}>
           {title}
         </Typography>

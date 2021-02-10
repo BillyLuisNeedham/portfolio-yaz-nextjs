@@ -32,7 +32,7 @@ const CustomTextField = withStyles({
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: 'red',
+        borderColor: '#F5D79D', // color to be used
       },
       '&:hover fieldset': {
         borderColor: 'yellow',

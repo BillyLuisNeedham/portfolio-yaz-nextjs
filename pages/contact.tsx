@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
-import { Box, Grid, TextField, Typography } from '@material-ui/core'
+import { Box, Grid, TextField, Typography, withStyles } from '@material-ui/core'
 import { generalStrings } from '../public/assets/strings/general'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -14,11 +14,35 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     item: {
-      width: '90%',
+      width: '70%',
       margin: theme.spacing(1),
+      textAlign: 'center',
     },
   })
 )
+
+//TODO customize style to fit designs then replace current TextFields with custom one
+const CustomTextField = withStyles({
+  root: {
+    '& label': {
+      color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
+  },
+})(TextField)
 
 interface Props {}
 
@@ -28,6 +52,7 @@ interface IState {
   message: string
 }
 
+//TODO if user presses send before all fields are filled in, display error fields
 const ContactPage: React.FC<Props> = ({}) => {
   const [state, setState] = useState<IState>({
     name: '',
@@ -44,7 +69,7 @@ const ContactPage: React.FC<Props> = ({}) => {
   return (
     <div className={classes.root}>
       <Grid container className={classes.container} direction="column">
-        <Grid item>
+        <Grid item className={classes.item}>
           <Typography variant="h5">
             {generalStrings.contactPageHeader}
           </Typography>
@@ -66,15 +91,29 @@ const ContactPage: React.FC<Props> = ({}) => {
             variant="outlined"
             onChange={handleInputChange}
             value={state.email}
+            fullWidth
           />
         </Grid>
         <Grid item className={classes.item}>
+          <CustomTextField
+            label={generalStrings.message}
+            name="message"
+            variant="outlined"
+            onChange={handleInputChange}
+            value={state.message}
+            fullWidth
+            multiline
+            rows={8}
+          />
           <TextField
             label={generalStrings.message}
             name="message"
             variant="outlined"
             onChange={handleInputChange}
             value={state.message}
+            fullWidth
+            multiline
+            rows={8}
           />
         </Grid>
       </Grid>

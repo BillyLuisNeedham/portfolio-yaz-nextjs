@@ -91,11 +91,6 @@ const Home = () => {
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCard
-            theme={bottomsUpTheme}
-            title="Bottoms Up!"
-            subtitle="End to end project for a Udacity course."
-          />
           <CaseStudyCards screenWidth={screenWidth} />
         </Box>
       </Box>

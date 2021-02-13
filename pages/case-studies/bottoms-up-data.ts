@@ -116,3 +116,72 @@ export const WIREFRAMES ={
 }
 
 
+//VISUAL_DESIGN
+
+export const VISUAL_DESIGN = {
+    image1:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_home_mockup.png',
+        width:347,
+        height: 700,
+    },
+    image2:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/location_mockup.png',
+        width:347,
+        height: 700,
+    },
+    image3:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/Group 61.png',
+        width:616,
+        height: 664,
+    },
+    image4:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/pattern_library@2x.png',
+        width:616,
+        height:945,
+
+    },
+    image5:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/Group 63.png',
+        width:600,
+        height:230,
+    },
+    image6:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/location_pre-iteration_mockup.png',
+        width:495,
+        height:1000,
+    },
+    image7:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/location_mockup.png',
+        width:495,
+        height:1000,
+    },
+    image8:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_pre-iteration_mockup.png',
+        width:495,
+        height:1000,
+    },
+    image9:{
+        imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_pre-iteration_mockup.png',
+        width:495,
+        height:1000,
+    },
+    text1:"To maintain consistency throughout, I created a style guide and pattern library, consisting of reusable components and their states.",
+    text2:"Designing buttons, cards and lists that can be rearranged and combined with other components; whilst keeping the same consistency.",
+    text3:"Using lookback I conducted unmoderated user testing to get quantitative and qualitative data to identify and issues not indicated in the first round of user testing.",
+    text4:"On conclusion of the results data, I decided that the Key Performance Indicator (KPI) I wanted to improve on was:",
+    text5:"To decrease the amount of time taken to complete an order.",
+    text6:"34% of confusion was users not know where to click on to select the pub. So I changed the way the information was presented by using a card system with other pubs nearby to make it clearer to the user that it is clickable. Plus it will give them the option to look at places nearby if there is no availability left.",
+    text7:"67% of the users found it hard to find the filter button. Because of the wide variety of user ages I have decided to iterate the icon filter button to words. I have also added a search button so that it will be easier for the users to find the drink they want without stress and confusion.", 
+}
+
+
+//conclusion
+
+export const CONCLUSION = {
+    text1:"As this project was done for a Udacity course it has not yet been built. ",
+    text2:" However, the project would be built as a progressive web application for phones as customers are unlikely to carry a laptop to the pub.",
+    text3:"BottomsUp will provide the users of updates of the capacity limit and new opening hours. It provides users with ease of location by using the phones GPS.",
+    text4:"During this project I have learned so much from research techniques through to the final design solutions on a high fidelity prototype and user testing. ",
+    text5:"From working on this project, I have learned that accessing your scope early on is especially important, especially working by yourself. Scope creep will always be inevitable as you collect more data and come up with better ways of designing.",
+    text6:" Research and user testing early on important and will save time and money down the line.",
+}

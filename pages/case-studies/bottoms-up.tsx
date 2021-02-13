@@ -7,8 +7,9 @@ import ListItem from'@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
-import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK } from './bottoms-up-data';
+import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION } from './bottoms-up-data';
 import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../../utils/constants/dimens'
 import CaseStudyDivider from '../../components/CaseStudyDivider/CaseStudyDivider';
 import BulletNumbers from '../../components/bulletnumbers/BulletNumbers'
@@ -20,10 +21,14 @@ const useStyles = makeStyles((theme: Theme) =>
 
   createStyles({
     root: {
-      flexGrow: 1,
+      flexGrow: 0,
+    },
+    sections:{
+      paddingLeft: "3em",
+      paddingRight: "3em"
     },
     title:{
-      flexGrow: 1,
+      flexGrow: 0,
     },
     intro:{
       margin: '2vw',
@@ -106,6 +111,49 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow: 'row nowrap',
       justifyContent: 'space-between',
     },
+    visualDesignMain:{
+      display:"flex",
+      flexFlow:"column nowrap",
+      justifyContent:'center',
+      alignItems: 'center',
+    },
+    visualDesign2:{
+      marginTop:"5em",
+      display:"flex",
+      flexFlow:"row nowrap",
+      justifyContent:'center',
+      alignItems: 'center',
+      
+    },
+    visualDesign3:{
+      display:"flex",
+      flexFlow:"row nowrap",
+      justifyContent:'center',
+      alignItems: 'center',
+      
+    },
+    visualDesignsub3:{
+      display:"flex",
+      flexFlow:"column nowrap",
+      justifyContent:'center',
+      alignItems: 'center',
+    },
+    visualDesigncomponents:{
+      margin:"5em"
+    },
+    visualDesign4:{
+      display:"flex",
+      flexFlow:"column nowrap",
+      justifyContent:'center',
+      alignItems: 'center',
+    },
+    conclusion:{
+      display:"flex",
+      flexFlow:"column nowrap",
+      justifyContent:'center',
+      alignItems: 'center',
+      padding: "5em",
+    },
 
 
   })
@@ -124,7 +172,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             {TITLE}
           </Typography>
         </Box>
-        <Box className={classes.intro}>
+        <Box className={clsx(classes.intro, classes.sections)}>
           <Box className={classes.introbody}>
           <Typography className={classes.intropara} variant="body1" align="center" >
                 {INTO_PARA}
@@ -177,7 +225,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
 
         <div>
           <CaseStudyDivider title={"The Challenge"}/>
-          <Box className={classes.challange} >
+          <Box className={clsx(classes.challange, classes.sections)} >
             <Box alignSelf="center" className={classes.challangeintro}>
               <Typography align="center" variant="body1" > 
               {THE_CHALLANGE.intro}
@@ -247,7 +295,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
         <div>
           <CaseStudyDivider title={"Ideation"}/>
 
-          <Box className={classes.challange} >
+          <Box className={clsx(classes.challange, classes.sections)} >
             
             <Box className={classes.challangemain} >
               <Typography align="center" variant="body1" className={classes.challangemaincontent}>
@@ -287,7 +335,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
         <div >
           <CaseStudyDivider title={"Wireframes"}/>
 
-          <Box className={classes.wireframesMain} >
+          <Box className={clsx(classes.wireframesMain, classes.sections)} >
 
             <Box m={5} alignSelf="center">
               <Image
@@ -307,6 +355,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
               variant="contained" 
               color="secondary" 
               href={WIREFRAME_LINK}
+              size="large"
               style={{
                 borderRadius:"50px",
                 boxShadow:"0 3px 6px #00000029",
@@ -326,7 +375,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                     width={`${WIREFRAMES.image2.width}`} 
                     height={`${WIREFRAMES.image2.height}`} 
                     />
-                  <Box m={5} width={584}>
+                  <Box m={5} width="30vw">
                     <Typography align="center" variant="body1">
                       {WIREFRAMES.text2}
                     </Typography>
@@ -362,7 +411,8 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 <Image
                 src={`${WIREFRAMES.image4.imagesrc}`}   
                 width={`${WIREFRAMES.image4.width}`} 
-                height={`${WIREFRAMES.image4.height}`} 
+                height={`${WIREFRAMES.image4.height}`}
+                layout="intrinsic" 
                 />
               </Box>
 
@@ -384,8 +434,212 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
         <div>
         <CaseStudyDivider title={"Visual Design"}/>
 
+        <Box className={clsx(classes.visualDesignMain, classes.sections)} >
+          <Box className={classes.visualDesign2}> 
+            <Box p={2} >
+              <Image
+                src={`${VISUAL_DESIGN.image1.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image1.width}`} 
+                height={`${VISUAL_DESIGN.image1.height}`}
+                layout="intrinsic" 
+                />
+            </Box>
+            <Box p={10} mt={10}>
+              <Image
+              src={`${VISUAL_DESIGN.image2.imagesrc}`}   
+              width={`${VISUAL_DESIGN.image2.width}`} 
+              height={`${VISUAL_DESIGN.image2.height}`} 
+              layout="intrinsic"
+              />
+
+            </Box>
+          </Box>
+
+          <Box className={classes.visualDesign3}>
+            
+            <Box className={classes.visualDesignsub3}>
+              <Image
+                className={classes.visualDesigncomponents}
+                src={`${VISUAL_DESIGN.image3.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image3.width}`} 
+                height={`${VISUAL_DESIGN.image3.height}`} 
+                layout="intrinsic"
+                />
+
+              <Typography 
+                align="left" 
+                variant="body1"
+                className={classes.visualDesigncomponents} >
+              {VISUAL_DESIGN.text1}
+              </Typography>
+
+              <Image
+                className={classes.visualDesigncomponents}
+                src={`${VISUAL_DESIGN.image5.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image5.width}`} 
+                height={`${VISUAL_DESIGN.image5.height}`}
+                layout="intrinsic" 
+                />
+
+            </Box>
+
+            <Box className={classes.visualDesignsub3}>
+              <Image
+                className={classes.visualDesigncomponents}
+                src={`${VISUAL_DESIGN.image4.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image4.width}`} 
+                height={`${VISUAL_DESIGN.image4.height}`}
+                layout="intrinsic" 
+                />
+              <Typography 
+                align="right" 
+                variant="body1" 
+                className={classes.visualDesigncomponents}>
+                {VISUAL_DESIGN.text2}
+              </Typography>
+            </Box>
+            
+          </Box>
+
+          <Box className={classes.visualDesigncomponents}>
+            <Typography
+              color="secondary" 
+              align="right" 
+              variant="h4" >
+                Test and Iterate Again
+            </Typography>
+          </Box>
+          
+          <Box className={classes.visualDesign4}>
+            <Box width="42vw" p={4}>
+              <Typography align="left" variant="body1" >
+                {VISUAL_DESIGN.text3}
+              </Typography>
+            </Box>
+
+            <Box width="41vw" p={4}>
+              <Typography align="left" variant="body1" >
+                {VISUAL_DESIGN.text4}
+              </Typography>
+            </Box>
+
+            <Box width="50vw" p={4}>
+              <Typography align="center" variant="h4" color="secondary">
+                {VISUAL_DESIGN.text5}
+              </Typography>
+            </Box>
+
+            <Box>
+              <Image
+                src={`${VISUAL_DESIGN.image6.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image6.width}`} 
+                height={`${VISUAL_DESIGN.image6.height}`}
+                layout="intrinsic" 
+                />
+            </Box>
+
+            <Box
+              m="14vh"
+              border={8} 
+              borderColor="secondary.main"
+              width="60vw">
+              <Typography align="center" variant="body1" >
+                {VISUAL_DESIGN.text6}
+              </Typography>
+            </Box>
+
+            <Box p={4}>
+              <Image
+                src={`${VISUAL_DESIGN.image7.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image7.width}`} 
+                height={`${VISUAL_DESIGN.image7.height}`}
+                layout="intrinsic" 
+                />
+            </Box>
+
+            <Box p={4}>
+              <Image
+                src={`${VISUAL_DESIGN.image8.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image8.width}`} 
+                height={`${VISUAL_DESIGN.image8.height}`}
+                layout="intrinsic" 
+                />
+            </Box>
+            
+            <Box
+            m="14vh"
+            border={8} 
+            borderColor="secondary.main"
+            width="60vw">
+              <Typography align="center" variant="body1" >
+                {VISUAL_DESIGN.text7}
+              </Typography>
+            </Box>
+
+            <Box>
+              <Image
+                src={`${VISUAL_DESIGN.image9.imagesrc}`}   
+                width={`${VISUAL_DESIGN.image9.width}`} 
+                height={`${VISUAL_DESIGN.image9.height}`}
+                layout="intrinsic" 
+              />
+            </Box>          
+          </Box>
+        </Box>
         </div>
+
+        <div>
+          <CaseStudyDivider title={"Conclusion"}/>
+          <Box className={classes.conclusion}>
+            <Box p={2} width="63vw">
+              <Typography align="center" variant="body1" >
+                {CONCLUSION.text1}
+              </Typography>
+            </Box>
+            <Box p={2} width="63vw">
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text2}
+              </Typography>
+            </Box>
+            <Box p={2} width="63vw">
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text3}
+              </Typography>
+            </Box>
+          </Box>
+          
+
+          <Box p={2} width="63vw">
+            <Typography align="left" variant="h5" color="secondary">
+              What I Learned
+            </Typography>
+          </Box>
+
+          <Box className={classes.conclusion}>
+            <Box p={2} width="63vw"> 
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text4}
+              </Typography>
+            </Box>
+            <Box p={2} width="63vw">
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text5}
+              </Typography>
+            </Box>
+            <Box p={2} width="63vw">
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text6}
+              </Typography>
+            </Box>
+          </Box>
       
+          <Box p={2} width="63vw" className={classes.conclusion}>
+            <Typography align="left" variant="h5" color="secondary">
+              Thanks for stopping by.
+            </Typography>
+          </Box>
+
+          </div>
 
       </Box>
       

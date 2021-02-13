@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
-import { Box, Grid, TextField, Typography, withStyles } from '@material-ui/core'
+import {
+  Box,
+  Grid,
+  Link,
+  TextField,
+  Typography,
+  withStyles,
+} from '@material-ui/core'
 import { generalStrings } from '../public/assets/strings/general'
 import { theme } from '../theme/index'
+import { Button } from '../components/button'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,10 +22,19 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       alignItems: 'center',
     },
-    item: {
+    textBoxCont: {
       width: '70%',
       margin: theme.spacing(1),
       textAlign: 'center',
+    },
+    rightAlignedCont: {
+      display: 'flex',
+      width: '70%',
+      justifyContent: 'center',
+    },
+    rightAlignedItem: {
+      alignSelf: 'flex-end',
+      marginRight: '15%',
     },
   })
 )
@@ -37,8 +54,8 @@ const CustomTextField = withStyles({
         borderColor: yellow, // color to be used
       },
       '&:hover fieldset': {
-        borderColor: yellow, 
-        borderWidth: 2 
+        borderColor: yellow,
+        borderWidth: 2,
       },
       '&.Mui-focused fieldset': {
         borderColor: yellow,
@@ -72,12 +89,12 @@ const ContactPage: React.FC<Props> = ({}) => {
   return (
     <div className={classes.root}>
       <Grid container className={classes.container} direction="column">
-        <Grid item className={classes.item}>
+        <Grid item className={classes.textBoxCont}>
           <Typography variant="h5">
             {generalStrings.contactPageHeader}
           </Typography>
         </Grid>
-        <Grid item className={classes.item}>
+        <Grid item className={classes.textBoxCont}>
           <CustomTextField
             label={generalStrings.nameString}
             name="name"
@@ -87,7 +104,7 @@ const ContactPage: React.FC<Props> = ({}) => {
             fullWidth
           />
         </Grid>
-        <Grid item className={classes.item}>
+        <Grid item className={classes.textBoxCont}>
           <CustomTextField
             label={generalStrings.email}
             name="email"
@@ -97,7 +114,7 @@ const ContactPage: React.FC<Props> = ({}) => {
             fullWidth
           />
         </Grid>
-        <Grid item className={classes.item}>
+        <Grid item className={classes.textBoxCont}>
           <CustomTextField
             label={generalStrings.message}
             name="message"
@@ -108,6 +125,21 @@ const ContactPage: React.FC<Props> = ({}) => {
             multiline
             rows={8}
           />
+        </Grid>
+        {/* </Grid>
+      <Grid container className={classes.rightAlignedCont}> */}
+        <Grid item className={classes.rightAlignedItem}>
+          <Button name="SEND" color="secondary" />
+        </Grid>
+        <Grid item className={classes.rightAlignedItem}>
+          <Typography variant="subtitle2">
+            {generalStrings.orEmailMe}
+            {/* //TODO get link to mail client working 
+            see https://medium.com/the-couch/adding-a-contact-form-to-your-next-js-app-7a1b5f63f27z*/}
+            <Link>
+              <a>{generalStrings.emailAddress}</a>
+            </Link>
+          </Typography>
         </Grid>
       </Grid>
     </div>

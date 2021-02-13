@@ -70,7 +70,7 @@ export const IDEATION ={
         height: 663,
     },
     image3:{
-        imagesrc:'/assets/images/bottomsUp/Ideation/Image 11.png',
+        imagesrc:'/assets/images/bottomsUp/Ideation/Image 11@2x.png',
         width:1206,
         height: 710,
     },
@@ -80,7 +80,9 @@ export const IDEATION ={
      
 }
 
-//ideation
+//wireframes
+
+export const WIREFRAME_LINK ="https://google.co.uk"
 
 export const WIREFRAMES ={
     image1:{

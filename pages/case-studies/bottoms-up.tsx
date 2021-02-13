@@ -7,10 +7,10 @@ import ListItem from'@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS} from './bottoms-up-data';
+import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES } from './bottoms-up-data';
 import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../../utils/constants/dimens'
-import FiberManualRecordSharpIcon from '@material-ui/icons/FiberManualRecordSharp';
 import CaseStudyDivider from '../../components/CaseStudyDivider/CaseStudyDivider';
+import BulletNumbers from '../../components/bulletnumbers/BulletNumbers'
 import Image from 'next/image'
 
 
@@ -103,7 +103,8 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
           </Box>
           <Box className={classes.lists}>
           <List className={classes.root}>
-          <ListSubheader>Roll</ListSubheader>
+            
+          <ListSubheader disableSticky={true} >Roll</ListSubheader>
           {ROLL_INFO.map((info, index)=>(
             <ListItem key={`roll-key-${index}`}>
               <ListItemIcon>
@@ -117,7 +118,8 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             </ListItem>))}
           </List>
           <List className={classes.root}>
-          <ListSubheader>Tools</ListSubheader>
+
+          <ListSubheader disableSticky={true}>Tools</ListSubheader>
           {TOOLS_USED.map((info, index)=>(
             <ListItem key={`tools-key-${index}`}>
               <ListItemIcon>
@@ -133,8 +135,13 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
           <List className={classes.tooliconlist}>
             {TOOL_ICONS.map((info, index)=>(
               <ListItem key={`tool-icons-key-${index}`}>
-                    <ListItemText primary={info} />
-                </ListItem>))}
+                <Image
+                    src={info}
+                    layout="intrinsic"
+                    height={TOOL_INCON_WIDTH[index].h}
+                    width={TOOL_INCON_WIDTH[index].w}
+                  />
+              </ListItem>))}
           </List>
         </Box>
         </Box>
@@ -190,51 +197,108 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             
 
               <Box alignSelf="center">
-                <List >
-                    <ListItem key="1RF">
-                      <ListItemIcon>
-                      <Image
-                        src={`${RESEARCH_FINDINGS[1].pointsrc}`} 
-                        width="202"
-                        height="202"
-                      />
-                      </ListItemIcon>
-                      <ListItemText primary={RESEARCH_FINDINGS[1].finding} />
-                    </ListItem>
-                </List>
 
-                <List >
-                    <ListItem key="2RF">
-                      <ListItemIcon>
-                      <Image
-                        src={`${RESEARCH_FINDINGS[2].pointsrc}`} 
-                        width="202"
-                        height="202"
-                      />
-                      </ListItemIcon>
-                      <ListItemText primary={RESEARCH_FINDINGS[2].finding} />
-                    </ListItem>
+              {RESEARCH_FINDINGS.map((info, index)=>(
+                <List key={`${index}RF`}>
+                  <ListItem >
+                    <ListItemIcon>
+                      <BulletNumbers number={index} />
+                    </ListItemIcon>
+                    <ListItemText primary={info} />
+                  </ListItem>
                 </List>
-
-                <List >
-                    <ListItem key="3RF">
-                      <ListItemIcon>
-                      <Image
-                        src={`${RESEARCH_FINDINGS[3].pointsrc}`} 
-                        width="202"
-                        height="202"
-                      />
-                      </ListItemIcon>
-                      <ListItemText primary={RESEARCH_FINDINGS[3].finding} />
-                    </ListItem>
-                </List>
+                ))}
               </Box>
-            
-
-
           </Box>
+        </div>
 
+        <div>
+          <CaseStudyDivider title={"Ideation"}/>
 
+          <Box className={classes.challange} >
+            
+            <Box className={classes.challangemain} >
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {IDEATION.text1}
+              </Typography>
+              <Image
+                className={classes.challangemaincontent}
+                src={`${IDEATION.image1.imagesrc}`}   
+                width={`${IDEATION.image1.width}`} 
+                height={`${IDEATION.image1.height}`} 
+                />
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {IDEATION.text2}
+              </Typography>
+              <Image
+                className={classes.challangemaincontent}
+                src={`${IDEATION.image2.imagesrc}`}   
+                width={`${IDEATION.image2.width}`} 
+                height={`${IDEATION.image2.height}`} 
+                />
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {IDEATION.text3}
+              </Typography>
+              <Image
+              className={classes.challangemaincontent}
+              src={`${IDEATION.image3.imagesrc}`}   
+              width={`${IDEATION.image3.width}`} 
+              height={`${IDEATION.image3.height}`} 
+              />
+            </Box>
+          </Box>
+        </div>
+
+        <div>
+          <CaseStudyDivider title={"Wireframes"}/>
+
+          <Box className={classes.challange} >
+            
+            <Box className={classes.challangemain} >
+            <Image
+                className={classes.challangemaincontent}
+                src={`${WIREFRAMES.image1.imagesrc}`}   
+                width={`${WIREFRAMES.image1.width}`} 
+                height={`${WIREFRAMES.image1.height}`} 
+                />
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {WIREFRAMES.text1}
+              </Typography>
+            <Image
+                className={classes.challangemaincontent}
+                src={`${WIREFRAMES.image2.imagesrc}`}   
+                width={`${WIREFRAMES.image2.width}`} 
+                height={`${WIREFRAMES.image2.height}`} 
+                />
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {WIREFRAMES.text2}
+              </Typography>
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {WIREFRAMES.text3}
+              </Typography>
+              <Image
+                className={classes.challangemaincontent}
+                src={`${WIREFRAMES.image3.imagesrc}`}   
+                width={`${WIREFRAMES.image3.width}`} 
+                height={`${WIREFRAMES.image3.height}`} 
+                />
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {WIREFRAMES.text4}
+              </Typography>
+              <Image
+              className={classes.challangemaincontent}
+              src={`${WIREFRAMES.image4.imagesrc}`}   
+              width={`${WIREFRAMES.image4.width}`} 
+              height={`${WIREFRAMES.image4.height}`} 
+              />
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {WIREFRAMES.text5}
+              </Typography>
+              <Typography align="center" variant="body1" className={classes.challangemaincontent}>
+                {WIREFRAMES.text6}
+              </Typography>
+            </Box>
+          </Box>
         </div>
       
 

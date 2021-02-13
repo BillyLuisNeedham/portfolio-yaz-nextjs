@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import { Box, Grid, TextField, Typography, withStyles } from '@material-ui/core'
 import { generalStrings } from '../public/assets/strings/general'
+import { theme } from '../theme/index'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,24 +22,26 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-//TODO customize style to fit designs then replace current TextFields with custom one
+const yellow: string = '#F5D79D'
+
 const CustomTextField = withStyles({
   root: {
     '& label': {
-      color: 'green',
+      color: theme.palette.primary.main,
     },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'green',
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: '#F5D79D', // color to be used
+        borderColor: yellow, // color to be used
       },
       '&:hover fieldset': {
-        borderColor: 'yellow',
+        borderColor: yellow, 
+        borderWidth: 2 
       },
       '&.Mui-focused fieldset': {
-        borderColor: 'green',
+        borderColor: yellow,
       },
     },
   },
@@ -75,7 +78,7 @@ const ContactPage: React.FC<Props> = ({}) => {
           </Typography>
         </Grid>
         <Grid item className={classes.item}>
-          <TextField
+          <CustomTextField
             label={generalStrings.nameString}
             name="name"
             variant="outlined"
@@ -85,7 +88,7 @@ const ContactPage: React.FC<Props> = ({}) => {
           />
         </Grid>
         <Grid item className={classes.item}>
-          <TextField
+          <CustomTextField
             label={generalStrings.email}
             name="email"
             variant="outlined"
@@ -96,16 +99,6 @@ const ContactPage: React.FC<Props> = ({}) => {
         </Grid>
         <Grid item className={classes.item}>
           <CustomTextField
-            label={generalStrings.message}
-            name="message"
-            variant="outlined"
-            onChange={handleInputChange}
-            value={state.message}
-            fullWidth
-            multiline
-            rows={8}
-          />
-          <TextField
             label={generalStrings.message}
             name="message"
             variant="outlined"

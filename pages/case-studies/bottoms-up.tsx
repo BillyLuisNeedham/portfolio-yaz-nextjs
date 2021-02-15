@@ -1,12 +1,14 @@
 import React from 'react'
 import { Theme, createStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
+import { Toolbar, Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from'@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
 import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION } from './bottoms-up-data';
@@ -21,26 +23,25 @@ const useStyles = makeStyles((theme: Theme) =>
 
   createStyles({
     root: {
-      flexGrow: 0,
+      display:"flex",
+      flexFlow: 'column nowrap',
+      justifyContent: 'space-between',
     },
     sections:{
       paddingLeft: "3em",
       paddingRight: "3em"
-    },
-    title:{
-      flexGrow: 0,
     },
     intro:{
       margin: '2vw',
       display: 'flex',
       flexFlow: 'row nowrap',
       justifyContent: 'space-between',
+      alignItems: "center",
       [theme.breakpoints.down('sm')]: {
         flexFlow: 'row wrap',
       },
     },
     introbody:{
-      margin: '5vw',
       flexGrow:1,
       maxWidth:'50vw',
       padding:'5vw',
@@ -55,6 +56,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     lists:{
       flexGrow:1,
+    },
+    listItem:{
+      paddingLeft: '100px',
+      paddingRight: '16px',
+              
     },
     tooliconlist:{
       display: 'flex',
@@ -88,7 +94,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow: 'column nowrap',
       justifyContent:'center',
       alignItems: 'center',
-      paddingBottom: '5em'
+      paddingBottom: '5em',
+      marginTop:'5em',
       
     },
     wireframes1:{
@@ -116,6 +123,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow:"column nowrap",
       justifyContent:'center',
       alignItems: 'center',
+      marginTop:'5em',
     },
     visualDesign2:{
       marginTop:"5em",
@@ -156,74 +164,123 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
 
-  })
+  }),
 )
 
 interface Props {}
+
 
 const BottomsUpPage: React.FC<Props> = (props: Props) => {
   const classes = useStyles()
 
   return (
     <ThemeProvider theme={THEME}>
+      
       <Box className={classes.root}>
-        <Box className={classes.title}>
-          <Typography variant="h3" >
-            {TITLE}
-          </Typography>
-        </Box>
-        <Box className={clsx(classes.intro, classes.sections)}>
-          <Box className={classes.introbody}>
-          <Typography className={classes.intropara} variant="body1" align="center" >
-                {INTO_PARA}
-            </Typography>
-          </Box>
-          <Box className={classes.lists}>
-          <List className={classes.root}>
-            
-          <ListSubheader disableSticky={true} >Roll</ListSubheader>
-          {ROLL_INFO.map((info, index)=>(
-            <ListItem key={`roll-key-${index}`}>
-              <ListItemIcon>
+        <Box>
+          <AppBar elevation={0} position="absolute" color="transparent">
+            <Toolbar>
+              <IconButton edge="start" color="inherit">
                 <Image
-                  src="/assets/images/bottomsUp/web_bullet_points_green@2x.png"
-                  width="32"
-                  height="44"
+                src="/Logo_White.png"
+                width={37}
+                height={48}
                 />
-              </ListItemIcon>
-              <ListItemText primary={info} />
-            </ListItem>))}
-          </List>
-          <List className={classes.root}>
+              </IconButton>
+              <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
+                <Typography style={{fontSize:"16px"}}>
+                  Yazmin Leigh Portfolio
+                </Typography>
+                <Typography style={{fontSize:"8px"}}>
+                  UI / UX Designer
+                </Typography>
 
-          <ListSubheader disableSticky={true}>Tools</ListSubheader>
-          {TOOLS_USED.map((info, index)=>(
-            <ListItem key={`tools-key-${index}`}>
-              <ListItemIcon>
-                <Image
-                    src="/assets/images/bottomsUp/web_bullet_points_green@2x.png"
-                    width="32"
-                    height="44"
-                  />
-              </ListItemIcon>
-                <ListItemText primary={info} />
-            </ListItem>))}
-          </List>
-          <List className={classes.tooliconlist}>
-            {TOOL_ICONS.map((info, index)=>(
-              <ListItem key={`tool-icons-key-${index}`}>
-                <Image
-                    src={info}
-                    layout="intrinsic"
-                    height={TOOL_INCON_WIDTH[index].h}
-                    width={TOOL_INCON_WIDTH[index].w}
-                  />
-              </ListItem>))}
-          </List>
+              </Box>
+              
+
+            </Toolbar>
+            
+
+          </AppBar>
+          <Image
+            src={TITLE.title}
+            width={1920}
+            height={614}
+            layout="responsive"
+            objectFit="contain"
+          />
+
         </Box>
+          
+        <Box className={clsx(classes.intro, classes.sections)}>
+            <Box className={classes.introbody}>
+            <Typography className={classes.intropara} variant="body1" align="center" >
+                  {INTO_PARA}
+              </Typography>
+            </Box>
+            <Box className={classes.lists}>
+            <List className={classes.root}>
+
+              <div style={{ display: "flex", alignItems: "center"}}>
+                <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
+                  <span style={{ padding: "0 10px 0 10px"}}>
+                  <ListSubheader disableSticky={true} style={{fontSize:"40px", fontStyle:"italic" }} >Roll</ListSubheader>
+                  </span>
+                <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
+              </div> 
+              
+              {ROLL_INFO.map((info, index)=>(
+                <ListItem className={classes.listItem} alignItems="center" key={`roll-key-${index}`}>
+                  <ListItemIcon>
+                    <Image
+                      src="/assets/images/bottomsUp/web_bullet_points_green@2x.png"
+                      width="32"
+                      height="44"
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary={info} />
+                </ListItem>))}
+            </List>
+            
+            <List>
+              <div style={{ display: "flex", alignItems: "center"}}>
+                <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
+                <span style={{ padding: "0 10px 0 10px"}}>
+                  <ListSubheader disableSticky={true} style={{fontSize:"40px", fontStyle:"italic" }} >Tools</ListSubheader>
+                </span>
+                <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
+              </div>
+
+              {TOOLS_USED.map((info, index)=>(
+                <ListItem className={classes.listItem} alignItems="center"  key={`tools-key-${index}`}>
+                  <ListItemIcon>
+                    <Image
+                        src="/assets/images/bottomsUp/web_bullet_points_green@2x.png"
+                        width="32"
+                        height="44"
+                      />
+                  </ListItemIcon>
+                    <ListItemText primary={info} />
+                </ListItem>))}
+            </List>
+            <List className={classes.tooliconlist}>
+              {TOOL_ICONS.map((info, index)=>(
+                <ListItem key={`tool-icons-key-${index}`}>
+                  <Image
+                      src={info}
+                      layout="intrinsic"
+                      height={TOOL_INCON_WIDTH[index].h}
+                      width={TOOL_INCON_WIDTH[index].w}
+                    />
+                </ListItem>))}
+          </List>
+          </Box>
         </Box>
 
-        <div>
+        
+        
+
+        <Box p={4}>
           <CaseStudyDivider title={"The Challenge"}/>
           <Box className={clsx(classes.challange, classes.sections)} >
             <Box alignSelf="center" className={classes.challangeintro}>
@@ -232,7 +289,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
               </Typography>
             </Box>
             <Box p={3} m={3}>
-              <Typography align="center" variant="h1" >
+              <Typography color="primary" align="center" variant="h1" >
                 {THE_CHALLANGE.subheading}
               </Typography>
             </Box>
@@ -270,9 +327,16 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
 
           <Box className={classes.challange}>
             <Box p={3}>
-              <Typography align="center" variant="h1">
-                Research Findings
-              </Typography>
+              <div style={{ display: "flex", alignItems: "center"}}>
+                <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
+                <span style={{ padding: "0 10px 0 10px"}}>
+                  <Typography color="secondary" align="center" variant="h3" style={{whiteSpace: "nowrap"}}>
+                  Research Findings
+                  </Typography>
+                </span>
+                <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
+              </div>
+              
             </Box>
             
 
@@ -290,9 +354,9 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 ))}
               </Box>
           </Box>
-        </div>
+        </Box>
 
-        <div>
+        <Box p={4}>
           <CaseStudyDivider title={"Ideation"}/>
 
           <Box className={clsx(classes.challange, classes.sections)} >
@@ -330,9 +394,9 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
               />
             </Box>
           </Box>
-        </div>
+        </Box>
 
-        <div >
+        <Box p={4} >
           <CaseStudyDivider title={"Wireframes"}/>
 
           <Box className={clsx(classes.wireframesMain, classes.sections)} >
@@ -350,20 +414,38 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 </Typography>
             </Box>
 
+            <Box p={4} mb={4}>
+              <Button 
+                variant="contained" 
+                color="secondary" 
+                href={WIREFRAME_LINK}
+                size="large"
+                style={{
+                  borderRadius:"50px",
+                  boxShadow:"0 3px 6px #00000029",
+                  textTransform: "capitalize"
+                  }} 
+                >
+                View Prototype
+              </Button>
+            </Box>
 
-            <Button 
-              variant="contained" 
-              color="secondary" 
-              href={WIREFRAME_LINK}
-              size="large"
-              style={{
-                borderRadius:"50px",
-                boxShadow:"0 3px 6px #00000029",
-                textTransform: "capitalize"
-                }} 
-              >
-              View Prototype
-               </Button>
+            
+            <div style={{ display: "flex", alignItems: "center", width:"100%"}}>
+              <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
+                <span style={{ padding: "0 10px 0 10px"}}>
+                  <Typography
+                    style={{whiteSpace: "nowrap"}}
+                    color="secondary" 
+                    align="right" 
+                    variant="h4" >
+                      Test and Iterate Again
+                  </Typography>
+                </span>
+              <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
+            </div>
+            
+
             
 
               <Box m={5} className={classes.wireframes1} >
@@ -429,9 +511,9 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 </Box>
               </Box>
           </Box>
-        </div>
+        </Box>
 
-        <div>
+      <Box p={4}>
         <CaseStudyDivider title={"Visual Design"}/>
 
         <Box className={clsx(classes.visualDesignMain, classes.sections)} >
@@ -501,14 +583,21 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             
           </Box>
 
-          <Box className={classes.visualDesigncomponents}>
-            <Typography
-              color="secondary" 
-              align="right" 
-              variant="h4" >
-                Test and Iterate Again
-            </Typography>
-          </Box>
+          
+            <div style={{ display: "flex", alignItems: "center", width:"100%"}}>
+              <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
+                <span style={{ padding: "0 10px 0 10px"}}>
+                  <Typography
+                    style={{whiteSpace: "nowrap"}}
+                    color="secondary" 
+                    align="right" 
+                    variant="h4" >
+                      Test and Iterate Again
+                  </Typography>
+                </span>
+              <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
+            </div>
+          
           
           <Box className={classes.visualDesign4}>
             <Box width="42vw" p={4}>
@@ -586,60 +675,60 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             </Box>          
           </Box>
         </Box>
-        </div>
+      </Box>
 
-        <div>
-          <CaseStudyDivider title={"Conclusion"}/>
-          <Box className={classes.conclusion}>
-            <Box p={2} width="63vw">
-              <Typography align="center" variant="body1" >
-                {CONCLUSION.text1}
-              </Typography>
-            </Box>
-            <Box p={2} width="63vw">
-              <Typography align="left" variant="body1" >
-                {CONCLUSION.text2}
-              </Typography>
-            </Box>
-            <Box p={2} width="63vw">
-              <Typography align="left" variant="body1" >
-                {CONCLUSION.text3}
-              </Typography>
-            </Box>
-          </Box>
-          
-
+      <Box>
+        <CaseStudyDivider title={"Conclusion"}/>
+        <Box className={classes.conclusion}>
           <Box p={2} width="63vw">
-            <Typography align="left" variant="h5" color="secondary">
-              What I Learned
+            <Typography align="center" variant="body1" >
+              {CONCLUSION.text1}
             </Typography>
           </Box>
-
-          <Box className={classes.conclusion}>
-            <Box p={2} width="63vw"> 
-              <Typography align="left" variant="body1" >
-                {CONCLUSION.text4}
-              </Typography>
-            </Box>
-            <Box p={2} width="63vw">
-              <Typography align="left" variant="body1" >
-                {CONCLUSION.text5}
-              </Typography>
-            </Box>
-            <Box p={2} width="63vw">
-              <Typography align="left" variant="body1" >
-                {CONCLUSION.text6}
-              </Typography>
-            </Box>
-          </Box>
-      
-          <Box p={2} width="63vw" className={classes.conclusion}>
-            <Typography align="left" variant="h5" color="secondary">
-              Thanks for stopping by.
+          <Box p={2} width="63vw">
+            <Typography align="left" variant="body1" >
+              {CONCLUSION.text2}
             </Typography>
           </Box>
+          <Box p={2} width="63vw">
+            <Typography align="left" variant="body1" >
+              {CONCLUSION.text3}
+            </Typography>
+          </Box>
+        </Box>
+        
 
-          </div>
+        <Box p={2} width="63vw">
+          <Typography align="left" variant="h5" color="secondary">
+            What I Learned
+          </Typography>
+        </Box>
+
+        <Box className={classes.conclusion}>
+          <Box p={2} width="63vw"> 
+            <Typography align="left" variant="body1" >
+              {CONCLUSION.text4}
+            </Typography>
+          </Box>
+          <Box p={2} width="63vw">
+            <Typography align="left" variant="body1" >
+              {CONCLUSION.text5}
+            </Typography>
+          </Box>
+          <Box p={2} width="63vw">
+            <Typography align="left" variant="body1" >
+              {CONCLUSION.text6}
+            </Typography>
+          </Box>
+        </Box>
+    
+        <Box p={2} width="63vw" className={classes.conclusion}>
+          <Typography align="left" variant="h5" color="secondary">
+            Thanks for stopping by.
+          </Typography>
+        </Box>
+
+      </Box>
 
       </Box>
       

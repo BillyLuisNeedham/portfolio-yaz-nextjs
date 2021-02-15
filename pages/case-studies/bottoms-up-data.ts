@@ -4,7 +4,7 @@ import { bottomsUpTheme } from '../../theme'
 //theme
 export const THEME = bottomsUpTheme
 // title
-export const TITLE = "BottomsUpPage"
+export const TITLE = {title:"/assets/images/bottomsUp/title/header_web@2x.png"}
 
 // Roll info
 export const ROLL_INFO = ["design research", "Prototype", "ui/ux design", "user testing"]

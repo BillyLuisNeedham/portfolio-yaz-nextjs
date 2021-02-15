@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      margin: "5em",
     },
     title: {
       color: theme.palette.background.default,

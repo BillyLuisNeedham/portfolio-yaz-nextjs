@@ -43,7 +43,7 @@ const MobileNavBar =({ activeRoute, onNavigateCallback })=>{
 
 
     return(
-        <AppBar className={classes.mobnavbar} position='sticky'>
+        <AppBar elevation={0}  color="transparent" className={classes.mobnavbar} position='absolute'>
             <IconButton color="inherit" >
                 <Image
                     src="/Logo_White.png"

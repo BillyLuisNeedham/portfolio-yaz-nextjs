@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { bottomsUpTheme, psdsTheme } from '../../theme'
 import CaseStudyCard from './caseStudyCard/CaseStudyCard'
 import { Box, Link } from '@material-ui/core'
+import { NavRoutes } from '../../utils/constants/navRoutes'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,17 +15,15 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 interface Props {
-  screenWidth: number
 }
 
-export const CaseStudyCards: React.FC<Props> = ({ screenWidth }) => {
+export const CaseStudyCards: React.FC<Props> = ({  }) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       <Link href="/case-studies/bottoms-up" style={{ textDecoration: 'none' }}>
         <CaseStudyCard
-          screenWidth={screenWidth}
           image={
             <Image
               src="/assets/images/bottomsUp/3_phone_mockup.png"
@@ -44,7 +43,6 @@ export const CaseStudyCards: React.FC<Props> = ({ screenWidth }) => {
         style={{ textDecoration: 'none' }}
       >
         <CaseStudyCard
-          screenWidth={screenWidth}
           image={
             <Image
               src="/assets/images/psds/case_study.png"

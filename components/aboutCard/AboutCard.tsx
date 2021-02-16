@@ -5,7 +5,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import NavBar from './navBar/NavBar'
 import { NavRoutes } from '../../utils/constants/navRoutes'
 import Image from 'next/image'
-import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../../utils/constants/dimens'
+import {MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH} from '../../utils/constants/dimens'
 import Footer from '../Footer/Footer'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -27,12 +27,11 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 interface IAboutCardProps {
-  windowWidth: number
   activeRoute: NavRoutes
   onNavigateCallback: (navRoutes: NavRoutes) => void
 }
 
-const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
+const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
   const classes = useStyles()
   const spacer = () => <Box p={1} />
   function navToRoute(navRoutes: NavRoutes) {
@@ -40,11 +39,10 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, windowWidth }) => {
     console.log(`navToRoute clicked: ${navRoutes}`)
   }
 
-
   return (
 
     
-     (windowWidth < MIN_LANDSCAPE_MOBILE_WIDTH)
+     (SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH)
       ? //mobile page
       <Box p={4} borderRight={1} >
         <Box

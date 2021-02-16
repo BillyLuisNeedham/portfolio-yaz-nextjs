@@ -1,14 +1,14 @@
 import React, { ReactNode, useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import { Box, Paper, Typography, Grid, ThemeProvider } from '@material-ui/core'
-import { MIN_LANDSCAPE_MOBILE_WIDTH } from '../../../utils/constants/dimens'
+import { MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH } from '../../../utils/constants/dimens'
 
 interface Props {
   title: string
   subtitle: string
   theme: Theme
   image: ReactNode
-  screenWidth: number
+  
 }
 
 const CaseStudyCard: React.FC<Props> = ({
@@ -16,7 +16,6 @@ const CaseStudyCard: React.FC<Props> = ({
   subtitle,
   theme,
   image,
-  screenWidth,
 }) => {
   const useStyles = makeStyles({
     root: {
@@ -41,7 +40,7 @@ const CaseStudyCard: React.FC<Props> = ({
   })
   const classes = useStyles()
 
-  const useMobileLayout: Boolean = screenWidth < MIN_LANDSCAPE_MOBILE_WIDTH
+  const useMobileLayout: Boolean = SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH
 
   const titleComponent: ReactNode = (
     <Typography variant="h5" className={classes.text}>

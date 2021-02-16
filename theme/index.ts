@@ -1,3 +1,5 @@
+import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../utils/constants/dimens'
+
 import { createMuiTheme } from '@material-ui/core/styles';
 
 
@@ -21,6 +23,9 @@ const theme = createMuiTheme({
   typography: {
     body1: {
       color: '#EA02B3'
+    },
+    h1:{
+      color: 'pink'
     }
   }
 })
@@ -43,8 +48,44 @@ const bottomsUpTheme = createMuiTheme({
   },
 
   typography: {
-    fontFamily: 'Abril Fatface',
+    fontFamily: 'Raleway',
 
+    h1:{ 
+      '@media (max-width:575px)': {
+        fontSize: '2.5rem',
+      },
+    },
+    h2:{ 
+      '@media (max-width:575px)': {
+        fontSize: '2rem',
+      },
+    },
+    body1:{ 
+      lineHeight:"2.5em",
+      '@media (max-width:575px)': {
+        fontSize: '0.75rem',
+      },
+    },
+    caption:{ 
+      '@media (max-width:575px)': {
+        fontSize: '0.25rem',
+      },
+    },
+    h3:{ 
+      '@media (max-width:575px)': {
+        fontSize: '1.5rem',
+      },
+    },
+    h4:{ 
+      '@media (max-width:575px)': {
+        fontSize: '1rem',
+      },
+    },
+    h5:{ 
+      '@media (max-width:575px)': {
+        fontSize: '0.75rem',
+      },
+    },
   },
 })
 
@@ -68,7 +109,7 @@ const psdsTheme = createMuiTheme({
   typography: {
     fontFamily: 'Roboto',
     h1: {
-      fontFamily: 'Playfair Display'
+      fontFamily: 'Playfair Display',
     }, 
     h2: {
       fontFamily: 'Playfair Display'

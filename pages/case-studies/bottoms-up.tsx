@@ -1,6 +1,6 @@
 import React from 'react'
 import { Theme, createStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles'
-import { Toolbar, Typography } from '@material-ui/core'
+import { createMuiTheme, Toolbar, Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from'@material-ui/core/ListItem';
@@ -12,60 +12,92 @@ import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
 import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION } from './bottoms-up-data';
-import {MIN_LANDSCAPE_MOBILE_WIDTH} from '../../utils/constants/dimens'
+import {MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH} from '../../utils/constants/dimens'
 import CaseStudyDivider from '../../components/CaseStudyDivider/CaseStudyDivider';
 import BulletNumbers from '../../components/bulletnumbers/BulletNumbers'
 import Image from 'next/image'
+import MobileNavBar from '../../components/mobileNavBar/MobileNavBar';
+import { NavRoutes } from '../../utils/constants/navRoutes';
 
 
 
 const useStyles = makeStyles((theme: Theme) =>
-
   createStyles({
     root: {
       display:"flex",
       flexFlow: 'column nowrap',
       justifyContent: 'space-between',
     },
-    sections:{
-      paddingLeft: "3em",
-      paddingRight: "3em"
+
+    dividerouter:{
+      display: "flex", 
+      alignItems: "center"
+
     },
+    dividermiddle:{
+      borderBottom: "3px solid #305538", 
+      width: "50%"
+
+    },
+    divideinners:{
+      padding: "0 10px 0 10px"
+
+    },
+
+    dividertypography:{
+      whiteSpace: "nowrap"
+    },
+    
     intro:{
-      margin: '2vw',
       display: 'flex',
       flexFlow: 'row nowrap',
-      justifyContent: 'space-between',
       alignItems: "center",
+      margin: "4rem",
       [theme.breakpoints.down('sm')]: {
         flexFlow: 'row wrap',
+        margin:"0",
       },
     },
     introbody:{
-      flexGrow:1,
-      maxWidth:'50vw',
-      padding:'5vw',
+      maxWidth:"50vw",
+      padding:"15vw",
       [theme.breakpoints.down('sm')]: {
-        maxWidth: '100vw',
+        maxWidth: '90vw',
+        padding:"10vw",
       },
-
     },
+    
     intropara:{
-      maxWidth:"537px",
+      alignSelf:"center",
+      [theme.breakpoints.down('sm')]: {
+        maxWidth:"90vw",
+      },
 
     },
     lists:{
       flexGrow:1,
     },
+    listSubHeader:{
+      fontSize:"2.75rem", 
+      fontStyle:"italic",
+      [theme.breakpoints.down('sm')]: {
+        fontSize:"1.5rem",
+      },
+  },
     listItem:{
-      paddingLeft: '100px',
-      paddingRight: '16px',
+      paddingLeft: '5vw',
+      paddingRight: '1vw',
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: '15vw',
+        paddingRight: '1vw',
+      },
               
     },
     tooliconlist:{
       display: 'flex',
       flexDirection: 'row',
       justifyContent:'flex-start',
+      margin:"2rem 0 0 0",
       padding: 0,
     },
     challange:{
@@ -94,91 +126,218 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow: 'column nowrap',
       justifyContent:'center',
       alignItems: 'center',
-      paddingBottom: '5em',
-      marginTop:'5em',
+      margin:'5em 0 5em 0',
+      [theme.breakpoints.down('sm')]: {
+        flexFlow: 'column nowrap',
+        margin:'2.5em 0 2.5em 0',
+      },
       
     },
     wireframes1:{
       display:'flex',
       flexFlow: 'column nowrap',
+      margin:'5em 0 5em 0',
+      [theme.breakpoints.down('sm')]: {
+        margin:'2.5em 0 2.5em 0',
+      },
     },
     wireframes2:{
       display:'flex',
       flexFlow: 'row nowrap',
       justifyContent:'center',
       alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        flexFlow: 'column nowrap',
+      },
       
     },
     wireframes3:{
       display:'flex',
-      flexFlow: 'column wrap'
+      flexFlow: 'column nowrap'
     },
     wireframes4:{
-      display:'flex',
-      flexFlow: 'row nowrap',
-      justifyContent: 'space-between',
+      display:"grid",
+      gridTemplateColumns: "auto auto",
+      gridTemplateRows:"auto auto auto auto auto",
+      [theme.breakpoints.down('sm')]: {
+        margin:'2.5em 0 2.5em 0',
+      },
+    },
+    wireframearrowitem1:{
+      gridColumn:"1/ span 2",
+      gridRow:"1/ span 3",
+      alignSelf:"end",
+
+    },
+    wireframearrowitem2:{
+      gridColumn:"1/ 1",
+      gridRow:"3/span 2",
+      alignSelf:"end",
+      
+    },
+    wireframearrowitem3:{
+      gridColumn:"2/ 2",
+      gridRow:"4/ span 2",
+      alignSelf:"end",
+      justifySelf:"center",
+      
+    },
+    wireframeitems:{
+      display:"flex",
+      alignSelf: "center",
+      justifyContent:"center",
+      width: '30vw',
+      margin:'5em 0 5em 0',
+      [theme.breakpoints.down('sm')]: {
+        width: '90vw',
+        margin:'2.5em 0 2.5em 0',
+      },
     },
     visualDesignMain:{
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:'center',
       alignItems: 'center',
-      marginTop:'5em',
+      margin:'5em 0 5em 0',
     },
     visualDesign2:{
-      marginTop:"5em",
-      display:"flex",
-      flexFlow:"row nowrap",
-      justifyContent:'center',
-      alignItems: 'center',
+      display:"grid",
+      gridTemplateColumns: "50% 50%",
+      gridTemplateRows:"auto",
+      [theme.breakpoints.down('sm')]: {
+        flexFlow:"row nowrap",
+      },
       
     },
     visualDesign3:{
       display:"flex",
       flexFlow:"row nowrap",
-      justifyContent:'center',
-      alignItems: 'center',
+      justifyContent:'space-evenly',
+      alignItems: 'space-evenly',
+      [theme.breakpoints.down('sm')]: {
+        flexFlow:"row wrap",
+        margin: "1em 0 3em 0",
+      },
       
     },
     visualDesignsub3:{
+      margin: "2em",
       display:"flex",
       flexFlow:"column nowrap",
-      justifyContent:'center',
-      alignItems: 'center',
+      justifyContent:'space-evenly',
+      alignItems: 'space-evenly',
+      [theme.breakpoints.down('sm')]: {
+        margin: "1em 0 0 0",
+      },
     },
     visualDesigncomponents:{
-      margin:"5em"
+      margin:"3em 0 3em 0",
+      maxWidth: "616px",
+      [theme.breakpoints.down('sm')]: {
+        margin:"1em 0 1em 0",
+      },
     },
     visualDesign4:{
+      margin:"3em 0 3em 0",
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:'center',
       alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        flexFlow:"column wrap",
+        margin: "1em 0 3em 0",
+      },
     },
     conclusion:{
+      
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:'center',
       alignItems: 'center',
-      padding: "5em",
+      margin: "5em",
+      [theme.breakpoints.down('sm')]: {
+        margin: "2.5",
+      },
     },
-
-
+    conclusionbox:{
+      maxWidth: "1217px",
+      alignSelf:'center',
+    },
+    conclusiontext:{
+      padding:"3em 0 3em 0",
+      [theme.breakpoints.down('sm')]: {
+        padding:"1.5em 0 1.5em 0",
+      },
+    },
   }),
 )
 
-interface Props {}
 
 
-const BottomsUpPage: React.FC<Props> = (props: Props) => {
+interface Props {
+  
+}
+
+
+const BottomsUpPage: React.FC<Props> = ({}) => {
+  
   const classes = useStyles()
 
+  const Divider = (title: string) =>{
+    return(
+      <div className={classes.dividerouter}>
+        <div className={classes.dividermiddle} />
+          <span className={classes.divideinners}>
+          <Typography 
+            color="secondary" 
+            align="center" 
+            variant="h3" 
+            className={classes.dividertypography}
+            > 
+            {title}
+            </Typography>
+          </span>
+        <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
+      </div> 
+    )
+  }
+
+  function navigateToRoute(navRoutes: NavRoutes) {
+    console.log(`navigate to navRoute ${navRoutes}`)
+  }
+
+  
   return (
     <ThemeProvider theme={THEME}>
       
       <Box className={classes.root}>
         <Box>
-          <AppBar elevation={0} position="absolute" color="transparent">
+          {SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
+            <MobileNavBar
+            onNavigateCallback={navigateToRoute}
+            activeRoute={NavRoutes.Work}/>
+          ):(
+            <AppBar elevation={0} position="absolute" color="transparent">
+              <Toolbar>
+                <IconButton edge="start" color="inherit">
+                  <Image
+                  src="/Logo_White.png"
+                  width={37}
+                  height={48}
+                  />
+                </IconButton>
+                <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
+                  <Typography variant="body1">
+                    Yazmin Leigh Portfolio
+                  </Typography>
+                  <Typography variant="caption">
+                    UI / UX Designer
+                  </Typography>
+                </Box>
+              </Toolbar>
+            </AppBar>
+          )}
+          {/* <AppBar elevation={0} position="absolute" color="transparent">
             <Toolbar>
               <IconButton edge="start" color="inherit">
                 <Image
@@ -188,20 +347,15 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 />
               </IconButton>
               <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
-                <Typography style={{fontSize:"16px"}}>
+                <Typography variant="body1">
                   Yazmin Leigh Portfolio
                 </Typography>
-                <Typography style={{fontSize:"8px"}}>
+                <Typography variant="caption">
                   UI / UX Designer
                 </Typography>
-
               </Box>
-              
-
             </Toolbar>
-            
-
-          </AppBar>
+          </AppBar> */}
           <Image
             src={TITLE.title}
             width={1920}
@@ -212,19 +366,18 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
 
         </Box>
           
-        <Box className={clsx(classes.intro, classes.sections)}>
-            <Box className={classes.introbody}>
-            <Typography className={classes.intropara} variant="body1" align="center" >
-                  {INTO_PARA}
-              </Typography>
-            </Box>
-            <Box className={classes.lists}>
-            <List className={classes.root}>
-
-              <div style={{ display: "flex", alignItems: "center"}}>
-                <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
-                  <span style={{ padding: "0 10px 0 10px"}}>
-                  <ListSubheader disableSticky={true} style={{fontSize:"40px", fontStyle:"italic" }} >Roll</ListSubheader>
+        <Box className={classes.intro}>
+          <Box className={classes.introbody}>
+            <Typography className={classes.intropara} variant="body1" align="left" >
+                {INTO_PARA}
+            </Typography>
+          </Box>
+          <Box className={classes.lists}>
+            <List >
+              <div className={classes.dividerouter}>
+                <div className={classes.dividermiddle} />
+                  <span className={classes.divideinners}>
+                  <ListSubheader disableSticky={true}  className={classes.listSubHeader}>Roll</ListSubheader>
                   </span>
                 <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
               </div> 
@@ -243,10 +396,10 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             </List>
             
             <List>
-              <div style={{ display: "flex", alignItems: "center"}}>
-                <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
-                <span style={{ padding: "0 10px 0 10px"}}>
-                  <ListSubheader disableSticky={true} style={{fontSize:"40px", fontStyle:"italic" }} >Tools</ListSubheader>
+              <div className={classes.dividerouter}>
+                <div className={classes.dividermiddle} />
+                <span className={classes.divideinners} >
+                  <ListSubheader disableSticky={true} className={classes.listSubHeader} >Tools</ListSubheader>
                 </span>
                 <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
               </div>
@@ -273,23 +426,23 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                       width={TOOL_INCON_WIDTH[index].w}
                     />
                 </ListItem>))}
-          </List>
+            </List>
           </Box>
         </Box>
 
         
         
 
-        <Box p={4}>
+        <Box>
           <CaseStudyDivider title={"The Challenge"}/>
-          <Box className={clsx(classes.challange, classes.sections)} >
+          <Box className={classes.challange} >
             <Box alignSelf="center" className={classes.challangeintro}>
               <Typography align="center" variant="body1" > 
               {THE_CHALLANGE.intro}
               </Typography>
             </Box>
             <Box p={3} m={3}>
-              <Typography color="primary" align="center" variant="h1" >
+              <Typography color="primary" align="center" variant="h1" style={{fontFamily:"Abril Fatface"}} >
                 {THE_CHALLANGE.subheading}
               </Typography>
             </Box>
@@ -326,17 +479,8 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
           </Box>
 
           <Box className={classes.challange}>
-            <Box p={3}>
-              <div style={{ display: "flex", alignItems: "center"}}>
-                <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
-                <span style={{ padding: "0 10px 0 10px"}}>
-                  <Typography color="secondary" align="center" variant="h3" style={{whiteSpace: "nowrap"}}>
-                  Research Findings
-                  </Typography>
-                </span>
-                <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
-              </div>
-              
+            <Box>
+              {Divider("Research Findings")}
             </Box>
             
 
@@ -356,10 +500,10 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
           </Box>
         </Box>
 
-        <Box p={4}>
+        <Box>
           <CaseStudyDivider title={"Ideation"}/>
 
-          <Box className={clsx(classes.challange, classes.sections)} >
+          <Box className={classes.challange} >
             
             <Box className={classes.challangemain} >
               <Typography align="center" variant="body1" className={classes.challangemaincontent}>
@@ -396,32 +540,33 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
           </Box>
         </Box>
 
-        <Box p={4} >
+        <Box>
           <CaseStudyDivider title={"Wireframes"}/>
 
-          <Box className={clsx(classes.wireframesMain, classes.sections)} >
+          <Box className={classes.wireframesMain} >
 
-            <Box m={5} alignSelf="center">
+            <Box alignSelf="center" className={classes.wireframeitems}>
               <Image
                   src={`${WIREFRAMES.image1.imagesrc}`}
                   layout="intrinsic"     
                   width={`${WIREFRAMES.image1.width}`} 
                   height={`${WIREFRAMES.image1.height}`} 
                   />
-
-                <Typography align="center" variant="body1">
+            </Box>
+            <Box className={classes.wireframeitems}>
+                <Typography  align="center" variant="body1">
                   {WIREFRAMES.text1}
                 </Typography>
             </Box>
 
-            <Box p={4} mb={4}>
+            <Box className={classes.wireframeitems}>
               <Button 
                 variant="contained" 
                 color="secondary" 
                 href={WIREFRAME_LINK}
                 size="large"
                 style={{
-                  borderRadius:"50px",
+                  borderRadius:"3.5rem",
                   boxShadow:"0 3px 6px #00000029",
                   textTransform: "capitalize"
                   }} 
@@ -429,67 +574,60 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 View Prototype
               </Button>
             </Box>
+          </Box>
 
-            
-            <div style={{ display: "flex", alignItems: "center", width:"100%"}}>
-              <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
-                <span style={{ padding: "0 10px 0 10px"}}>
-                  <Typography
-                    style={{whiteSpace: "nowrap"}}
-                    color="secondary" 
-                    align="right" 
-                    variant="h4" >
-                      Test and Iterate Again
+          {Divider("Test and Iterate Again")}
+
+          <Box className={classes.wireframesMain} >
+            <Box  className={classes.wireframes1} >
+
+              <Box  className={classes.wireframes2} >
+                <Image
+                  
+                  src={`${WIREFRAMES.image2.imagesrc}`} 
+                  layout="intrinsic"  
+                  width={`${WIREFRAMES.image2.width}`} 
+                  height={`${WIREFRAMES.image2.height}`} 
+                  />
+                <Box className={classes.wireframeitems} >
+                  <Typography align="center" variant="body1">
+                    {WIREFRAMES.text2}
                   </Typography>
-                </span>
-              <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
-            </div>
-            
-
-            
-
-              <Box m={5} className={classes.wireframes1} >
-
-                <Box m={5}  className={classes.wireframes2} >
-                  <Image
-                    src={`${WIREFRAMES.image2.imagesrc}`} 
-                    layout="intrinsic"  
-                    width={`${WIREFRAMES.image2.width}`} 
-                    height={`${WIREFRAMES.image2.height}`} 
-                    />
-                  <Box m={5} width="30vw">
-                    <Typography align="center" variant="body1">
-                      {WIREFRAMES.text2}
-                    </Typography>
-                  </Box>
-                  
-
-                </Box>
-
-
-                <Box m={5}  className={classes.wireframes2}>
-                  <Box m={5}  width={584}>
-                    <Typography align="center" variant="body1" >
-                      {WIREFRAMES.text3}
-                    </Typography>
-                  </Box>
-                  
-                  <Image
-                    src={`${WIREFRAMES.image3.imagesrc}`}
-                    layout="intrinsic"     
-                    width={`${WIREFRAMES.image3.width}`} 
-                    height={`${WIREFRAMES.image3.height}`} 
-                    />
                 </Box>
                 
+
               </Box>
 
-              <Box alignSelf="center" className={classes.wireframes3} >
-                <Box m={5}>
-                  <Typography align="center" variant="body1">
-                    {WIREFRAMES.text4}
+
+              <Box  className={classes.wireframes2}>
+                <Box className={classes.wireframeitems}>
+                  <Typography align="center" variant="body1" >
+                    {WIREFRAMES.text3}
                   </Typography>
                 </Box>
+                
+                <Image
+                className={classes.wireframeitems}
+                  src={`${WIREFRAMES.image3.imagesrc}`}
+                  layout="intrinsic"     
+                  width={`${WIREFRAMES.image3.width}`} 
+                  height={`${WIREFRAMES.image3.height}`} 
+                  />
+              </Box>
+              
+            </Box>
+
+            <Box alignSelf="center" className={classes.wireframes3} >
+              <Box className={classes.wireframeitems}>
+                <Typography align="center" variant="body1" >
+                  {WIREFRAMES.text4}
+                </Typography>
+              </Box>
+              
+            </Box>
+
+            <Box className={classes.wireframes4}>
+              <Box className={classes.wireframearrowitem1}>
                 <Image
                 src={`${WIREFRAMES.image4.imagesrc}`}   
                 width={`${WIREFRAMES.image4.width}`} 
@@ -497,28 +635,27 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 layout="intrinsic" 
                 />
               </Box>
-
-              <Box alignSelf="center" className={classes.wireframes4}>
-                <Box pr={4}>
-                  <Typography align="left" variant="body1" >
-                    {WIREFRAMES.text5}
-                  </Typography>
-                </Box>
-                <Box pl={10}>
-                  <Typography align="center" variant="body1" >
-                    {WIREFRAMES.text6}
-                  </Typography>
-                </Box>
+              
+              <Box className={classes.wireframearrowitem2} >
+                <Typography align="left" variant="body1"  >
+                  {WIREFRAMES.text5}
+                </Typography>
               </Box>
+              <Box className={classes.wireframearrowitem3}>
+                <Typography align="left" variant="body1" >
+                  {WIREFRAMES.text6}
+                </Typography>
+              </Box>
+            </Box>
           </Box>
         </Box>
 
-      <Box p={4}>
+      <Box >
         <CaseStudyDivider title={"Visual Design"}/>
 
-        <Box className={clsx(classes.visualDesignMain, classes.sections)} >
+        <Box className={classes.visualDesignMain} >
           <Box className={classes.visualDesign2}> 
-            <Box p={2} >
+            <Box p={1} justifySelf="start" alignSelf="start">
               <Image
                 src={`${VISUAL_DESIGN.image1.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image1.width}`} 
@@ -526,7 +663,25 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 layout="intrinsic" 
                 />
             </Box>
-            <Box p={10} mt={10}>
+            <Box p={1} justifySelf="end" alignSelf="end" >
+              <Box >
+                <Button 
+                  variant="contained" 
+                  color="secondary" 
+                  href={WIREFRAME_LINK}
+                  fullWidth={true}
+                  size="large"
+                  style={{
+                    margin: "0 0 1em 0",
+                    whiteSpace: "nowrap",
+                    borderRadius:"3.5rem",
+                    boxShadow:"0 3px 6px #00000029",
+                    textTransform: "capitalize"
+                    }} 
+                  >
+                  View Prototype
+                </Button>
+              </Box>
               <Image
               src={`${VISUAL_DESIGN.image2.imagesrc}`}   
               width={`${VISUAL_DESIGN.image2.width}`} 
@@ -552,7 +707,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 align="left" 
                 variant="body1"
                 className={classes.visualDesigncomponents} >
-              {VISUAL_DESIGN.text1}
+              {VISUAL_DESIGN.text2}
               </Typography>
 
               <Image
@@ -566,60 +721,49 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             </Box>
 
             <Box className={classes.visualDesignsub3}>
+              
+              <Typography 
+                align="left" 
+                variant="body1" 
+                className={classes.visualDesigncomponents}>
+                {VISUAL_DESIGN.text1}
+              </Typography>
               <Image
                 className={classes.visualDesigncomponents}
                 src={`${VISUAL_DESIGN.image4.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image4.width}`} 
                 height={`${VISUAL_DESIGN.image4.height}`}
                 layout="intrinsic" 
-                />
-              <Typography 
-                align="right" 
-                variant="body1" 
-                className={classes.visualDesigncomponents}>
-                {VISUAL_DESIGN.text2}
-              </Typography>
-            </Box>
-            
+              />
+            </Box> 
           </Box>
+        </Box>
 
+        {Divider("Test and Iterate Again")}
           
-            <div style={{ display: "flex", alignItems: "center", width:"100%"}}>
-              <div style={{ borderBottom: "3px solid #305538", width: "50%"}} />
-                <span style={{ padding: "0 10px 0 10px"}}>
-                  <Typography
-                    style={{whiteSpace: "nowrap"}}
-                    color="secondary" 
-                    align="right" 
-                    variant="h4" >
-                      Test and Iterate Again
-                  </Typography>
-                </span>
-              <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
-            </div>
-          
-          
+        <Box className={classes.visualDesignMain} >  
           <Box className={classes.visualDesign4}>
-            <Box width="42vw" p={4}>
+            <Box className={classes.visualDesigncomponents}>
               <Typography align="left" variant="body1" >
                 {VISUAL_DESIGN.text3}
               </Typography>
             </Box>
 
-            <Box width="41vw" p={4}>
+            <Box className={classes.visualDesigncomponents}>
               <Typography align="left" variant="body1" >
                 {VISUAL_DESIGN.text4}
               </Typography>
             </Box>
 
-            <Box width="50vw" p={4}>
+            <Box className={classes.visualDesigncomponents} >
               <Typography align="center" variant="h4" color="secondary">
                 {VISUAL_DESIGN.text5}
               </Typography>
             </Box>
 
-            <Box>
+            <Box >
               <Image
+                className={classes.visualDesigncomponents}
                 src={`${VISUAL_DESIGN.image6.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image6.width}`} 
                 height={`${VISUAL_DESIGN.image6.height}`}
@@ -628,16 +772,16 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             </Box>
 
             <Box
-              m="14vh"
+              className={classes.visualDesigncomponents}
               border={8} 
               borderColor="secondary.main"
-              width="60vw">
+              >
               <Typography align="center" variant="body1" >
                 {VISUAL_DESIGN.text6}
               </Typography>
             </Box>
 
-            <Box p={4}>
+            <Box className={classes.visualDesigncomponents}>
               <Image
                 src={`${VISUAL_DESIGN.image7.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image7.width}`} 
@@ -646,7 +790,7 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
                 />
             </Box>
 
-            <Box p={4}>
+            <Box className={classes.visualDesigncomponents}>
               <Image
                 src={`${VISUAL_DESIGN.image8.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image8.width}`} 
@@ -656,10 +800,10 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
             </Box>
             
             <Box
-            m="14vh"
-            border={8} 
-            borderColor="secondary.main"
-            width="60vw">
+              className={classes.visualDesigncomponents}
+              border={8} 
+              borderColor="secondary.main"
+              >
               <Typography align="center" variant="body1" >
                 {VISUAL_DESIGN.text7}
               </Typography>
@@ -680,50 +824,48 @@ const BottomsUpPage: React.FC<Props> = (props: Props) => {
       <Box>
         <CaseStudyDivider title={"Conclusion"}/>
         <Box className={classes.conclusion}>
-          <Box p={2} width="63vw">
-            <Typography align="center" variant="body1" >
+          <Box className={classes.conclusiontext}>
+            <Typography align="left" variant="body1" >
               {CONCLUSION.text1}
             </Typography>
           </Box>
-          <Box p={2} width="63vw">
+          <Box className={classes.conclusiontext}>
             <Typography align="left" variant="body1" >
               {CONCLUSION.text2}
             </Typography>
           </Box>
-          <Box p={2} width="63vw">
+          <Box className={classes.conclusiontext}>
             <Typography align="left" variant="body1" >
               {CONCLUSION.text3}
             </Typography>
           </Box>
         </Box>
         
-
-        <Box p={2} width="63vw">
-          <Typography align="left" variant="h5" color="secondary">
-            What I Learned
-          </Typography>
-        </Box>
+        {Divider("What I Learned")}
 
         <Box className={classes.conclusion}>
-          <Box p={2} width="63vw"> 
-            <Typography align="left" variant="body1" >
-              {CONCLUSION.text4}
-            </Typography>
+          <Box className={classes.conclusionbox} >
+            <Box className={classes.conclusiontext} > 
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text4}
+              </Typography>
+            </Box>
+            <Box className={classes.conclusiontext}>
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text5}
+              </Typography>
+            </Box>
+            <Box className={classes.conclusiontext}>
+              <Typography align="left" variant="body1" >
+                {CONCLUSION.text6}
+              </Typography>
+            </Box>
           </Box>
-          <Box p={2} width="63vw">
-            <Typography align="left" variant="body1" >
-              {CONCLUSION.text5}
-            </Typography>
           </Box>
-          <Box p={2} width="63vw">
-            <Typography align="left" variant="body1" >
-              {CONCLUSION.text6}
-            </Typography>
-          </Box>
-        </Box>
+          
     
-        <Box p={2} width="63vw" className={classes.conclusion}>
-          <Typography align="left" variant="h5" color="secondary">
+        <Box className={classes.conclusion}>
+          <Typography align="left" variant="h2" color="secondary">
             Thanks for stopping by.
           </Typography>
         </Box>

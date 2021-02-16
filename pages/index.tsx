@@ -9,7 +9,7 @@ import { CaseStudyCards } from '../components/caseStudyCards/CaseStudyCards'
 import { bottomsUpTheme } from '../theme'
 import Image from 'next/image'
 import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
-import { MIN_LANDSCAPE_MOBILE_WIDTH } from '../utils/constants/dimens'
+import { MIN_LANDSCAPE_MOBILE_WIDTH ,SCREEN_WIDTH } from '../utils/constants/dimens'
 import CaseStudyDivider from '../components/CaseStudyDivider/CaseStudyDivider'
 
 const useStyles = makeStyles(() =>
@@ -31,37 +31,19 @@ const useStyles = makeStyles(() =>
 )
 
 const Home = () => {
-  const [windowWidth, setWindowWidth] = useState(0)
 
   const classes = useStyles()
 
-  const [screenWidth, setScreenWidth] = useState<number | undefined>(undefined)
-
-  function handleResize(): void {
-    setScreenWidth(window.innerWidth)
-  }
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize)
-
-      handleResize()
-      return () => window.removeEventListener("resize", handleResize)
-    }
-  }, [])
 
   function navigateToRoute(navRoutes: NavRoutes) {
     console.log(`navigate to navRoute ${navRoutes}`)
   }
 
-  React.useEffect(() => {
-    setWindowWidth(window.outerWidth)
-  })
 
   const x = true
 
   //TODO SORT OUT STYLING
-  return windowWidth < MIN_LANDSCAPE_MOBILE_WIDTH ? (
+  return SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
     <div className={classes.mobile}>
       <MobileNavBar
         onNavigateCallback={navigateToRoute}
@@ -70,13 +52,12 @@ const Home = () => {
       <Box>
         <Box>
           <AboutCard
-            windowWidth={windowWidth}
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}
           />
         </Box>
         <Box>
-          <CaseStudyCards screenWidth={screenWidth} />
+          <CaseStudyCards />
         </Box>
       </Box>
     </div>
@@ -85,13 +66,12 @@ const Home = () => {
       <Box display="flex">
         <Box flex={1}>
           <AboutCard
-            windowWidth={windowWidth}
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}
           />
         </Box>
         <Box flex={2} m={2}>
-          <CaseStudyCards screenWidth={screenWidth} />
+          <CaseStudyCards  />
         </Box>
       </Box>
     </div>

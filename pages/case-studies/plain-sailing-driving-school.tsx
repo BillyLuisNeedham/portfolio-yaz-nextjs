@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
     
     intropara:{
       alignSelf:"center",
+      padding:" 0 0 1rem 0",
       [theme.breakpoints.down('sm')]: {
         maxWidth:"90vw",
       },
@@ -104,7 +105,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     research:{
       display: 'flex',
-      flexDirection: 'column',
+      flexFlow: 'column nowrap',
       justifyContent:'center',
       margin: '2vw 0 2vw 0'
     },
@@ -120,8 +121,14 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent:'center',
     },
     researchmaincontent:{
-      maxWidth: '50vw',
-      margin: '2vw',
+      maxWidth:"1279px",
+      padding:'3rem',
+    },
+    ideation3pics:{
+      display:"flex",
+      flexflow:"row wrap",
+      justifyContent:"center"
+
     },
     wireframesMain:{
       display:'flex',
@@ -340,7 +347,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             </AppBar>
           )}
           <Image
-            src={TITLE.title}
+            src={`${TITLE.titleimg}`}
             width={1920}
             height={614}
             layout="responsive"
@@ -351,6 +358,9 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
           
         <Box className={classes.intro}>
           <Box className={classes.introbody}>
+            <Typography className={classes.intropara} color ="secondary" variant="h5" align="left" style={{fontWeight:"bold"}} >
+                {TITLE.title}
+            </Typography>
             <Typography className={classes.intropara} variant="body1" align="left" >
                 {INTO_PARA}
             </Typography>
@@ -421,38 +431,42 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
           <Box className={classes.research} >
             <Box alignSelf="center" className={classes.researchintro}>
               <Typography align="center" variant="body1" > 
-              {RESEARCH.intro}
+                {RESEARCH.intro}
               </Typography>
             </Box>
-            <Box >
-            <Image
-                className={classes.researchmaincontent}
+            <Box className={classes.researchmain}>
+              <Image
                 src={`${RESEARCH.image1.imagesrc}`}
-                layout="intrinsic"     
                 width={`${RESEARCH.image1.width}`} 
                 height={`${RESEARCH.image1.height}`} 
+                layout="intrinsic"  
                 />
-              
             </Box>
-            
             <Box className={classes.researchmain} >
-              <Typography align="center" variant="body1" className={classes.researchmaincontent}>
-                {RESEARCH.text1}
-              </Typography>
-              <Image
-                className={classes.researchmaincontent}
-                src={`${RESEARCH.image2.imagesrc}`} 
-                layout="intrinsic"    
-                width={`${RESEARCH.image2.width}`} 
-                height={`${RESEARCH.image2.height}`} 
+              <Box className={classes.researchmaincontent}>
+                <Typography align="center" variant="body1" >
+                  {RESEARCH.text1}
+                </Typography>
+              </Box>
+              
+
+              <Box className={classes.researchmaincontent}>
+                <Image
+                  src={`${RESEARCH.image2.imagesrc}`} 
+                  layout="intrinsic"    
+                  width={`${RESEARCH.image2.width}`} 
+                  height={`${RESEARCH.image2.height}`} 
                 />
-              <Image
-              className={classes.researchmaincontent}
-              src={`${RESEARCH.image3.imagesrc}`} 
-              layout="intrinsic"    
-              width={`${RESEARCH.image3.width}`} 
-              height={`${RESEARCH.image3.height}`} 
-              />
+              </Box>
+              <Box className={classes.researchmaincontent}>
+                <Image
+                  src={`${RESEARCH.image3.imagesrc}`} 
+                  layout="intrinsic"    
+                  width={`${RESEARCH.image3.width}`} 
+                  height={`${RESEARCH.image3.height}`} 
+                />
+              </Box>
+              
             </Box>
           </Box>
 
@@ -497,27 +511,34 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
               <Typography align="center" variant="body1" className={classes.researchmaincontent}>
                 {IDEATION.text2}
               </Typography>
-              <Image
-                className={classes.researchmaincontent}
-                layout="intrinsic"  
-                src={`${IDEATION.image2.imagesrc}`}   
-                width={`${IDEATION.image2.width}`} 
-                height={`${IDEATION.image2.height}`} 
-                />
-              <Image
-              className={classes.researchmaincontent}
-              src={`${IDEATION.image3.imagesrc}`} 
-              layout="intrinsic"    
-              width={`${IDEATION.image3.width}`} 
-              height={`${IDEATION.image3.height}`} 
-              />
-              <Image
-              className={classes.researchmaincontent}
-              src={`${IDEATION.image4.imagesrc}`} 
-              layout="intrinsic"    
-              width={`${IDEATION.image4.width}`} 
-              height={`${IDEATION.image4.height}`} 
-              />
+              <Box className={classes.ideation3pics}>
+                <Box className={classes.researchmaincontent}>
+                  <Image  
+                    layout="intrinsic"  
+                    src={`${IDEATION.image2.imagesrc}`}   
+                    width={`${IDEATION.image2.width}`} 
+                    height={`${IDEATION.image2.height}`} 
+                  />
+                </Box>
+               
+                <Box className={classes.researchmaincontent}>
+                  <Image  
+                    layout="intrinsic"  
+                    src={`${IDEATION.image3.imagesrc}`}   
+                    width={`${IDEATION.image3.width}`} 
+                    height={`${IDEATION.image3.height}`} 
+                  />
+                </Box>
+              </Box>
+              <Box className={classes.researchmaincontent}>
+                  <Image  
+                    layout="intrinsic"  
+                    src={`${IDEATION.image4.imagesrc}`}   
+                    width={`${IDEATION.image4.width}`} 
+                    height={`${IDEATION.image4.height}`} 
+                  />
+                </Box>
+              
             </Box>
           </Box>
         </Box>

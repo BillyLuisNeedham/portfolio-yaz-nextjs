@@ -4,7 +4,10 @@ import { psdsTheme } from '../../theme'
 //theme
 export const THEME = psdsTheme
 // title
-export const TITLE = {title:"/assets/images/psds/PSDS iphone mockup.png"}
+export const TITLE = {
+    titleimg:"/assets/images/psds/PSDS iphone mockup.png",
+    title:"Plain Sailing Driving School"
+    }
 
 // Roll info
 export const ROLL_INFO = ["Design research", "Prototype", "UI/UX design", "User Testing"]
@@ -28,7 +31,7 @@ export const RESEARCH ={
     image1:{
         imagesrc:'/assets/images/psds/Group 20.png',
         width:1282,
-        height: 912,
+        height:912,
     },
     image2:{
         imagesrc:'/assets/images/psds/Image 27.png',
@@ -37,7 +40,7 @@ export const RESEARCH ={
     },
     image3:{
         imagesrc:'/assets/images/psds/Image 28.png',
-        width:1721,
+        width:1279,
         height: 877,
     },
     text1:"I continued my research by conducting interviews with students that are looking to start driving lessons. The aim was to discover insights into what information is preferable to the customers before committing to paying for lessons with that particular driving school.",

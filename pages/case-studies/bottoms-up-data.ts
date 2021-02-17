@@ -185,3 +185,14 @@ export const CONCLUSION = {
     text5:"From working on this project, I have learned that accessing your scope early on is especially important, especially working by yourself. Scope creep will always be inevitable as you collect more data and come up with better ways of designing.",
     text6:" Research and user testing early on important and will save time and money down the line.",
 }
+
+//Footer card info
+
+export const FOOTER_CARD= {
+    image:{
+        imagesrc:'/assets/images/psds/Homepage.png',
+        width:107,
+        height: 107,
+    },
+    title:"Plain Sailing Driving School"
+}

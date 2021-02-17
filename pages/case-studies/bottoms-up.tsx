@@ -11,13 +11,14 @@ import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
-import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION } from './bottoms-up-data';
+import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION, FOOTER_CARD } from './bottoms-up-data';
 import {MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH} from '../../utils/constants/dimens'
 import CaseStudyDivider from '../../components/CaseStudyDivider/CaseStudyDivider';
 import BulletNumbers from '../../components/bulletnumbers/BulletNumbers'
 import Image from 'next/image'
 import MobileNavBar from '../../components/mobileNavBar/MobileNavBar';
 import { NavRoutes } from '../../utils/constants/navRoutes';
+import CaseStudyFooterBar from '../../components/caseStudyFooterBar/CaseStudyFooterBar';
 
 
 
@@ -337,25 +338,6 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
               </Toolbar>
             </AppBar>
           )}
-          {/* <AppBar elevation={0} position="absolute" color="transparent">
-            <Toolbar>
-              <IconButton edge="start" color="inherit">
-                <Image
-                src="/Logo_White.png"
-                width={37}
-                height={48}
-                />
-              </IconButton>
-              <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
-                <Typography variant="body1">
-                  Yazmin Leigh Portfolio
-                </Typography>
-                <Typography variant="caption">
-                  UI / UX Designer
-                </Typography>
-              </Box>
-            </Toolbar>
-          </AppBar> */}
           <Image
             src={TITLE.title}
             width={1920}
@@ -871,6 +853,13 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
         </Box>
 
       </Box>
+
+      <CaseStudyFooterBar 
+        cardImage={FOOTER_CARD.image.imagesrc} 
+        cardImageHeight={FOOTER_CARD.image.height}
+        cardImageWidth={FOOTER_CARD.image.width}
+        cardTitle={FOOTER_CARD.title}
+        />
 
       </Box>
       

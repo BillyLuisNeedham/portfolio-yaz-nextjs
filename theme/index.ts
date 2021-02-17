@@ -66,6 +66,11 @@ const bottomsUpTheme = createMuiTheme({
         fontSize: '0.75rem',
       },
     },
+    body2:{ 
+      '@media (max-width:575px)': {
+        fontSize: '0.45rem',
+      },
+    },
     caption:{ 
       '@media (max-width:575px)': {
         fontSize: '0.25rem',

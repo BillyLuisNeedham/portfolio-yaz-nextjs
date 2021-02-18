@@ -8,7 +8,7 @@ import {
   Typography,
   withStyles,
 } from '@material-ui/core'
-import { generalStrings } from '../public/assets/strings/general'
+import { contactStrings } from '../public/assets/strings/contact-strings'
 import { theme } from '../theme/index'
 import { Button } from '../components/button'
 
@@ -91,12 +91,12 @@ const ContactPage: React.FC<Props> = ({}) => {
       <Grid container className={classes.container} direction="column">
         <Grid item className={classes.textBoxCont}>
           <Typography variant="h5">
-            {generalStrings.contactPageHeader}
+            {contactStrings.contactPageHeader}
           </Typography>
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
-            label={generalStrings.nameString}
+            label={contactStrings.nameString}
             name="name"
             variant="outlined"
             onChange={handleInputChange}
@@ -106,7 +106,7 @@ const ContactPage: React.FC<Props> = ({}) => {
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
-            label={generalStrings.email}
+            label={contactStrings.email}
             name="email"
             variant="outlined"
             onChange={handleInputChange}
@@ -116,7 +116,7 @@ const ContactPage: React.FC<Props> = ({}) => {
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
-            label={generalStrings.message}
+            label={contactStrings.message}
             name="message"
             variant="outlined"
             onChange={handleInputChange}
@@ -133,11 +133,11 @@ const ContactPage: React.FC<Props> = ({}) => {
         </Grid>
         <Grid item className={classes.rightAlignedItem}>
           <Typography variant="subtitle2">
-            {generalStrings.orEmailMe}
+            {contactStrings.orEmailMe}
             {/* //TODO get link to mail client working 
             see https://medium.com/the-couch/adding-a-contact-form-to-your-next-js-app-7a1b5f63f27z*/}
             <Link>
-              <a>{generalStrings.emailAddress}</a>
+              <a>{contactStrings.emailAddress}</a>
             </Link>
           </Typography>
         </Grid>

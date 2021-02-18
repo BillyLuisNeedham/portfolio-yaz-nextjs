@@ -115,18 +115,50 @@ const psdsTheme = createMuiTheme({
     fontFamily: 'Roboto',
     h1: {
       fontFamily: 'Playfair Display',
+      '@media (max-width:575px)': {
+        fontSize: '2.5rem',
+      },
     }, 
     h2: {
-      fontFamily: 'Playfair Display'
+      fontFamily: 'Playfair Display',
+      '@media (max-width:575px)': {
+        fontSize: '2rem',
+      },
     },
     h3: {
-      fontFamily: 'Playfair Display'
+      fontFamily: 'Playfair Display',
+      '@media (max-width:575px)': {
+        fontSize: '1.5rem',
+      },
     },
     h4: {
-      fontFamily: 'Playfair Display'
+      fontFamily: 'Playfair Display',
+      '@media (max-width:575px)': {
+        fontSize: '1rem',
+      },
     },
     h5: {
-      fontFamily: 'Playfair Display'
+      fontFamily: 'Playfair Display',
+      '@media (max-width:575px)': {
+        fontSize: '0.75rem',
+      },
+    },
+    body1:{ 
+      lineHeight:"2.5em",
+      fontSize: '1.5rem',
+      '@media (max-width:575px)': {
+        fontSize: '0.75rem',
+      },
+    },
+    body2:{ 
+      '@media (max-width:575px)': {
+        fontSize: '0.45rem',
+      },
+    },
+    caption:{ 
+      '@media (max-width:575px)': {
+        fontSize: '0.25rem',
+      },
     },
   }
 })

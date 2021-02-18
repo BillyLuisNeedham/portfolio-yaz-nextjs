@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     introbody:{
       maxWidth:"50vw",
-      padding:"15vw",
+      padding:"5vw",
       [theme.breakpoints.down('sm')]: {
         maxWidth: '90vw',
         padding:"10vw",
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
     
     intropara:{
       alignSelf:"center",
-      padding:" 0 0 1rem 0",
+      padding:" 2rem 0 1rem 0",
       [theme.breakpoints.down('sm')]: {
         maxWidth:"90vw",
       },
@@ -164,39 +164,13 @@ const useStyles = makeStyles((theme: Theme) =>
       display:'flex',
       flexFlow: 'column nowrap'
     },
-    wireframes4:{
-      display:"grid",
-      gridTemplateColumns: "auto auto",
-      gridTemplateRows:"auto auto auto auto auto",
-      [theme.breakpoints.down('sm')]: {
-        margin:'2.5em 0 2.5em 0',
-      },
-    },
-    wireframearrowitem1:{
-      gridColumn:"1/ span 2",
-      gridRow:"1/ span 3",
-      alignSelf:"end",
-
-    },
-    wireframearrowitem2:{
-      gridColumn:"1/ 1",
-      gridRow:"3/span 2",
-      alignSelf:"end",
-      
-    },
-    wireframearrowitem3:{
-      gridColumn:"2/ 2",
-      gridRow:"4/ span 2",
-      alignSelf:"end",
-      justifySelf:"center",
-      
-    },
+    
+   
     wireframeitems:{
       display:"flex",
       alignSelf: "center",
       justifyContent:"center",
-      width: '30vw',
-      margin:'5em 0 5em 0',
+      margin:' 5vw 20vw 5vw 20vw',
       [theme.breakpoints.down('sm')]: {
         width: '90vw',
         margin:'2.5em 0 2.5em 0',
@@ -241,7 +215,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     visualDesigncomponents:{
       margin:"3em 0 3em 0",
-      maxWidth: "616px",
+      maxWidth: "75vw",
       [theme.breakpoints.down('sm')]: {
         margin:"1em 0 1em 0",
       },
@@ -287,8 +261,8 @@ interface Props {
   
 }
 
+const PSDSPage: React.FC<Props>= (props: Props) => {
 
-const BottomsUpPage: React.FC<Props> = ({}) => {
   
   const classes = useStyles()
 
@@ -806,4 +780,4 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
   )
 }
 
-export default BottomsUpPage
+export default PSDSPage

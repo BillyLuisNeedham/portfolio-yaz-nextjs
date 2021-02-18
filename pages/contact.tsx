@@ -133,7 +133,7 @@ const ContactPage: React.FC<Props> = ({}) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(inputs)
+      body: JSON.stringify(inputs),
     })
     const text = await res.text()
     handleResponse(res.status, text)
@@ -200,6 +200,9 @@ const ContactPage: React.FC<Props> = ({}) => {
           </Typography>
         </Grid>
       </Grid>
+      {
+        //TODO build out error msg and error display
+      }
     </div>
   )
 }

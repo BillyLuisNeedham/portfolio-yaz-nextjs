@@ -94,7 +94,7 @@ export const WIREFRAME_LINK ="https://google.co.uk"
 export const WIREFRAMES ={
     image1:{
         imagesrc:'/assets/images/psds/Group 54.png',
-        width:750,
+        width:1920,
         height: 950,
     },
 

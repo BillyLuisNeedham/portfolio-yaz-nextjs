@@ -351,9 +351,8 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             width={1920}
             height={614}
             layout="responsive"
-            objectFit="contain"
-          />
-
+            
+          /> 
         </Box>
           
         <Box className={classes.intro}>
@@ -554,7 +553,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 </Typography>
             </Box>
 
-            <Box alignSelf="center" className={classes.wireframeitems}>
+            <Box alignSelf="center" >
               <Image
                   src={`${WIREFRAMES.image1.imagesrc}`}
                   layout="intrinsic"     
@@ -691,35 +690,41 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
 
             
 
-            <Box >
-              <Image
-                className={classes.visualDesigncomponents}
-                src={`${VISUAL_DESIGN.image5.imagesrc}`}   
-                width={`${VISUAL_DESIGN.image5.width}`} 
-                height={`${VISUAL_DESIGN.image5.height}`}
-                layout="intrinsic" 
+            <Box className={classes.visualDesign3} >
+              <Box className={classes.visualDesignMain}>
+                <Image
+                  className={classes.visualDesigncomponents}
+                  src={`${VISUAL_DESIGN.image5.imagesrc}`}   
+                  width={`${VISUAL_DESIGN.image5.width}`} 
+                  height={`${VISUAL_DESIGN.image5.height}`}
+                  layout="intrinsic" 
                 />
-              <Image
-                className={classes.visualDesigncomponents}
-                src={`${VISUAL_DESIGN.image6.imagesrc}`}   
-                width={`${VISUAL_DESIGN.image6.width}`} 
-                height={`${VISUAL_DESIGN.image6.height}`}
-                layout="intrinsic" 
-                />
-              <Image
+                <Image
                 className={classes.visualDesigncomponents}
                 src={`${VISUAL_DESIGN.image7.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image7.width}`} 
                 height={`${VISUAL_DESIGN.image7.height}`}
                 layout="intrinsic" 
                 />
-              <Image
-                className={classes.visualDesigncomponents}
-                src={`${VISUAL_DESIGN.image8.imagesrc}`}   
-                width={`${VISUAL_DESIGN.image8.width}`} 
-                height={`${VISUAL_DESIGN.image8.height}`}
-                layout="intrinsic" 
+              </Box>
+              
+              <Box className={classes.visualDesignMain}>
+                <Image
+                  className={classes.visualDesigncomponents}
+                  src={`${VISUAL_DESIGN.image6.imagesrc}`}   
+                  width={`${VISUAL_DESIGN.image6.width}`} 
+                  height={`${VISUAL_DESIGN.image6.height}`}
+                  layout="intrinsic" 
                 />
+                
+                <Image
+                  className={classes.visualDesigncomponents}
+                  src={`${VISUAL_DESIGN.image8.imagesrc}`}   
+                  width={`${VISUAL_DESIGN.image8.width}`} 
+                  height={`${VISUAL_DESIGN.image8.height}`}
+                  layout="intrinsic" 
+                />
+              </Box>
             </Box>    
           </Box>
         </Box>
@@ -762,7 +767,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
           </Box>
           </Box>
 
-          {Divider("What I Learned")}
+          {Divider("Next Steps")}
 
           <Box className={classes.conclusion}>
             <Box className={classes.conclusionbox} >

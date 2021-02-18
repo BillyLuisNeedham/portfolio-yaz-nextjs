@@ -66,25 +66,80 @@ const CustomTextField = withStyles({
 
 interface Props {}
 
-interface IState {
+interface IMessage {
   name: string
   email: string
   message: string
 }
 
+interface IStatus {
+  submitted: boolean
+  submitting: boolean
+  info: { error: boolean; msg: string }
+}
+
 //TODO if user presses send before all fields are filled in, display error fields
 const ContactPage: React.FC<Props> = ({}) => {
-  const [state, setState] = useState<IState>({
+  const classes = useStyles()
+  const [status, setStatus] = useState<IStatus>({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  })
+
+  const [inputs, setInputs] = useState<IMessage>({
     name: '',
     email: '',
     message: '',
   })
-  const classes = useStyles()
+
+  const handleResponse = (status, msg) => {
+    if (status === 200) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      })
+      setInputs({
+        name: '',
+        email: '',
+        message: '',
+      })
+    } else {
+      setStatus({
+        submitted: status.submitted,
+        submitting: status.submitting,
+        info: { error: true, msg: msg },
+      })
+    }
+  }
 
   const handleInputChange = (e) => {
+    e.persist()
     const { name, value } = e.target
-    setState({ ...state, [name]: value })
+    setInputs({ ...inputs, [name]: value })
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    })
   }
+
+  const handleOnSubmit = async (e) => {
+    e.preventDefault()
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
+    const res = await fetch('api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs)
+    })
+    const text = await res.text()
+    handleResponse(res.status, text)
+  }
+
+  //TODO add email api stuff. see: https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now
 
   return (
     <div className={classes.root}>
@@ -96,31 +151,34 @@ const ContactPage: React.FC<Props> = ({}) => {
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
+            id={'name'}
             label={contactStrings.nameString}
             name="name"
             variant="outlined"
             onChange={handleInputChange}
-            value={state.name}
+            value={inputs.name}
             fullWidth
           />
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
+            id={'email'}
             label={contactStrings.email}
             name="email"
             variant="outlined"
             onChange={handleInputChange}
-            value={state.email}
+            value={inputs.email}
             fullWidth
           />
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
+            id={'message'}
             label={contactStrings.message}
             name="message"
             variant="outlined"
             onChange={handleInputChange}
-            value={state.message}
+            value={inputs.message}
             fullWidth
             multiline
             rows={8}
@@ -129,7 +187,7 @@ const ContactPage: React.FC<Props> = ({}) => {
         {/* </Grid>
       <Grid container className={classes.rightAlignedCont}> */}
         <Grid item className={classes.rightAlignedItem}>
-          <Button name="SEND" color="secondary" />
+          <Button name="SEND" color="secondary" disabled={status.submitting} />
         </Grid>
         <Grid item className={classes.rightAlignedItem}>
           <Typography variant="subtitle2">

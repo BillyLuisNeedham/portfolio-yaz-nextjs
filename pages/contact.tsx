@@ -187,7 +187,18 @@ const ContactPage: React.FC<Props> = ({}) => {
         {/* </Grid>
       <Grid container className={classes.rightAlignedCont}> */}
         <Grid item className={classes.rightAlignedItem}>
-          <Button name="SEND" color="secondary" disabled={status.submitting} />
+          <Button
+            onClick={handleOnSubmit}
+            name={
+              !status.submitting
+                ? !status.submitted
+                  ? 'Submit'
+                  : 'Submitted'
+                : 'Submitting'
+            }
+            color="secondary"
+            disabled={status.submitting}
+          />
         </Grid>
         <Grid item className={classes.rightAlignedItem}>
           <Typography variant="subtitle2">

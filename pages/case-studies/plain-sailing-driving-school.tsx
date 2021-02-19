@@ -379,40 +379,40 @@ const PSDSPage: React.FC<Props>= (props: Props) => {
 
       {/* title img */}
       <Box className={classes.root}>
-        <Box>
-          {SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
-            <MobileNavBar
-            onNavigateCallback={navigateToRoute}
-            activeRoute={NavRoutes.Work}/>
-          ):(
-            <AppBar elevation={0} position="absolute" color="transparent">
-              <Toolbar>
-                <IconButton edge="start" color="inherit" href="/">
-                  <Image
-                  src="/Logo_White.png"
-                  width={37}
-                  height={48}
-                  />
-                </IconButton>
-                <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
-                  <Typography variant="body1">
-                    Yazmin Leigh Portfolio
-                  </Typography>
-                  <Typography variant="caption">
-                    UI / UX Designer
-                  </Typography>
-                </Box>
-              </Toolbar>
-            </AppBar>
-          )}
-          <Image
-            src={`${TITLE.titleimg}`}
-            width={1920}
-            height={614}
-            layout="responsive"
-            
-          /> 
-        </Box>
+        
+        {SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
+          <MobileNavBar
+          onNavigateCallback={navigateToRoute}
+          activeRoute={NavRoutes.Work}/>
+        ):(
+          <AppBar elevation={0} position="absolute" color="transparent">
+            <Toolbar>
+              <IconButton edge="start" color="inherit" href="/">
+                <Image
+                src="/Logo_White.png"
+                width={37}
+                height={48}
+                />
+              </IconButton>
+              <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
+                <Typography variant="body1">
+                  Yazmin Leigh Portfolio
+                </Typography>
+                <Typography variant="caption">
+                  UI / UX Designer
+                </Typography>
+              </Box>
+            </Toolbar>
+          </AppBar>
+        )}
+        <Image
+          src={`${TITLE.titleimg}`}
+          width={1920}
+          height={614}
+          layout="responsive"
+          
+        /> 
+        
 
           {/* Intro */}
         <Box className={classes.intro}>

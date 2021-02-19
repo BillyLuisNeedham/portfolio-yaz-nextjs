@@ -43,8 +43,8 @@ const MobileNavBar =({ activeRoute, onNavigateCallback })=>{
 
 
     return(
-        <AppBar elevation={0}  color="transparent" className={classes.mobnavbar} position='absolute'>
-            <IconButton color="inherit" >
+        <AppBar elevation={0}  color="primary" className={classes.mobnavbar} position='sticky'>
+            <IconButton href="/" color="inherit" >
                 <Image
                     src="/Logo_White.png"
                     alt="Logo Yazmin Leigh"

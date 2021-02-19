@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
+import { makeStyles, createStyles, Theme, ThemeProvider } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard/AboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
@@ -11,8 +11,13 @@ import Image from 'next/image'
 import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
 import { MIN_LANDSCAPE_MOBILE_WIDTH ,SCREEN_WIDTH } from '../utils/constants/dimens'
 import CaseStudyDivider from '../components/CaseStudyDivider/CaseStudyDivider'
+import MobileFooter from '../components/mobileNavBar/MobileFooter'
+import AppBar from '@material-ui/core/AppBar';
+import { Button, Toolbar } from '@material-ui/core';
+import {mobFooter} from "../theme/index"
 
-const useStyles = makeStyles(() =>
+
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
@@ -26,6 +31,13 @@ const useStyles = makeStyles(() =>
       flexDirection: 'column',
       justifyContent: 'space-around',
       height: 'auto',
+    },
+    studycardsbox: {
+
+      [theme.breakpoints.down('sm')]: {
+        margin:"1rem",
+      },
+      
     },
   })
 )
@@ -56,10 +68,20 @@ const Home = () => {
             activeRoute={NavRoutes.Work}
           />
         </Box>
-        <Box>
+        <Box className={classes.studycardsbox}>
+          <Box p={2}>
+          <Image
+            src="/assets/images/Group 68@2x.png"
+            width={300}
+            height={50}
+            layout="intrinsic"
+          />
+          </Box>
+          
           <CaseStudyCards />
         </Box>
       </Box>
+      <MobileFooter/>
     </div>
   ) : (
     <div className={classes.root}>

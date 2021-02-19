@@ -163,4 +163,23 @@ const psdsTheme = createMuiTheme({
   }
 })
 
-export { theme, bottomsUpTheme, psdsTheme };
+const mobFooter = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#402837',
+    },
+    secondary: {
+      main: '#F8F9FD',
+    },
+    background: {
+      default: '#FFFDF4',
+    },
+    text: {
+      primary: '#F8F9FD',
+      
+    }
+  },
+
+})
+
+export { theme, bottomsUpTheme, psdsTheme, mobFooter };

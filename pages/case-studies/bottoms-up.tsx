@@ -376,7 +376,6 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
     <ThemeProvider theme={THEME}>
       
       <Box className={classes.root}>
-        <Box>
           {SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
             <MobileNavBar
             onNavigateCallback={navigateToRoute}
@@ -402,6 +401,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
               </Toolbar>
             </AppBar>
           )}
+       
           <Image
             src={TITLE.title}
             width={1920}
@@ -410,7 +410,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             objectFit="contain"
           />
 
-        </Box>
+        
           
         <Box className={classes.intro}>
           <Box className={classes.introbody}>

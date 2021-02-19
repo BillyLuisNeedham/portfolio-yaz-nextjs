@@ -142,7 +142,7 @@ const ContactPage: React.FC<Props> = ({}) => {
   //TODO add email api stuff. see: https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id='contact-root'>
       <Grid container className={classes.container} direction="column">
         <Grid item className={classes.textBoxCont}>
           <Typography variant="h5">

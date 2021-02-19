@@ -48,11 +48,11 @@ export const THE_CHALLANGE ={
 
 
 //research findings
-export const RESEARCH_FINDINGS = [
-    "Ordering drinks in a pub on digital products needs to be simple and easy to start otherwise people won’t use them.",
-    "People don’t want to download multiple apps on their phone.",
-    "People are not going to the pubs because they are uncertain if they will get in or the pub/bar is even open."
-]
+export const RESEARCH_FINDINGS = {
+    1:"Ordering drinks in a pub on digital products needs to be simple and easy to start otherwise people won’t use them.",
+    2:"People don’t want to download multiple apps on their phone.",
+    3:"People are not going to the pubs because they are uncertain if they will get in or the pub/bar is even open."
+}
 
 
 
@@ -194,5 +194,7 @@ export const FOOTER_CARD= {
         width:107,
         height: 107,
     },
-    title:"Plain Sailing Driving School"
+    title:"Plain Sailing Driving School",
+    casestudypage:"pages/case-studies/plain-sailing-driving-school.tsx"
+
 }

@@ -27,7 +27,7 @@ export const INTO_PARA = "Plain Sailing Driving School is a start-up driving sch
 //the challenge
 
 export const RESEARCH ={
-    intro:"Around 75% of the driving school customers are between the ages of 17-25 years old. With this information, I began by creating a user persona for the websites target audience.",
+    intro:[`Around 75% of the driving school customers are between the ages of 17-25 years old. With this information, I began by creating a `, <span style={{color:'#E17200', fontWeight:"bold"}}>user persona</span>, ` for the websites target audience.`],
     image1:{
         imagesrc:'/assets/images/psds/Group 20.png',
         width:1282,
@@ -50,11 +50,11 @@ export const RESEARCH ={
 
 
 //research findings
-export const RESEARCH_FINDINGS = [
-    "Customers want to know the average amount of lessons and time it will take for them to pass their driving test and receive their licence.",
-    "Most customers are young and will have a tight budget so will like to know how much it will cost them with for the average amount of lessons.",
-    "Most customers will want to know the areas covered in the lessons and test."
-]
+export const RESEARCH_FINDINGS = {
+    1:"Customers want to know the average amount of lessons and time it will take for them to pass their driving test and receive their licence.",
+    2:"Most customers are young and will have a tight budget so will like to know how much it will cost them with for the average amount of lessons.",
+    3:"Most customers will want to know the areas covered in the lessons and test."
+}
 
 
 
@@ -81,7 +81,7 @@ export const IDEATION ={
         width:708,
         height: 531,
     },
-    text1:"I started creating users flows to understand and anticipate the cognitive patterns the user will take. By creating user flows early, this allowed me to map out possible scenarios and problems the user may encounter.",
+    text1:["I started creating ", <span style={{color:'#E17200', fontWeight:"bold"}}>users flows</span>, " to understand and anticipate the cognitive patterns the user will take. By creating user flows early, this allowed me to map out possible scenarios and problems the user may encounter."],
     text2:"With the user flows completed and a better understanding of the navigational flow, I continued by sketching out low fidelity ideas. With each screen, I allowed only 1-minute to encourage creativity and iron out good ideas from not so good ideas.",
     
      
@@ -97,11 +97,31 @@ export const WIREFRAMES ={
         width:1920,
         height: 950,
     },
+    image2:{
+        imagesrc:'/assets/images/psds/psds_wireframes_phones@2x.png',
+        width:510,
+        height: 644,
+    },
 
-    text1:"With the help of my user flows and low fidelity sketches, I used Adobe XD to create wireframes and a prototype. The reason for this is so that I was able to conduct my first lot of user testing. Wireframe prototype allows me to see users interact with the prototype and identify problems in the basic designs. Making changes to low fidelity wireframes is quicker than high fidelity making the complete design process more efficient, and the user experiences the best it can be.",
-    text2:"I recruited 5 participants aged between 17-25 to conduct moderated user testing on my wireframe prototype.",
-    text3:"80% of users wanted to know where they would go to book their driving theory test. 40% of users wanted to be able to get in touch with the instructor of their choice.",
-    text4:"Create a page where the customer will be able to view theory test centres around their area. Call and E-mail button on the instructors card so the customer can get in contact with that instructor.",
+    text1:[
+        <p style={{margin:"0 0 2rem 0"}}>With the help of my user flows and low fidelity sketches, I used Adobe XD to create wireframes and a prototype. The reason for this is so that I was able to conduct my first lot of user testing. </p> , 
+        <p>Wireframe prototype allows me to see users interact with the prototype and identify problems in the basic designs. Making changes to low fidelity wireframes is quicker than high fidelity making the complete design process more efficient, and the user experiences the best it can be.</p>
+    ],
+    text2:[
+        "I recruited ",
+        <span style={{color:'#E17200', fontWeight:"bold"}}>5 participants</span>,
+        " aged between 17-25 to conduct moderated user testing on my wireframe prototype."],
+    heading1:"Findings:",
+    text3:[
+        <p>80% of users wanted to know where they would go to book their driving theory test. </p>,
+        <p>40% of users wanted to be able to get in touch with the instructor of their choice.</p>,
+        
+    ],
+    heading2:"Solutions:",
+    text4:[
+        <p> Create a page where the customer will be able to view theory test centres around their area. </p>,
+        <p>Call and E-mail button on the instructors card so the customer can get in contact with that instructor.</p>,
+    ],
      
 }
 
@@ -150,11 +170,19 @@ export const VISUAL_DESIGN = {
         height: 692,
     },
     
-    text1:"Due to the growing popularity of van conversion and living on the road, I created a mood board from the inspiration of old Volkswagen campers, and nature. I wanted the 17-25 year olds be inspired by their dreams of being free, independent and stress-free, but also wanted the older customers to feel like it is not too late to have the freedom of travel and being on the road.",
+    text1:[
+        "Due to the growing popularity of van conversion and living on the road, I created a ",
+        <span style={{color:'#E17200', fontWeight:"bold"}}>mood board</span>,
+        " from the inspiration of old Volkswagen campers, and nature. I wanted the 17-25 year olds be inspired by their dreams of being free, independent and stress-free, but also wanted the older customers to feel like it is not too late to have the freedom of travel and being on the road."
+    ],
     text2:"Plain Sailing Driving School offers customers the opportunity to become a driving instructor. Included on this page are the benefits people you will receive when becoming an instructor for the company. It also tells them about the process they will go through, how long this is estimated to take and the pricing options.",
     text3:"I included instructors' page so the customers can see how many instructors the company has and to read a little bit about them for a more personal experience. The customers will have a better understanding of who the instructor is and their level of experiences.",
     text4:"As mentioned from the user test findings, most customers wanted to see where they would be able to book a driving theory test. With this in mind, I created a page where customers can search their local areas for test centres nearby.",
-    text5:"I designed mobile-first to create a better user experience on a smaller screen, as it is better to transfer the contents on larger screens. Also, where 75% of the target is between 17-25 years old, they are more likely to get this information on their phones.",
+    text5:[
+        "I designed ",
+        <span style={{color:'#E17200', fontWeight:"bold"}}>mobile-first</span>,
+        " to create a better user experience on a smaller screen, as it is better to transfer the contents on larger screens. Also, where 75% of the target is between 17-25 years old, they are more likely to get this information on their phones."
+    ],
 
 }
 
@@ -162,13 +190,19 @@ export const VISUAL_DESIGN = {
 //conclusion
 
 export const CONCLUSION = {
-    text1:"DUE TO COVID-19 this project has not been developed yet. ",
-    text2:" Once Plain Sailing Driving School are able to begin their company the website will provide them to better connect with their customers. ",
-    text3:"The customers will be able to see information on the company, instructors, areas covered, courses and prices. ",
-    text4:"During this project, I have learned that process, and early-stage user research and testing are essential. I started this project with hardly any direction with only a few dos' and don'ts' from the client. This made the user interviews and competitive analysis more important to establish the information and direction the website would take.",
-    text5:" Involving the engineers and the client in all design decisions. It is best to have the whole team involved through the entire design process, so I don't over promise and under deliver.",
-    text6:"Get the website developed by engineers and after a few months, see if there are any issues/problems that I haven't foreseen. ",
-    text7:"Once the company has grown and have more employees; then have it so that the customers can book and make payments online.",
+    text1:[
+        <p><span style={{color:'#E17200', fontWeight:"bold"}}>DUE TO COVID-19 </span>this project has not been developed yet.</p>,
+        <p>Once Plain Sailing Driving School are able to begin their company the website will provide them to better connect with their customers.</p>,
+        <p>The customers will be able to see information on the company, instructors, areas covered, courses and prices.  </p>
+    ],
+    text2:[
+        <p>During this project, I have learned that process, and early-stage user research and testing are essential. I started this project with hardly any direction with only a few dos' and don'ts' from the client. This made the user interviews and competitive analysis more important to establish the information and direction the website would take.</p>,
+        <p> Involving the engineers and the client in all design decisions. It is best to have the whole team involved through the entire design process, so I don't over promise and under deliver.</p>
+    ],
+    text3:[
+        <p>Get the website developed by engineers and after a few months, see if there are any issues/problems that I haven't foreseen. </p>,
+        <p>Once the company has grown and have more employees; then have it so that the customers can book and make payments online.</p>
+    ],
 }
 
 //Footer card info
@@ -179,5 +213,6 @@ export const FOOTER_CARD= {
         width:112,
         height: 94,
     },
-    title:"BottomsUp!"
+    title:"BottomsUp!",
+    casestudypage:"pages/case-studies/bottoms-up.tsx"
 }

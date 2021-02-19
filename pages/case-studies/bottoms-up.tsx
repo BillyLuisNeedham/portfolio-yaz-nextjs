@@ -9,7 +9,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
-import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
 import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION, FOOTER_CARD } from './bottoms-up-data';
 import {MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH} from '../../utils/constants/dimens'
@@ -121,6 +120,71 @@ const useStyles = makeStyles((theme: Theme) =>
     challangemaincontent:{
       maxWidth: '50vw',
       margin: '2vw',
+    },
+    findings:{
+      display:"grid",
+      gridTemplateColumns: "25% 75%",
+      gridTemplateRows:"auto auto auto",
+      margin:"5vw 20vw 5vw 20vw",
+      placeItems:"center center",
+      [theme.breakpoints.down('sm')]: {
+        gridTemplateColumns: "25% 12.5% 12.5% 50%",
+        margin:"5vw 4vw 5vw 4vw ",
+      },
+    },
+    f1a:{
+      gridColumn:"1",
+      gridRow:"1",
+      [theme.breakpoints.down('sm')]: {
+        placeSelf:"center start",
+        gridColumn:"1/ span 2",
+      },
+    },
+    f1b:{
+      gridColumn:"1",
+      gridRow:"2",
+      [theme.breakpoints.down('sm')]: {
+        placeSelf:"center start",
+        gridColumn:"1/ span 2",
+      },
+    },
+    f1c:{
+      gridColumn:"1",
+      gridRow:"3",
+      [theme.breakpoints.down('sm')]: {
+        placeSelf:"center start",
+        gridColumn:"1/ span 2",
+      },
+    },
+    f2a:{
+      gridColumn:"2",
+      gridRow:"1",
+      placeSelf:"center start",
+      [theme.breakpoints.down('sm')]: {
+        placeSelf:"center end",
+        gridColumn:"3/ span 2",
+        
+      },
+    },
+    f2b:{
+      gridColumn:"2",
+      gridRow:"2",
+      placeSelf:"center start",
+      [theme.breakpoints.down('sm')]: {
+        placeSelf:"center end",
+        gridColumn:"3/ span 2",
+        
+      },
+    },
+    f2c:{
+      gridColumn:"2",
+      gridRow:"3",
+      placeSelf:"center start",
+      [theme.breakpoints.down('sm')]: {
+        placeSelf:"center end",
+        gridColumn:"3/ span 2",
+        
+      },
     },
     wireframesMain:{
       display:'flex',
@@ -320,7 +384,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
           ):(
             <AppBar elevation={0} position="absolute" color="transparent">
               <Toolbar>
-                <IconButton edge="start" color="inherit">
+                <IconButton edge="start" color="inherit" href="/">
                   <Image
                   src="/Logo_White.png"
                   width={37}
@@ -359,7 +423,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
               <div className={classes.dividerouter}>
                 <div className={classes.dividermiddle} />
                   <span className={classes.divideinners}>
-                  <ListSubheader disableSticky={true}  className={classes.listSubHeader}>Roll</ListSubheader>
+                  <ListSubheader disableSticky={true}  className={classes.listSubHeader}>Role</ListSubheader>
                   </span>
                 <div style={{ borderBottom: "3px solid #305538", width: "100%"}} />
               </div> 
@@ -464,21 +528,32 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             <Box>
               {Divider("Research Findings")}
             </Box>
-            
 
-              <Box alignSelf="center">
+            <Box className={classes.findings} >
+              <div className={classes.f1a}>
+                <BulletNumbers number={1} color={"#305538"} />
+              </div>
+              <div className={classes.f1b}>
+                <BulletNumbers number={2} color={"#305538"} />
+              </div> 
+              <div className={classes.f1c}>
+                <BulletNumbers number={3} color={"#305538"} /> 
+              </div>  
 
-              {RESEARCH_FINDINGS.map((info, index)=>(
-                <List key={`${index}RF`}>
-                  <ListItem >
-                    <ListItemIcon>
-                      <BulletNumbers number={index} />
-                    </ListItemIcon>
-                    <ListItemText primary={info} />
-                  </ListItem>
-                </List>
-                ))}
-              </Box>
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.f2a}>
+                {RESEARCH_FINDINGS[1]}
+              </Typography>
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.f2b}>
+                {RESEARCH_FINDINGS[2]}
+              </Typography>
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.f2c}>
+                {RESEARCH_FINDINGS[3]}
+              </Typography>
+
+            </Box>
+
+
+
           </Box>
         </Box>
 
@@ -859,6 +934,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
         cardImageHeight={FOOTER_CARD.image.height}
         cardImageWidth={FOOTER_CARD.image.width}
         cardTitle={FOOTER_CARD.title}
+        pageLink={FOOTER_CARD.casestudypage}
         />
 
       </Box>

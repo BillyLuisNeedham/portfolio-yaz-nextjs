@@ -2,11 +2,11 @@ import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Image from 'next/image';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import Link from 'next/link';
 import IconButton from '@material-ui/core/IconButton';
 
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       
@@ -15,12 +15,20 @@ const useStyles = makeStyles(() =>
         display:"flex",
         flexFlow: "row nowrap",
         justifyContent:"center",
-        backgroundColor:"#ffffff"
+        backgroundColor:"#ffffff",
+        [theme.breakpoints.down('sm')]: {
+            display:"grid",
+            gridTemplateColumns: "50% 50%",
+            padding:"1vw",
+          },
     },
     left: {
         display:"flex",
         flexFlow: "column nowrap",
         padding: "3rem 2rem 3rem 0",
+        [theme.breakpoints.down('sm')]: {
+            padding:"0",
+          },
       
     },
     picbox:{
@@ -35,6 +43,12 @@ const useStyles = makeStyles(() =>
         flexFlow: "row nowrap",
         justifyContent: "center",
         fontFamily:"Gadugi",
+        fontSize:"1rem",
+        [theme.breakpoints.down('sm')]: {
+            flexFlow:"column nowrap",
+            fontSize:".8rem",
+            padding:"0 2vw 0 4vw",
+          },
     },
     socialmedia: {
         display:"flex",
@@ -44,35 +58,57 @@ const useStyles = makeStyles(() =>
     },
     button:{
         margin: '10px 0 0 0',
+        [theme.breakpoints.down('sm')]: {
+            margin:"0",
+          },
     },
     right: {
         display:"flex",
         flexFlow: "column nowrap",
         justifyContent:"center",
-        padding: "0 0 0 2rem",
+        padding: "0 0 0 4rem",
         color:"#707070",
+        [theme.breakpoints.down('sm')]: {
+            padding:"0",
+          },
     },
     title: {
         padding: "1.5rem 1.5rem 1.5rem 0",
+        fontSize:"1.5rem",
+        [theme.breakpoints.down('sm')]: {
+            padding:"0",
+            fontSize:"1rem",
+          },
       
     },
     casestudycard: {
         display:"grid",
-        gridTemplateColumns:"33% auto",
+        gridTemplateColumns:"auto auto",
         gridTemplateRows:"auto",
         
     },
     casestudypic: {
+        display:"flex",
+        justifyContent:"center",
+        alignContent:"center",
         background: "#87ABA9 0% 0% no-repeat padding-box",
         borderRadius:"10px 0px 0px 10px",
+        padding:"0 2rem 0 2rem",
+        [theme.breakpoints.down('sm')]: {
+            padding:"0",
+          },
       
     },
     casestudytitle: {
         display:"flex",
         border:"1px solid #707070",
         borderRadius:"0px 10px 10px 0px",
-        padding: "2rem 3rem 2rem 3rem",
+        padding: "2rem 4rem 2rem 4rem",
         whiteSpace:"nowrap",
+        [theme.breakpoints.down('sm')]: {
+            whiteSpace:"normal",
+            padding:"0",
+          },
       
     },
   })
@@ -82,9 +118,11 @@ interface Props {
     cardImageHeight:number
     cardImageWidth:number
     cardTitle:string
+    pageLink:string
+
 }
 
-const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardImageWidth, cardTitle }) => {
+const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardImageWidth, cardTitle, pageLink }) => {
     const classes = useStyles()
 
     return(
@@ -102,12 +140,13 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
                   />
                 </div>
                 <div className={classes.email}>
-                    <Typography variant="body2" style={{ fontWeight:"bold", color:"#402837",}}>
+                    <p style={{ fontWeight:"bold", color:"#402837",}}>
                        Or E-mail me on &nbsp;
-                       <Link key="Email" component="a" href="mailto:yazminleigh33@gmail.com" style={{color:"#38718F",}} >
-                           yazminleigh33@gmail.com 
-                        </Link> 
-                    </Typography>
+                       <Link href="mailto:yazminleigh33@gmail.com" >
+                            yazminleigh33@gmail.com 
+                        </Link>
+                    </p>
+                     
                     
 
                 </div>
@@ -147,24 +186,28 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
             <div className={classes.right}>
                 
                 <div className={classes.title}>
-                    <Typography variant="body1">
+                    <p>
                         More of my work
-                    </Typography>
+                    </p>
                 </div>
                 <div className={classes.casestudycard}>
                     <div className={classes.casestudypic}>
-                        <Image 
-                            src={cardImage}
-                            width={`${cardImageWidth}`}
-                            height={`${cardImageHeight}`}
-                            layout="intrinsic"
-                        />
+                        <Link href={pageLink}>
+                            <Image 
+                                src={cardImage}
+                                width={`${cardImageWidth}`}
+                                height={`${cardImageHeight}`}
+                                layout="intrinsic"
+                            />
+                        </Link>
                     </div>
                     <div className={classes.casestudytitle}>
                         <div style={{alignSelf:"center"}}>
-                            <Typography variant="body1" align="center" style={{fontFamily:"PlayFair Display", fontWeight:"bold"}}>
-                                {cardTitle}
-                            </Typography>
+                            <Link href={pageLink}>
+                                <Typography variant="body1" align="center" style={{fontFamily:"PlayFair Display", fontWeight:"bold"}}>
+                                    {cardTitle}
+                                </Typography>
+                            </Link>
                         </div>
                     </div>
                 </div>

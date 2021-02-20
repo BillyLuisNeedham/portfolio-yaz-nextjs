@@ -34,6 +34,9 @@ describe('Contact', () => {
   it('renders an email input', () => {
     expect(emailInput).toBeInTheDocument()
   })
+  it('renders a message input', () => {
+    expect(messageInput).toBeInTheDocument()
+  })
   it('displays name error text if name is not filled out when submit button is clicked', () => {
     const nameError = dom.queryByText(contactStrings.nameError)
 

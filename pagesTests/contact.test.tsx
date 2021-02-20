@@ -5,6 +5,7 @@ import {
   queryByText,
   RenderResult,
   MatcherOptions,
+  fireEvent,
 } from '@testing-library/react'
 import Contact from '../pages/contact'
 import { contactStrings } from '../public/assets/strings/contact-strings'
@@ -13,15 +14,17 @@ const getById = queryByAttribute.bind(null, 'id')
 
 describe('Contact', () => {
   let dom: RenderResult
-  let nameInput: MatcherOptions
-  let emailInput: MatcherOptions
-  let messageInput: MatcherOptions
+  let nameInput
+  let emailInput
+  let messageInput
+  let submitButton
 
   beforeEach(() => {
     dom = render(<Contact />)
     nameInput = getById(dom.container, 'name')
     emailInput = getById(dom.container, 'email')
     messageInput = getById(dom.container, 'message')
+    submitButton = getById(dom.container, 'submit-button')
   })
 
   it('renders', () => {
@@ -40,6 +43,10 @@ describe('Contact', () => {
   it('displays name error text if name is not filled out when submit button is clicked', () => {
     const nameError = dom.queryByText(contactStrings.nameError)
 
-    expect(nameError).not.toBeInTheDocument()
+    expect(nameError).not.toBeVisible()
+
+    fireEvent.click(submitButton)
+
+    expect(nameError).toBeVisible()
   })
 })

@@ -188,6 +188,7 @@ const ContactPage: React.FC<Props> = ({}) => {
       <Grid container className={classes.rightAlignedCont}> */}
         <Grid item className={classes.rightAlignedItem}>
           <Button
+            id={'submit-button'}
             onClick={handleOnSubmit}
             name={
               !status.submitting

@@ -6,6 +6,7 @@ interface Props {
   name: string
   disabled: boolean
   onClick: any
+  id: string
 }
 
 const Button: FunctionComponent<Props> = ({
@@ -13,10 +14,12 @@ const Button: FunctionComponent<Props> = ({
   name,
   disabled,
   onClick,
+  id
 }) => {
   return (
     <>
       <MuiButton
+        id={id}
         color={color}
         variant="contained"
         disabled={disabled}

@@ -198,9 +198,7 @@ const ContactPage: React.FC<Props> = ({}) => {
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
             id={'name'}
-            label={
-              nameError.error ? nameError.errorMsg : contactStrings.nameString
-            }
+            label={contactStrings.nameString}
             name="name"
             variant="outlined"
             onChange={handleInputChange}
@@ -211,7 +209,7 @@ const ContactPage: React.FC<Props> = ({}) => {
         </Grid>
         <Grid item className={classes.textBoxCont}>
           <Typography variant="subtitle2">
-            {nameError.error? nameError.errorMsg : null}
+            {nameError.error ? nameError.errorMsg : null}
           </Typography>
         </Grid>
         <Grid item className={classes.textBoxCont}>

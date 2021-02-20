@@ -47,7 +47,7 @@ describe('Contact', () => {
 
     fireEvent.click(submitButton)
 
-    expect(nameError).toBeVisible()
+    expect(nameError).toBeInTheDocument()
 
     //TODO write code to satisfy test
   })

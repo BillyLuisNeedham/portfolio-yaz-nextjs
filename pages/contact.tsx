@@ -103,7 +103,7 @@ const ContactPage: React.FC<Props> = ({}) => {
     errorMsg: '',
   })
 
-  const nameErrorHandler = () => {
+  const nameErrorStatusHandler = (): boolean => {
     !inputs.name
       ? setNameError({
           error: true,
@@ -113,9 +113,11 @@ const ContactPage: React.FC<Props> = ({}) => {
           error: false,
           errorMsg: '',
         })
+
+    return nameError.error
   }
 
-  const handleResponse = (status, msg) => {
+  const handleResponse = (status, msg): void => {
     if (status === 200) {
       setStatus({
         submitted: true,
@@ -136,7 +138,7 @@ const ContactPage: React.FC<Props> = ({}) => {
     }
   }
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e): void => {
     e.persist()
     const { name, value } = e.target
     setInputs({ ...inputs, [name]: value })
@@ -149,10 +151,26 @@ const ContactPage: React.FC<Props> = ({}) => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault()
-    submitToApi()
+    const allInputsFilled: boolean = checkInputsOk()
+    if (allInputsFilled) {
+      submitToApi()
+    } else {
+      //TODO handle error
+    }
   }
 
-  const checkInputs = () => {}
+  const checkInputsOk = (): boolean => {
+    const toBeChecked: boolean[] = [nameErrorStatusHandler()]
+
+    let allOk = true
+
+    toBeChecked.forEach((errorStatus) => {
+      // only set allOk if error
+      errorStatus ? (allOk = false) : null
+    })
+
+    return allOk
+  }
 
   const submitToApi = async () => {
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))

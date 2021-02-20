@@ -48,5 +48,7 @@ describe('Contact', () => {
     fireEvent.click(submitButton)
 
     expect(nameError).toBeVisible()
+
+    //TODO write code to satisfy test
   })
 })

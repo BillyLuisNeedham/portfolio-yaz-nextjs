@@ -103,16 +103,17 @@ const ContactPage: React.FC<Props> = ({}) => {
     errorMsg: '',
   })
 
-  useEffect(() => {
-    const nameErrorHandler = () => {
-      nameError.error
-        ? setNameError((prev) => ({
-            ...prev,
-            errorMsg: contactStrings.nameError,
-          }))
-        : setNameError((prev) => ({ ...prev, errorMsg: '' }))
-    }
-  }, [nameError])
+  const nameErrorHandler = () => {
+    !inputs.name
+      ? setNameError({
+          error: true,
+          errorMsg: contactStrings.nameError,
+        })
+      : setNameError({
+          error: false,
+          errorMsg: '',
+        })
+  }
 
   const handleResponse = (status, msg) => {
     if (status === 200) {
@@ -179,12 +180,15 @@ const ContactPage: React.FC<Props> = ({}) => {
         <Grid item className={classes.textBoxCont}>
           <CustomTextField
             id={'name'}
-            label={contactStrings.nameString}
+            label={
+              nameError.error ? nameError.errorMsg : contactStrings.nameString
+            }
             name="name"
             variant="outlined"
             onChange={handleInputChange}
             value={inputs.name}
             fullWidth
+            error={nameError.error}
           />
         </Grid>
         <Grid item className={classes.textBoxCont}>

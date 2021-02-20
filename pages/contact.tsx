@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles'
 import {
   Box,
@@ -78,6 +78,11 @@ interface IStatus {
   info: { error: boolean; msg: string }
 }
 
+interface IError {
+  error: boolean
+  errorMsg: string
+}
+
 //TODO if user presses send before all fields are filled in, display error fields
 const ContactPage: React.FC<Props> = ({}) => {
   const classes = useStyles()
@@ -92,6 +97,22 @@ const ContactPage: React.FC<Props> = ({}) => {
     email: '',
     message: '',
   })
+
+  const [nameError, setNameError] = useState<IError>({
+    error: false,
+    errorMsg: '',
+  })
+
+  useEffect(() => {
+    const nameErrorHandler = () => {
+      nameError.error
+        ? setNameError((prev) => ({
+            ...prev,
+            errorMsg: contactStrings.nameError,
+          }))
+        : setNameError((prev) => ({ ...prev, errorMsg: '' }))
+    }
+  }, [nameError])
 
   const handleResponse = (status, msg) => {
     if (status === 200) {
@@ -127,6 +148,12 @@ const ContactPage: React.FC<Props> = ({}) => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault()
+    submitToApi()
+  }
+
+  const checkInputs = () => {}
+
+  const submitToApi = async () => {
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
     const res = await fetch('api/send', {
       method: 'POST',

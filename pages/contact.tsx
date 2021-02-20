@@ -210,6 +210,11 @@ const ContactPage: React.FC<Props> = ({}) => {
           />
         </Grid>
         <Grid item className={classes.textBoxCont}>
+          <Typography variant="subtitle2">
+            {nameError.error? nameError.errorMsg : null}
+          </Typography>
+        </Grid>
+        <Grid item className={classes.textBoxCont}>
           <CustomTextField
             id={'email'}
             label={contactStrings.email}

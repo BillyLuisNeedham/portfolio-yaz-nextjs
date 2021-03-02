@@ -19,20 +19,22 @@ const CaseStudyCard: React.FC<Props> = ({
 }) => {
   const useStyles = makeStyles({
     root: {
-      flexGrow: 1,
+      
     },
     paper: {
       padding: theme.spacing(2),
-      margin: 'auto',
+      margin: '1.5rem',
       textAlign: 'center',
       minHeight: '150px',
       backgroundColor: theme.palette.primary.main,
+      borderRadius: "20px",
     },
     column: {
       minHeight: '150px',
     },
     text: {
       color: theme.palette.background.default,
+      whiteSpace:"nowrap"
     },
     textContainer: {
       marginBottom: theme.spacing(1),
@@ -43,7 +45,7 @@ const CaseStudyCard: React.FC<Props> = ({
   const useMobileLayout: Boolean = SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH
 
   const titleComponent: ReactNode = (
-    <Typography variant="h5" className={classes.text}>
+    <Typography variant="h3" className={classes.text}>
       {title}
     </Typography>
   )
@@ -60,7 +62,7 @@ const CaseStudyCard: React.FC<Props> = ({
       >
         <Grid item>
           <Box className={classes.textContainer}>{titleComponent}</Box>
-          <Typography variant="body2" className={classes.text}>
+          <Typography variant="h5" className={classes.text}>
             {subtitle}
           </Typography>
         </Grid>

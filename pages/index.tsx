@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 'auto',
     },
     studycardsbox: {
-
       [theme.breakpoints.down('sm')]: {
         margin:"1rem",
       },
@@ -92,8 +91,8 @@ const Home = () => {
             activeRoute={NavRoutes.Work}
           />
         </Box>
-        <Box flex={2} m={2}>
-          <CaseStudyCards  />
+        <Box flex={2} m={2} className={classes.studycardsbox}>
+          <CaseStudyCards/>
         </Box>
       </Box>
     </div>

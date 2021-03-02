@@ -19,14 +19,15 @@ const CaseStudyCard: React.FC<Props> = ({
 }) => {
   const useStyles = makeStyles({
     root: {
-      flexGrow: 1,
+      
     },
     paper: {
       padding: theme.spacing(2),
-      margin: 'auto',
+      margin: '1.5rem',
       textAlign: 'center',
       minHeight: '150px',
       backgroundColor: theme.palette.primary.main,
+      borderRadius: "20px",
     },
     column: {
       minHeight: '150px',

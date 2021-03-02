@@ -33,8 +33,6 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 'auto',
     },
     studycardsbox: {
-      
-
       [theme.breakpoints.down('sm')]: {
         margin:"1rem",
       },

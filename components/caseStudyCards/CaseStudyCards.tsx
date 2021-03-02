@@ -9,10 +9,11 @@ import { NavRoutes } from '../../utils/constants/navRoutes'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      height:"100%",
+      margin:"3rem 0 2rem 0",
+      minheight:"100vh",
       display:"flex",
       flexFlow:"column nowrap",
-      justifyContent:"center",
+      justifyContent:"flex-start",
     },
   })
 )
@@ -32,8 +33,9 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
               <Image
                 src="/assets/images/bottomsUp/3_phone_mockup.png"
                 alt="3 phones displaying bottoms up card"
-                height={125}
-                width={150}
+                height={250}
+                width={297}
+                layout="intrinsic"
               />
             }
             theme={bottomsUpTheme}
@@ -42,8 +44,7 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
           />
         </Link>
       </div>
-      
-      {/* <Box p={1} /> */}
+    
       <div>
         <Link
           href="/case-studies/plain-sailing-driving-school"
@@ -54,8 +55,9 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
               <Image
                 src="/assets/images/psds/case_study.png"
                 alt="3 phones displaying bottoms up card"
-                height={155}
-                width={155}
+                height={326}
+                width={326}
+                layout="intrinsic"
               />
             }
             theme={psdsTheme}

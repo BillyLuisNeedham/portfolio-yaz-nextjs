@@ -146,9 +146,6 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
                             yazminleigh33@gmail.com 
                         </Link>
                     </p>
-                     
-                    
-
                 </div>
                 <div className={classes.socialmedia}>
                     {/* media links css- flex box row*/}

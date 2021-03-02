@@ -182,4 +182,22 @@ const mobFooter = createMuiTheme({
 
 })
 
-export { theme, bottomsUpTheme, psdsTheme, mobFooter };
+const navtext = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#402837',
+    },
+    secondary: {
+      main: '#38718F',
+    },
+    background: {
+      default: '#F8F9FD',
+    },
+    text: {
+      primary: '#707070',
+      secondary: '#EA02B3'
+    }
+  },
+})
+
+export { theme, bottomsUpTheme, psdsTheme, mobFooter, navtext };

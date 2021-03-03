@@ -69,13 +69,9 @@ interface IAboutCardProps {
   onNavigateCallback: (navRoutes: NavRoutes) => void
 }
 
-const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
+const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback }) => {
   const classes = useStyles()
   const spacer = () => <Box p={1} />
-  function navToRoute(navRoutes: NavRoutes) {
-    // TODO update with call when built out
-    console.log(`navToRoute clicked: ${navRoutes}`)
-  }
 
   return (
     <div>
@@ -172,7 +168,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
           {spacer()}
           <NavBar 
           activeRoute={activeRoute}
-          onNavigateCallback={navToRoute} />
+          onNavigateCallback={onNavigateCallback} />
         </Box>
         <Box className={classes.footer}>
           <Footer/>

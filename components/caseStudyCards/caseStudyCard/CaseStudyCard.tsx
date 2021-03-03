@@ -34,7 +34,10 @@ const CaseStudyCard: React.FC<Props> = ({
     },
     text: {
       color: theme.palette.background.default,
-      whiteSpace:"nowrap"
+      whiteSpace:"nowrap",
+      [theme.breakpoints.down('sm')]: {
+        whiteSpace:"normal"
+      },
     },
     textContainer: {
       marginBottom: theme.spacing(1),

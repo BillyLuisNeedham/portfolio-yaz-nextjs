@@ -17,7 +17,11 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight: '100vh',
       display:'flex',
       flexDirection:"column",
-      justifyContent:'space-around'
+      justifyContent:'space-around',
+      [theme.breakpoints.down('sm')]: {
+        minHeight:0,
+        margin: 0,
+      },
     },
     footer: {
       bottom: 0,
@@ -46,7 +50,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute }) => {
       
         (SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH)
         ? //mobile page
-        <Box p={4} borderRight={1} >
+        <Box className={classes.root} p={4} >
           <Box
             display="flex"
             flexDirection="column"

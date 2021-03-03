@@ -33,11 +33,19 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 'auto',
     },
     studycardsbox: {
+      background:"white",
+      margin:0,
+      padding:0,
       [theme.breakpoints.down('sm')]: {
         margin:"1rem",
+        background:"none",
       },
-      
     },
+    aboutcardbox:{
+      margin:0,
+      padding:0,
+
+    }
   })
 )
 
@@ -61,7 +69,7 @@ const Home = () => {
         activeRoute={NavRoutes.Work}
       />
       <Box>
-        <Box>
+        <Box className={classes.aboutcardbox}>
           <AboutCard
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}

@@ -12,6 +12,21 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     img:{
         borderRadius:"30px",
+    },
+    imgrow1:{
+        display: "flex",
+        flexFlow: "row nowrap",
+        justifyContent:"flex-start",
+        margin:"1rem",
+
+    },
+    imgrow2:{
+        display: "flex",
+        flexFlow: "row nowrap",
+        justifyContent:"flex-end",
+    },
+    imgbox:{
+        padding:"1rem",
 
     },
   })
@@ -27,69 +42,81 @@ const About: React.FC<Props> = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div>     
+            <div style={{margin:"3rem",}}>     
                 <Typography color="secondary" variant="h3">
                     Thanks for stopping by.
                 </Typography>
             </div>
             <div>
                 <Image
-                src="/assets/images/Group 68@2x.png"
-                width={300}
+                src="/assets/images/aboutme/Group 59@2x.png"
+                width={403}
                 height={50}
                 layout="intrinsic"
                 />
             </div>
-            <div>     
+            <div style={{margin:"3rem", fontFamily:"Gadugi"}}>     
                 <Typography color="primary" variant="body1">
                     {BODY_TEXT[0]}
                 </Typography>
             </div>
             <div>
                 <Image
-                src="/assets/images/Group 68@2x.png"
-                width={300}
+                src="/assets/images/aboutme/Group 58@2x.png"
+                width={403}
                 height={50}
                 layout="intrinsic"
                 />
             </div>
-            <div>     
+            <div style={{margin:"3rem", fontFamily:"Gadugi"}}>     
                 <Typography color="primary" variant="body1">
                     {BODY_TEXT[1]}
                 </Typography>
             </div>
             <div>
-                <div className={classes.img}>
-                    <Image
-                    src="/assets/images/Group 68@2x.png"
-                    width={300}
-                    height={50}
-                    layout="intrinsic"
-                    />
+                <div className={classes.imgrow1}>
+                    <div className={classes.imgbox}>
+                        <Image
+                        className={classes.img}
+                        src="/assets/images/aboutme/surfing.jpg"
+                        width={303}
+                        height={230}
+                        layout="intrinsic"
+                        />
+                    </div>
+                    <div className={classes.imgbox} style={{margin:"0 0 0 6rem",}}>
+                        <Image
+                        className={classes.img}
+                        src="/assets/images/aboutme/Snowboarding.jpg"
+                        width={303}
+                        height={230}
+                        layout="intrinsic"
+                        />
+                    </div>
                 </div>
-                <div className={classes.img}>
-                    <Image
-                    src="/assets/images/Group 68@2x.png"
-                    width={300}
-                    height={50}
-                    layout="intrinsic"
-                    />
-                </div>
-                <div className={classes.img}>
-                    <Image
-                    src="/assets/images/Group 68@2x.png"
-                    width={300}
-                    height={50}
-                    layout="intrinsic"
-                    />
-                </div>
-                <div className={classes.img}>
-                    <Image
-                    src="/assets/images/Group 68@2x.png"
-                    width={300}
-                    height={50}
-                    layout="intrinsic"
-                    />
+                
+                <div className={classes.imgrow2}>
+                    <div className={classes.imgbox} style={{margin:"0 6rem 0 0",}}>
+                        <Image
+                        className={classes.img}
+                        src="/assets/images/aboutme/ironman.jpg"
+                        width={303}
+                        height={230}
+                        layout="intrinsic"
+                        />
+                    </div>
+                    <div className={classes.imgbox}>
+                        <Image
+                        className={classes.img}
+                        src="/assets/images/aboutme/climbing.jpg"
+                        width={303}
+                        height={230}
+                        layout="intrinsic"
+                        />
+                    </div>
+                    
+                    
+
                 </div>
             </div>
                 

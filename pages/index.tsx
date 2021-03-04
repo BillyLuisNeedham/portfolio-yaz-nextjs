@@ -35,12 +35,14 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 'auto',
     },
     studycardsbox: {
-      background:"white",
+      borderLeft: "1px solid black",
+      background:"#F8F9FD",
       margin:0,
       padding:0,
       [theme.breakpoints.down('sm')]: {
         margin:"1rem",
         background:"none",
+        borderLeft:"none",
       },
     },
     aboutcardbox:{

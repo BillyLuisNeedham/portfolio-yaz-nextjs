@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display:'flex',
       flexDirection:"column",
       justifyContent:'space-around',
-      borderRight: "1px solid black",
+      // borderRight: "1px solid black",
       [theme.breakpoints.down('sm')]: {
         minHeight:0,
         marginTop: "3rem",

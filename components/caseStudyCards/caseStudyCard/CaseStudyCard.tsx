@@ -19,7 +19,7 @@ const CaseStudyCard: React.FC<Props> = ({
 }) => {
   const useStyles = makeStyles({
     root: {
-      
+  
     },
     paper: {
       padding: theme.spacing(2),

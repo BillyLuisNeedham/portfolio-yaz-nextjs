@@ -24,25 +24,21 @@ const NavBar: React.FC<INavBarProps> = ({ activeRoute, onNavigateCallback }) => 
         text="Work"
         active={activeRoute === NavRoutes.Work}
         onClickCallback={() => onNavigateCallback(NavRoutes.Work)}
-        textcolor="textPrimary"
       />
       <NavText
         text="Contact"
         active={activeRoute === NavRoutes.Contact}
         onClickCallback={() => onNavigateCallback(NavRoutes.Contact)}
-        textcolor="primary"
       />
       <NavText
         text="About Me"
         active={activeRoute === NavRoutes.AboutMe}
         onClickCallback={() => onNavigateCallback(NavRoutes.AboutMe)}
-        textcolor="primary"
       />
       <NavText
         text="Résumé"
         active={activeRoute === NavRoutes.Resume}
         onClickCallback={() => onNavigateCallback(NavRoutes.Resume)}
-        textcolor="primary"
       />
     </Box>
   )

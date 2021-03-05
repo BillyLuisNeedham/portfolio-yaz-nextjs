@@ -8,7 +8,10 @@ import {navtext} from '../../../../theme/index'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      marginBottom: '5px'
+      marginBottom: '5px',
+      "&:hover":{
+        cursor:"pointer" ,
+      }
     },
     pinkLine: {
       height: '1px',
@@ -20,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     activeText: {
       fontWeight: 'bold',
+      color:"#707070", 
     },
   })
 )
@@ -27,7 +31,6 @@ const useStyles = makeStyles((theme: Theme) =>
 interface INavTextProps {
   text: string
   active: boolean
-  textcolor: string
   onClickCallback: () => void
 }
 
@@ -36,7 +39,6 @@ interface INavTextProps {
 const NavText: React.FC<INavTextProps> = ({
   text,
   active,
-  textcolor,
   onClickCallback,
 }) => {
   const classes = useStyles()
@@ -46,9 +48,9 @@ const NavText: React.FC<INavTextProps> = ({
       <div className={classes.root}>
         <Typography
           variant="h6"
-          color={textcolor}
           className={active ? classes.activeText : null}
           onClick={onClickCallback}
+          color="primary"
         >
           {text}
         </Typography>

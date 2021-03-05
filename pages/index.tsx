@@ -1,11 +1,13 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import { makeStyles, createStyles, Theme, ThemeProvider } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard/AboutCard'
 import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
 import { CaseStudyCards } from '../components/caseStudyCards/CaseStudyCards'
+import About from '../pages/about';
+import Blog from '../pages/blog'
 import { bottomsUpTheme } from '../theme'
 import Image from 'next/image'
 import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       flexGrow: 1,
       minHeight: '90vh',
+      
     },
     container: {
       minHeight: '90vh',
@@ -33,12 +36,14 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 'auto',
     },
     studycardsbox: {
-      background:"white",
+      borderLeft: "1px solid black",
+      background:"#F8F9FD",
       margin:0,
       padding:0,
       [theme.breakpoints.down('sm')]: {
         margin:"1rem",
         background:"none",
+        borderLeft:"none",
       },
     },
     aboutcardbox:{
@@ -49,58 +54,84 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const Home = () => {
-
+const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 }) => {
   const classes = useStyles()
+  const [route, setRoute] = useState(routeInitial);
 
 
   function navigateToRoute(navRoutes: NavRoutes) {
-    console.log(`navigate to navRoute ${navRoutes}`)
+    // console.log(`navigate to navRoute ${navRoutes}`)
+    setRoute(navRoutes)
+    console.log(`navigate to navRoute (usestate) ${route}`)
   }
 
 
   const x = true
 
-  //TODO SORT OUT STYLING
+  
   return SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
+    // mob site
     <div className={classes.mobile}>
       <MobileNavBar
         onNavigateCallback={navigateToRoute}
         activeRoute={NavRoutes.Work}
+        
       />
       <Box>
         <Box className={classes.aboutcardbox}>
           <AboutCard
             onNavigateCallback={navigateToRoute}
-            activeRoute={NavRoutes.Work}
+            activeRoute={route}
           />
         </Box>
         <Box className={classes.studycardsbox}>
-          <Box p={2}>
-          <Image
-            src="/assets/images/Group 68@2x.png"
-            width={300}
-            height={50}
-            layout="intrinsic"
-          />
-          </Box>
+          { route === NavRoutes.Work
+            ? 
+            <div>
+              <Box p={2}>
+                <Image
+                  src="/assets/images/Group 68@2x.png"
+                  width={300}
+                  height={50}
+                  layout="intrinsic"
+                />
+              </Box>
+              <CaseStudyCards />
+            </div>
+            : route === NavRoutes.Contact
+            ?<Blog/>
+            : route === NavRoutes.AboutMe
+            ?<About/>
+            :route === NavRoutes.Resume
+            ?<Blog/>
+            :null
+            }
           
-          <CaseStudyCards />
         </Box>
       </Box>
       <MobileFooter/>
     </div>
-  ) : (
+  ) : ( 
+    // website
     <div className={classes.root}>
       <Box display="flex">
         <Box flex={1}>
           <AboutCard
             onNavigateCallback={navigateToRoute}
-            activeRoute={NavRoutes.Work}
+            activeRoute={route}
           />
         </Box>
         <Box flex={2} m={2} className={classes.studycardsbox}>
-          <CaseStudyCards/>
+          { route === NavRoutes.Work
+          ? <CaseStudyCards/>
+          : route === NavRoutes.Contact
+          ?<Blog/>
+          : route === NavRoutes.AboutMe
+          ?<About/>
+          :route === NavRoutes.Resume
+          ?<Blog/>
+          :null
+          }
         </Box>
       </Box>
     </div>

@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
       display:'flex',
       flexDirection:"column",
       justifyContent:'space-around',
-      // borderRight: "1px solid black",
       [theme.breakpoints.down('sm')]: {
         minHeight:0,
         marginTop: "3rem",
@@ -44,6 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
         position: "absolute",
         left: "-250px" ,
         top: "-175px" ,
+        maxWidth:"100vw",
       },
 
     },
@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme: Theme) =>
         position: "absolute",
         left: "0px" ,
         bottom: "-700px" ,
+        maxWidth:"100vw",
       },
 
     },
@@ -95,22 +96,30 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback 
           flexDirection="column"
           alignItems="center"
         >
-          <Box className={classes.picture}>
-            <Image 
-              className={classes.picture}
-              src="/assets/images/Profile_Image2.png"
-              alt="Profile picture of Yazmin Leigh"
-              layout="intrinsic"
-              width={248}
-              height={271}
-              quality={100}
-              />
-          </Box >
-          {spacer()}
-          <Typography color="secondary" variant="h5">{SUBTITLE}</Typography>
-          {spacer()}
-          <Typography color="primary" variant="body1">{BODY_TEXT}</Typography>
-          {spacer()}
+        <Box className={classes.picture}>
+          <Image 
+            className={classes.picture}
+            src="/assets/images/Profile_Image2.png"
+            alt="Profile picture of Yazmin Leigh"
+            layout="intrinsic"
+            width={248}
+            height={271}
+            quality={100}
+            />
+        </Box >
+          {activeRoute === 0
+          ?
+          <div>
+            {spacer()}
+            <Typography color="secondary" variant="h5">{SUBTITLE}</Typography>
+            {spacer()}
+            <Typography color="primary" variant="body1">{BODY_TEXT}</Typography>
+            {spacer()}
+          </div>
+          :null
+          }
+          
+          
         </Box>
 
           <Box

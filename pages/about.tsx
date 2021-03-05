@@ -8,6 +8,9 @@ import {BODY_TEXT } from '../public/assets/strings/about-me-data';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+        [theme.breakpoints.down('sm')]: {
+            maxWidth:"100vw",
+        },
     },
     img:{
         borderRadius:"30px",
@@ -17,16 +20,43 @@ const useStyles = makeStyles((theme: Theme) =>
         flexFlow: "row nowrap",
         justifyContent:"flex-start",
         margin:"1rem",
+        [theme.breakpoints.down('sm')]: {
+            flexFlow:"column nowrap",
+            justifyContent:"center",
+            margin:0,
+            
+        },
 
     },
     imgrow2:{
         display: "flex",
         flexFlow: "row nowrap",
         justifyContent:"flex-end",
+        [theme.breakpoints.down('sm')]: {
+            flexFlow:"column nowrap",
+            justifyContent:"center",
+            maxHeight:"12rem",
+            margin:"0 0 4rem 0",
+        },
     },
     imgbox:{
         padding:"1rem",
-
+        [theme.breakpoints.down('sm')]: {
+            padding:0,
+            alignSelf:"flex-end",
+            width:"13rem",
+            height:"auto",
+            maxHeight:"8rem",
+        },
+    },
+    right:{
+        margin:"0 0 0 6rem",
+        [theme.breakpoints.down('sm')]: {
+            margin: 0 ,
+            alignSelf:"flex-start",
+            width:"13rem",
+            height:"auto",
+        },
     },
     aboutbgimg:{
         overflow: "hidden",
@@ -38,6 +68,7 @@ const useStyles = makeStyles((theme: Theme) =>
           position: "absolute",
           left: "-250px" ,
           top: "-175px" ,
+          opacity:0,
         },
   
       },
@@ -51,8 +82,11 @@ const useStyles = makeStyles((theme: Theme) =>
           position: "absolute",
           left: "0px" ,
           bottom: "-700px" ,
+          maxWidth:"100vw",
+          opacity:0,
         },
       },
+    
   })
 )
 
@@ -119,7 +153,7 @@ const About: React.FC<Props> = () => {
                             layout="intrinsic"
                             />
                         </div>
-                        <div className={classes.imgbox} style={{margin:"0 0 0 6rem",}}>
+                        <div className={classes.right}>
                             <Image
                             className={classes.img}
                             src="/assets/images/aboutme/Snowboarding.jpg"
@@ -131,7 +165,7 @@ const About: React.FC<Props> = () => {
                     </div>
                     
                     <div className={classes.imgrow2}>
-                        <div className={classes.imgbox} style={{margin:"0 6rem 0 0",}}>
+                        <div className={classes.imgbox}>
                             <Image
                             className={classes.img}
                             src="/assets/images/aboutme/ironman.jpg"
@@ -140,7 +174,7 @@ const About: React.FC<Props> = () => {
                             layout="intrinsic"
                             />
                         </div>
-                        <div className={classes.imgbox}>
+                        <div className={classes.right}>
                             <Image
                             className={classes.img}
                             src="/assets/images/aboutme/climbing.jpg"
@@ -149,8 +183,6 @@ const About: React.FC<Props> = () => {
                             layout="intrinsic"
                             />
                         </div>
-                        
-                        
 
                     </div>
                 </div>

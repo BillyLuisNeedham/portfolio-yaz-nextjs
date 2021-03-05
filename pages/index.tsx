@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       flexGrow: 1,
       minHeight: '90vh',
+      
     },
     container: {
       minHeight: '90vh',
@@ -74,25 +75,38 @@ const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 })
       <MobileNavBar
         onNavigateCallback={navigateToRoute}
         activeRoute={NavRoutes.Work}
+        
       />
       <Box>
         <Box className={classes.aboutcardbox}>
           <AboutCard
             onNavigateCallback={navigateToRoute}
-            activeRoute={NavRoutes.Work}
+            activeRoute={route}
           />
         </Box>
         <Box className={classes.studycardsbox}>
-          <Box p={2}>
-          <Image
-            src="/assets/images/Group 68@2x.png"
-            width={300}
-            height={50}
-            layout="intrinsic"
-          />
-          </Box>
+          { route === NavRoutes.Work
+            ? 
+            <div>
+              <Box p={2}>
+                <Image
+                  src="/assets/images/Group 68@2x.png"
+                  width={300}
+                  height={50}
+                  layout="intrinsic"
+                />
+              </Box>
+              <CaseStudyCards />
+            </div>
+            : route === NavRoutes.Contact
+            ?<Blog/>
+            : route === NavRoutes.AboutMe
+            ?<About/>
+            :route === NavRoutes.Resume
+            ?<Blog/>
+            :null
+            }
           
-          <CaseStudyCards />
         </Box>
       </Box>
       <MobileFooter/>

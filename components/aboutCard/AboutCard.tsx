@@ -9,6 +9,7 @@ import {MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH} from '../../utils/constants/di
 import {SUBTITLE, BODY_TEXT } from '../../public/assets/strings/about-card-data'
 import Footer from '../Footer/Footer'
 import Link from 'next/link';
+import {EMAIL} from '../../utils/constants/socials'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -170,8 +171,8 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback 
         >
           <p style={{ fontWeight:"bold", color:"#402837",}}>
             Or E-mail me on &nbsp;
-            <Link href="mailto:yazminleigh33@gmail.com" >
-                yazminleigh33@gmail.com 
+            <Link href={`mailto:${EMAIL}`} >
+                {EMAIL}
             </Link>
           </p>
           {spacer()}

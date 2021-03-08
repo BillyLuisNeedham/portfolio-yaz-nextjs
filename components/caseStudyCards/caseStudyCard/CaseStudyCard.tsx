@@ -65,7 +65,7 @@ const CaseStudyCard: React.FC<Props> = ({
       >
         <Grid item>
           <Box className={classes.textContainer}>{titleComponent}</Box>
-          <Typography variant="h5" className={classes.text}>
+          <Typography variant="h6" className={classes.text}>
             {subtitle}
           </Typography>
         </Grid>

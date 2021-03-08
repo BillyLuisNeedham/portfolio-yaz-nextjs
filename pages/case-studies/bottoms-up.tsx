@@ -493,24 +493,41 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       [theme.breakpoints.down('sm')]: {
         flexFlow:"column wrap",
-        margin: "1em 0 3em 0",
+        margin: "1em 2em 3em 2em",
       },
     },
     visualDesign4textbox:{
       maxWidth:"45vw",
       padding:"2rem",
       margin:"0 0 4rem 0",
+      [theme.breakpoints.down('sm')]: {
+        maxWidth:"90vw",
+        padding: "1rem",
+        margin:"0",
+      },
     },
     visualDesign4textboxtext:{
       padding:"2rem",
       margin:"0 0 2rem 0",
+      [theme.breakpoints.down('sm')]: {
+        padding:"1rem",
+        margin:"0",
+      },
     },
     visualDesign4text:{
       maxWidth:"50vw",
       margin:"2rem",
+      [theme.breakpoints.down('sm')]: {
+        maxWidth:"90vw",
+        margin:"1rem",
+      },
+      
     },
     visualDesign4img:{
       margin:"4rem 0 4rem 0",
+      [theme.breakpoints.down('sm')]: {
+        margin:"2rem 1rem 2rem 1rem",
+      },
 
     },
     conclusion:{
@@ -521,18 +538,22 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       margin: "5em",
       [theme.breakpoints.down('sm')]: {
-        margin: "2.5",
+        margin: "2rem",
       },
     },
     conclusionbox:{
       maxWidth: "50vw",
       alignSelf:'center',
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: "90vw",
+      },
     },
     conclusiontext:{
       padding:"2rem 0 2rem 0",
       maxWidth:"50vw",
       [theme.breakpoints.down('sm')]: {
         padding:"1.5em 0 1.5em 0",
+        maxWidth: "90vw",
       },
     },
   }),
@@ -1004,7 +1025,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
 
         {Divider("Test and Iterate Again")}
           
-        <Box className={classes.visualDesignMain} >  
+        <Box >  
           <Box className={classes.visualDesign4}>
             <div className={classes.visualDesign4textbox}>
               <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
@@ -1015,7 +1036,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 {VISUAL_DESIGN.text4}
               </Typography>
 
-              <Typography  align="center" variant="h3" color="secondary" className={classes.visualDesign4text}>
+              <Typography  align="center" variant="h5" color="secondary" className={classes.visualDesign4text}>
                 {VISUAL_DESIGN.text5}
               </Typography>
              

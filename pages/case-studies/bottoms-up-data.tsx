@@ -18,13 +18,15 @@ export const TOOL_ICONS = ["/assets/images/bottomsUp/Image 2.png", "/assets/imag
 export const TOOL_INCON_WIDTH= { 0:{w:60, h:60}, 1:{w:84, h:40}, 2:{w:60, h:60}, 3:{w:60, h:60}}
 
 //intro paragraph
-export const INTO_PARA = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum ducimus aliquam vero similique maiores autem ea ex, corporis beatae voluptates natus aliquid molestiae, eum necessitatibus atque, a animi odit."
+export const INTO_PARA = "Whilst doing a three-month Udacity nano-degree on UX design, I chose this project because I felt that there were some issues and frustrations in the hospitality sectors due to Covid-19, that could be resolved."
 
 
 //the challenge
 
 export const THE_CHALLANGE ={
-    intro:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum ducimus aliquam vero similique maiores autem ea ex, corporis beatae voluptates natus aliquid molestiae, eum necessitatibus atque, a animi odit.",
+    intro:[
+        <p>Due to the Covid-19 pandemic, it has become increasingly difficult for customers in pubs and bars around Brighton and the UK to have the same experiences as before. Even though some of the reasons for this cannot be fixed by technology it can decrease some stresses and frustrations that customers have.<span style={{color:'#EF3D4C', fontWeight:"bold"}}> BottomsUp!</span>  provides a safe and easy way for customers to be able to order and pay for their drinks throughout the night without the hassle of waiting for someone to take their order.</p>
+    ],
     subheading:"Starting From Scratch",
     image1:{
         imagesrc:'/assets/images/bottomsUp/Research image 2.png',
@@ -41,8 +43,12 @@ export const THE_CHALLANGE ={
         width:1721,
         height: 877,
     },
-    text1:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum ducimus aliquam vero similique maiores autem ea ex, corporis beatae voluptates natus aliquid molestiae, eum necessitatibus atque, a animi odit.",
-    text2:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum ducimus aliquam vero similique maiores autem ea ex, corporis beatae voluptates natus aliquid molestiae, eum necessitatibus atque, a animi odit.", 
+    text1:[
+        <p>"I started researching on this project by wanting to understand the pains and frustrations of users. I conducted user interviews with people of different ages, to get a determine if they had the same pain points.  This allowed me to get a better overall view of the <span style={{color:'#EF3D4C', fontWeight:"bold"}}>Jobs-to-be-done</span>  I needed to include.</p>
+    ],
+    text2:[
+    <p>Using my recorded notes I mapped the information given and used that to synthesis my research into different findings.</p>
+    ], 
      
 }
 
@@ -76,8 +82,9 @@ export const IDEATION ={
     },
     text1:"Using my research finding, I came up with ten ideas for features.",
     text2:"Then with the help of an engineer, we discussed and sorted each feature idea into a value vs complexity quadrants graph. We did this so that we could discard and ideas that wouldn’t bring much value and complicated to build.",
-    text3:"Using the crazy-8 technique I sketched out eight different screens with no longer than a minute on each one." 
-     
+    text3:[
+    <p>Using the <span style={{color:'#EF3D4C', fontWeight:"bold"}}>crazy-8 technique</span> I sketched out eight different screens with no longer than a minute on each one.</p> 
+    ],
 }
 
 //wireframes
@@ -106,8 +113,11 @@ export const WIREFRAMES ={
         height: 844,
 
     },
-    text1:"Using the tool Figma I created wireframes for the pages that would best solve the research finding. Developing a low fidelity prototype to be able to use for user testing.",
-    text2:"Then with the help of an engineer, we discussed and sorted each feature idea into a value vs complexity quadrants graph. We did this so that we could discard and ideas that wouldn’t bring much value and complicated to build.",
+    text1:[
+        <p>Using the tool Figma I created wireframes for the pages that would best solve the research finding.</p>,
+        <p>Developing a low fidelity prototype to be able to use for user testing.</p>
+    ],
+    text2:"I recruited people to do moderated user testing to collect qualitative data on confusions/misunderstanding they have with my designs.",
     text3:"From the results of 2 rounds of users testing, I had some iterations to do to both the bottom and the top navigation bar.",
     text4:"BottomsUp! will be able to locate pubs and bars around the user, providing them with a list of options they can select from; using their phones GPS.",
     text5:"This informs the user how much availability the pub has left.", 

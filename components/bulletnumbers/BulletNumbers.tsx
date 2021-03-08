@@ -34,8 +34,9 @@ const BulletNumbers: React.FC<BulletNumbersProps> = ({number, color}) => {
           color:`${color}`,
           fontSize:'5vw',
           fontFamily:"Raleway",
+          fontWeight:600,
         [theme.breakpoints.down('sm')]: {
-          fontSize:'20vw',
+          fontSize:'30vw',
         },
       },
       

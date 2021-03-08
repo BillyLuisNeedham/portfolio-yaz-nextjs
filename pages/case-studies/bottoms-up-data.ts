@@ -161,7 +161,7 @@ export const VISUAL_DESIGN = {
         height:1000,
     },
     image9:{
-        imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_pre-iteration_mockup.png',
+        imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_selection_screen@2x.png',
         width:495,
         height:1000,
     },

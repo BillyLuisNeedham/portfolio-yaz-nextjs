@@ -51,6 +51,7 @@ const bottomsUpTheme = createMuiTheme({
     fontFamily: 'Raleway',
 
     h1:{ 
+      fontSize:"5rem",
       '@media (max-width:575px)': {
         fontSize: '2.5rem',
       },
@@ -60,10 +61,12 @@ const bottomsUpTheme = createMuiTheme({
         fontSize: '2rem',
       },
     },
-    body1:{ 
+    body1:{
+      fontSize:"1.5rem", 
       lineHeight:"2.5em",
       '@media (max-width:575px)': {
-        fontSize: '0.75rem',
+        fontSize: '.9rem',
+        lineHeight:"1.1rem",
       },
     },
     body2:{ 
@@ -87,10 +90,13 @@ const bottomsUpTheme = createMuiTheme({
       },
     },
     h5:{ 
+      fontSize: '3rem',
       '@media (max-width:575px)': {
-        fontSize: '0.75rem',
+        fontSize: '1rem',
+        fontWeight: "bold",
       },
     },
+    
   },
 })
 

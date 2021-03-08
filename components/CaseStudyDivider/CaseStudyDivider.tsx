@@ -8,16 +8,14 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       flexGrow: 1,
       backgroundColor: theme.palette.primary.main,
-      height: '100px',
     },
     container: {
-      height: '100px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      margin: "5em",
     },
     title: {
+      padding:"1em",
       color: theme.palette.background.default,
     },
   })
@@ -32,7 +30,7 @@ const CaseStudyDivider: React.FC<Props> = ({ title }) => {
   return (
     <div data-testid="CaseStudyDivider" className={classes.root}>
       <Box className={classes.container} >
-        <Typography variant="h4" className={classes.title}>
+        <Typography variant="h1" className={classes.title}>
           {title}
         </Typography>
       </Box>

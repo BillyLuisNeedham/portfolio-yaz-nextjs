@@ -9,11 +9,15 @@ import { NavRoutes } from '../../utils/constants/navRoutes'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      margin:"3rem 0 2rem 0",
+      margin:"3rem 4rem 2rem 4rem",
       minheight:"100vh",
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:"flex-start",
+      [theme.breakpoints.down('sm')]: {
+        margin:"2rem 0 2rem 0",
+        
+    },
     },
   })
 )

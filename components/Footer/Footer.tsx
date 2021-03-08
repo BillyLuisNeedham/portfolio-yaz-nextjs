@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import {LINKEDIN, INSTAGRAM} from '../../utils/constants/socials'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,7 +25,7 @@ const Footer =() =>{
             className={classes.button} 
             aria-label="linkedIn" 
             color="secondary" 
-            href="https://www.linkedin.com/"
+            href={`${LINKEDIN}`}
             target="_blank">
                 <Image 
                 src="/assets/SVG/iconfinder_1_Linkedin_unofficial_colored_svg_5296501.svg"
@@ -35,7 +36,7 @@ const Footer =() =>{
             <IconButton 
             className={classes.button} 
             aria-label="instagram" 
-            href="https://www.instagram.com/"
+            href={`${INSTAGRAM}`}
             target="_blank">
                 <Image 
                 src="/assets/SVG/iconfinder_1_Instagram_colored_svg_1_5296765.svg"

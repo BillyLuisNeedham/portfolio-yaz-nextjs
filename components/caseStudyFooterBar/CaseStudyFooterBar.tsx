@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
 import IconButton from '@material-ui/core/IconButton';
+import {EMAIL, LINKEDIN, INSTAGRAM} from '../../utils/constants/socials'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -142,8 +143,8 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
                 <div className={classes.email}>
                     <p style={{ fontWeight:"bold", color:"#402837",}}>
                        Or E-mail me on &nbsp;
-                       <Link href="mailto:yazminleigh33@gmail.com" >
-                            yazminleigh33@gmail.com 
+                       <Link href={`mailto:${EMAIL}`} >
+                            {EMAIL}
                         </Link>
                     </p>
                 </div>
@@ -154,7 +155,7 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
                             className={classes.button} 
                             aria-label="linkedIn" 
                             color="secondary" 
-                            href="https://www.linkedin.com/"
+                            href={LINKEDIN}
                             target="_blank">
                                 <Image 
                                 src="/assets/SVG/iconfinder_1_Linkedin_unofficial_colored_svg_5296501.svg"
@@ -168,7 +169,7 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
                         <IconButton 
                             className={classes.button} 
                             aria-label="instagram" 
-                            href="https://www.instagram.com/"
+                            href={INSTAGRAM}
                             target="_blank">
                                 <Image 
                                 src="/assets/SVG/iconfinder_1_Instagram_colored_svg_1_5296765.svg"

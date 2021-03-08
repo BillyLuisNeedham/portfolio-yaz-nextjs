@@ -1,3 +1,4 @@
+import SvgIcon from '@material-ui/core/SvgIcon';
 import React from 'react'
 import { ThemeProvider, Typography } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
@@ -132,9 +133,9 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback 
       </Box>
       :// web page
       <Box className={classes.root}>
-        <Box display="flex" justifyContent="flex-start">
+        <Box display="flex" justifyContent="flex-start">  
         <Image
-          src="/Logo_Grey.png"
+          src="/assets/images/Asset 7.svg"
           alt="Logo Yazmin Leigh"
           layout="intrinsic"
           width={37}

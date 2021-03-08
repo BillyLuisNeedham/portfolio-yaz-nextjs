@@ -485,11 +485,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     
-    
-    
-    
     visualDesign4:{
-      margin:"3em 0 3em 0",
+      
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:'center',
@@ -498,6 +495,23 @@ const useStyles = makeStyles((theme: Theme) =>
         flexFlow:"column wrap",
         margin: "1em 0 3em 0",
       },
+    },
+    visualDesign4textbox:{
+      maxWidth:"45vw",
+      padding:"2rem",
+      margin:"0 0 4rem 0",
+    },
+    visualDesign4textboxtext:{
+      padding:"2rem",
+      margin:"0 0 2rem 0",
+    },
+    visualDesign4text:{
+      maxWidth:"50vw",
+      margin:"2rem",
+    },
+    visualDesign4img:{
+      margin:"4rem 0 4rem 0",
+
     },
     conclusion:{
       
@@ -511,11 +525,12 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     conclusionbox:{
-      maxWidth: "1217px",
+      maxWidth: "50vw",
       alignSelf:'center',
     },
     conclusiontext:{
-      padding:"3em 0 3em 0",
+      padding:"2rem 0 2rem 0",
+      maxWidth:"50vw",
       [theme.breakpoints.down('sm')]: {
         padding:"1.5em 0 1.5em 0",
       },
@@ -991,45 +1006,40 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
           
         <Box className={classes.visualDesignMain} >  
           <Box className={classes.visualDesign4}>
-            <Box className={classes.visualDesigncomponents}>
-              <Typography color="textPrimary" align="left" variant="body1" >
+            <div className={classes.visualDesign4textbox}>
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
                 {VISUAL_DESIGN.text3}
               </Typography>
-            </Box>
 
-            <Box className={classes.visualDesigncomponents}>
-              <Typography color="textPrimary" align="left" variant="body1" >
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
                 {VISUAL_DESIGN.text4}
               </Typography>
-            </Box>
 
-            <Box className={classes.visualDesigncomponents} >
-              <Typography  align="center" variant="h4" color="secondary">
+              <Typography  align="center" variant="h3" color="secondary" className={classes.visualDesign4text}>
                 {VISUAL_DESIGN.text5}
               </Typography>
-            </Box>
+             
 
-            <Box >
+            </div>
+
+            <Box className={classes.visualDesign4img}>
               <Image
-                className={classes.visualDesigncomponents}
                 src={`${VISUAL_DESIGN.image6.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image6.width}`} 
                 height={`${VISUAL_DESIGN.image6.height}`}
                 layout="intrinsic" 
                 />
             </Box>
+            
+            
 
-            <Box
-              className={classes.visualDesigncomponents}
-              border={8} 
-              borderColor="secondary.main"
-              >
-              <Typography align="center" variant="body1" >
+            <Box border={8} borderColor="secondary.main">
+              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4text} >
                 {VISUAL_DESIGN.text6}
               </Typography>
             </Box>
 
-            <Box className={classes.visualDesigncomponents}>
+            <Box className={classes.visualDesign4img}>
               <Image
                 src={`${VISUAL_DESIGN.image7.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image7.width}`} 
@@ -1038,7 +1048,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 />
             </Box>
 
-            <Box className={classes.visualDesigncomponents}>
+            <Box className={classes.visualDesign4img}>
               <Image
                 src={`${VISUAL_DESIGN.image8.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image8.width}`} 
@@ -1047,17 +1057,13 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 />
             </Box>
             
-            <Box
-              className={classes.visualDesigncomponents}
-              border={8} 
-              borderColor="secondary.main"
-              >
-              <Typography align="center" variant="body1" >
+            <Box border={8} borderColor="secondary.main">
+              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4text} >
                 {VISUAL_DESIGN.text7}
               </Typography>
             </Box>
 
-            <Box>
+            <Box className={classes.visualDesign4img}>
               <Image
                 src={`${VISUAL_DESIGN.image9.imagesrc}`}   
                 width={`${VISUAL_DESIGN.image9.width}`} 
@@ -1072,18 +1078,14 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
       <Box>
         <CaseStudyDivider title={"Conclusion"}/>
         <Box className={classes.conclusion}>
-          <Box className={classes.conclusiontext}>
-            <Typography align="left" variant="body1" >
+          <Box className={classes.conclusionbox}>
+            <Typography color="textPrimary" align="left" variant="body1" className={classes.conclusiontext} >
               {CONCLUSION.text1}
             </Typography>
-          </Box>
-          <Box className={classes.conclusiontext}>
-            <Typography align="left" variant="body1" >
+            <Typography color="textPrimary" align="left" variant="body1" className={classes.conclusiontext} >
               {CONCLUSION.text2}
             </Typography>
-          </Box>
-          <Box className={classes.conclusiontext}>
-            <Typography align="left" variant="body1" >
+            <Typography color="textPrimary" align="left" variant="body1" className={classes.conclusiontext} >
               {CONCLUSION.text3}
             </Typography>
           </Box>
@@ -1094,17 +1096,17 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
         <Box className={classes.conclusion}>
           <Box className={classes.conclusionbox} >
             <Box className={classes.conclusiontext} > 
-              <Typography align="left" variant="body1" >
+              <Typography color="textPrimary" align="left" variant="body1" >
                 {CONCLUSION.text4}
               </Typography>
             </Box>
             <Box className={classes.conclusiontext}>
-              <Typography align="left" variant="body1" >
+              <Typography color="textPrimary" align="left" variant="body1" >
                 {CONCLUSION.text5}
               </Typography>
             </Box>
             <Box className={classes.conclusiontext}>
-              <Typography align="left" variant="body1" >
+              <Typography color="textPrimary" align="left" variant="body1" >
                 {CONCLUSION.text6}
               </Typography>
             </Box>

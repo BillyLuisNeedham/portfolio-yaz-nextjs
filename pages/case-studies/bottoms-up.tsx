@@ -10,7 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION, FOOTER_CARD } from './bottoms-up-data.tsx';
+import {THEME,TITLE,ROLL_INFO,TOOLS_USED,TOOL_ICONS,TOOL_INCON_WIDTH,INTO_PARA,THE_CHALLANGE, RESEARCH_FINDINGS, IDEATION, WIREFRAMES, WIREFRAME_LINK, VISUAL_DESIGN, CONCLUSION, FOOTER_CARD } from './BU-data'
 import {MIN_LANDSCAPE_MOBILE_WIDTH, SCREEN_WIDTH} from '../../utils/constants/dimens'
 import CaseStudyDivider from '../../components/CaseStudyDivider/CaseStudyDivider';
 import BulletNumbers from '../../components/bulletnumbers/BulletNumbers'
@@ -279,14 +279,14 @@ const useStyles = makeStyles((theme: Theme) =>
       margin:"10rem",
       [theme.breakpoints.down('sm')]: {
         flexFlow: 'column nowrap',
-        margin:'2.5em 0 2.5em 0',
+        margin:'0 0 2.5rem 0',
       },
       
     },
     wireframemainitems:{
       [theme.breakpoints.down('sm')]: {
         width: '90vw',
-        margin:'2.5em 0 2.5em 0',
+        margin:'2.5rem 0 2.5rem 0',
         padding:"0 .5rem 0 .5rem",
       },
     },
@@ -303,6 +303,8 @@ const useStyles = makeStyles((theme: Theme) =>
       height:"5rem",
       fontSize:"2rem",
       [theme.breakpoints.down('sm')]: {
+        alignSelf:"flex-end",
+        margin:"0 2rem 0 0",
         width:"10rem",
         height:"2.5rem",
         fontSize:"1rem",
@@ -313,7 +315,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow: 'row-reverse wrap',
       justifyContent: "center",
       [theme.breakpoints.down('sm')]: {
-        margin:'1em 0 1em 0',
+        margin:'1rem 0 1rem 0',
         justifyContent:"flex-end",
       },
     },
@@ -387,7 +389,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow:"column nowrap",
       justifyContent:'center',
       alignItems: 'center',
-      margin:'5em 0 5em 0',
+      margin:'5rem 0 0 0',
     },
     visualDesignimg1:{
       padding:"0 1rem 15rem 1rem",
@@ -408,7 +410,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
     },
     visualDesignbutton:{
-      margin: "0 0 1em 0",
+      margin: "1rem 0 1em -47rem",
       whiteSpace: "nowrap",
       borderRadius:"3.5rem",
       boxShadow:"0 3px 6px #00000029",
@@ -873,7 +875,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
               </Button>
           </Box>
 
-          {Divider("Test and Iterate Again")}
+          {Divider("Test and Iterate")}
 
           <Box className={classes.wireframesMain} >
             <Box  className={classes.wireframes1} >

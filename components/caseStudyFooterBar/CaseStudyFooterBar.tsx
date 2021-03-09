@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
         padding: "3rem 2rem 3rem 0",
         [theme.breakpoints.down('sm')]: {
             padding:"0",
+            maxWidth:"35vw",
           },
       
     },
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize:"1rem",
         [theme.breakpoints.down('sm')]: {
             flexFlow:"column nowrap",
-            fontSize:".8rem",
+            fontSize:".7rem",
             padding:"0 2vw 0 4vw",
           },
     },
@@ -55,6 +56,9 @@ const useStyles = makeStyles((theme: Theme) =>
         display:"flex",
         flexFlow: "row nowrap",
         justifyContent: "center",
+        [theme.breakpoints.down('sm')]: {
+            maxWidth:"30vw",
+        },
       
     },
     button:{
@@ -132,13 +136,13 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
             <div className={classes.left}>
                 {/* box one containing pic email and social media links. css- flex box column */}
                 <div className={classes.picbox}>
-                <Image
-                    className={classes.profilepic}
-                    src="/assets/images/Profile_Image2.png"
-                    width={194}
-                    height={194}
-                    layout="intrinsic"
-                  />
+                    <Image
+                        className={classes.profilepic}
+                        src="/assets/images/Profile_Image2.png"
+                        width={194}
+                        height={194}
+                        layout="intrinsic"
+                    />
                 </div>
                 <div className={classes.email}>
                     <p style={{ fontWeight:"bold", color:"#402837",}}>

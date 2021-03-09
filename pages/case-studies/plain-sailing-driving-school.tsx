@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display:"flex",
       flexFlow: 'column nowrap',
       justifyContent: 'space-between',
+      background:(THEME.palette.background.default),
     },
 
     dividerouter:{
@@ -203,6 +204,7 @@ const useStyles = makeStyles((theme: Theme) =>
     ideationmain:{
       display: 'flex',
       flexFlow: 'column nowrap',
+      margin:"0 0 5rem 0",
     },
     ideationtext:{
       maxWidth:'75vw',
@@ -221,9 +223,10 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     ideationpics:{
-      padding: "2vw 0 2vw 0",
-      
-
+      padding: "2vw 1rem 2vw 1rem",
+      [theme.breakpoints.down('sm')]: {
+        padding: '1rem 0 1rem 0',
+      },
       
     },
     wireframesMain:{

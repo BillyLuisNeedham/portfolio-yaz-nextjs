@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display:"flex",
       flexFlow: 'column nowrap',
       justifyContent: 'space-between',
+      background:(THEME.palette.background.default)
     },
 
     dividerouter:{

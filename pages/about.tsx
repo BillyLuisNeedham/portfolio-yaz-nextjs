@@ -8,12 +8,18 @@ import {BODY_TEXT } from '../public/assets/strings/about-me-data';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+        margin:"3rem",
         [theme.breakpoints.down('sm')]: {
             maxWidth:"100vw",
+            margin:"1rem",
         },
     },
     img:{
         borderRadius:"30px",
+    },
+    abouttitle:{
+        margin:"1rem 0 1rem 0",
+        whiteSpace:"nowrap",
     },
     imgrow1:{
         display: "flex",
@@ -62,12 +68,12 @@ const useStyles = makeStyles((theme: Theme) =>
         overflow: "hidden",
         position: "fixed",
         opacity: 0.1,
-        right: "164px" ,
-        top: "-220px" ,
+        right: "4vw" ,
+        top: "-15vw" ,
         [theme.breakpoints.down('sm')]: {
           position: "absolute",
-          left: "-250px" ,
-          top: "-175px" ,
+          left: "-17vw" ,
+          top: "-12vw" ,
           opacity:0,
         },
   
@@ -76,12 +82,12 @@ const useStyles = makeStyles((theme: Theme) =>
         overflow: "hidden",
         position: "fixed",
         opacity: 0.1,
-        right: "-250px" ,
-        bottom: "-200px" ,
+        right: "-17vw" ,
+        bottom: "-14vw" ,
         [theme.breakpoints.down('sm')]: {
           position: "absolute",
           left: "0px" ,
-          bottom: "-700px" ,
+          bottom: "-48vw" ,
           maxWidth:"100vw",
           opacity:0,
         },
@@ -111,7 +117,7 @@ const About: React.FC<Props> = () => {
                         layout="fixed"
                     />
                 </div>
-                <div style={{margin:"3rem",}}>     
+                <div className={classes.abouttitle}>     
                     <Typography color="secondary" variant="h3">
                         Thanks for stopping by.
                     </Typography>
@@ -124,7 +130,7 @@ const About: React.FC<Props> = () => {
                     layout="intrinsic"
                     />
                 </div>
-                <div style={{margin:"3rem", fontFamily:"Gadugi"}}>     
+                <div style={{fontFamily:"Gadugi"}}>     
                     <Typography color="primary" variant="body1">
                         {BODY_TEXT[0]}
                     </Typography>
@@ -137,7 +143,7 @@ const About: React.FC<Props> = () => {
                     layout="intrinsic"
                     />
                 </div>
-                <div style={{margin:"3rem", fontFamily:"Gadugi"}}>     
+                <div style={{fontFamily:"Gadugi"}}>     
                     <Typography color="primary" variant="body1">
                         {BODY_TEXT[1]}
                     </Typography>

@@ -1,18 +1,33 @@
-import React, { FunctionComponent } from "react";
-import MuiButton from "@material-ui/core/Button";
+import React, { FunctionComponent } from 'react'
+import MuiButton from '@material-ui/core/Button'
 
 interface Props {
-  color: "primary" | "secondary";
-  name: string;
+  color: 'primary' | 'secondary'
+  name: string
+  disabled: boolean
+  onClick: any
+  id: string
 }
 
-const Button: FunctionComponent<Props> = ({ color, name }) => {
+const Button: FunctionComponent<Props> = ({
+  color,
+  name,
+  disabled,
+  onClick,
+  id
+}) => {
   return (
     <>
-      <MuiButton color={color} variant="contained">
+      <MuiButton
+        id={id}
+        color={color}
+        variant="contained"
+        disabled={disabled}
+        onClick={onClick}
+      >
         {name}
       </MuiButton>
     </>
-  );
-};
-export { Button };
+  )
+}
+export { Button }

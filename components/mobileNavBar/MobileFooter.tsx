@@ -1,6 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import { Button, Toolbar } from '@material-ui/core';
+import { Button, Link, Toolbar } from '@material-ui/core';
 import { makeStyles, createStyles, Theme ,ThemeProvider} from '@material-ui/core/styles';
 import { mobFooter } from '../../theme/index'
 
@@ -31,9 +31,11 @@ const MobileFooter: React.FC<Props> = ({}) => {
             
             <AppBar position="relative" color="primary" className={classes.appBar} >
                 <Toolbar>
+                    <Link href='/contact' style={{textDecoration: 'none' }} >
                     <Button color="secondary">
                         Contact
                     </Button>
+                    </Link>
                     <Button color="secondary">
                         Résumé
                     </Button>

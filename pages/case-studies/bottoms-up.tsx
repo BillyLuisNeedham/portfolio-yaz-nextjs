@@ -30,7 +30,9 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-between',
       background:(THEME.palette.background.default)
     },
-
+    BUimage:{
+      maxHeight:'80vh',
+    },
     dividerouter:{
       display: "flex", 
       alignItems: "center"
@@ -294,21 +296,23 @@ const useStyles = makeStyles((theme: Theme) =>
     wireframetext:{
       maxWidth:"90%",
       padding:"5rem",
+      
       [theme.breakpoints.down('sm')]: {
         width: '90vw',
         padding:'0',
       },
     },
     wireframebutton:{
-      width:"19rem",
-      height:"5rem",
-      fontSize:"2rem",
+      width:"15vw",
+      height:"4vw",
+      fontSize:"2vw",
+      whiteSpace: "nowrap",
       [theme.breakpoints.down('sm')]: {
         alignSelf:"flex-end",
         margin:"0 2rem 0 0",
-        width:"10rem",
-        height:"2.5rem",
-        fontSize:"1rem",
+        width:"31vw",
+        height:"8vw",
+        fontSize:"3vw",
       },
     },
     wireframes1:{
@@ -416,9 +420,9 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius:"3.5rem",
       boxShadow:"0 3px 6px #00000029",
       textTransform: "capitalize",
-      width:"19rem",
-      height:"5rem",
-      fontSize:"2rem",
+      width:"15vw",
+      height:"4vw",
+      fontSize:"1.5vw",
       [theme.breakpoints.down('sm')]: {
         width:"10rem",
         height:"2.5rem",

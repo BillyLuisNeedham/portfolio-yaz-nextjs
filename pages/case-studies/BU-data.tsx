@@ -30,18 +30,18 @@ export const THE_CHALLANGE ={
     subheading:"Starting From Scratch",
     image1:{
         imagesrc:'/assets/images/bottomsUp/Research image 2.png',
-        width:774,
-        height: 580,
+        width:581,
+        height: 435,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Reasearch image.png',
-        width:798,
-        height: 599,
+        width:599,
+        height: 449,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/Image 12.png',
-        width:1721,
-        height: 877,
+        width:1291,
+        height: 658,
     },
     text1:[
         <p>"I started researching on this project by wanting to understand the pains and frustrations of users. I conducted user interviews with people of different ages, to get a determine if they had the same pain points.  This allowed me to get a better overall view of the <span style={{color:'#EF3D4C', fontWeight:"bold"}}>Jobs-to-be-done</span>  I needed to include.</p>
@@ -67,18 +67,18 @@ export const RESEARCH_FINDINGS = {
 export const IDEATION ={
     image1:{
         imagesrc:'/assets/images/bottomsUp/Ideation/Image 9.png',
-        width:1050,
-        height: 504,
+        width:788,
+        height: 378,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Ideation/Image 10.png',
-        width:1226,
-        height: 663,
+        width:920,
+        height: 497,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/Ideation/Image 11@2x.png',
-        width:1206,
-        height: 710,
+        width:905,
+        height: 533,
     },
     text1:"Using my research finding, I came up with ten ideas for features.",
     text2:"Then with the help of an engineer, we discussed and sorted each feature idea into a value vs complexity quadrants graph. We did this so that we could discard and ideas that wouldn’t bring much value and complicated to build.",
@@ -94,23 +94,23 @@ export const WIREFRAME_LINK ="https://google.co.uk"
 export const WIREFRAMES ={
     image1:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 59.png',
-        width:1214,
-        height: 825,
+        width:911,
+        height: 619,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group -1.png',
-        width:414,
-        height: 199,
+        width:311,
+        height: 149,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 15.png',
-        width:408,
-        height: 201,
+        width:306,
+        height: 151,
     },
     image4:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 58.png',
-        width:1219,
-        height: 844,
+        width:914,
+        height: 633,
 
     },
     text1:[
@@ -131,49 +131,49 @@ export const WIREFRAMES ={
 export const VISUAL_DESIGN = {
     image1:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_home_mockup.png',
-        width:347,
-        height: 700,
+        width:260,
+        height: 525,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/location_mockup.png',
-        width:347,
-        height: 700,
+        width:260,
+        height: 525,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/Group 61.png',
-        width:616,
-        height: 664,
+        width:462,
+        height: 465,
     },
     image4:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/pattern_library@2x.png',
-        width:616,
-        height:945,
+        width:462,
+        height:709,
 
     },
     image5:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/Group 63.png',
-        width:600,
-        height:230,
+        width:450,
+        height:173,
     },
     image6:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/location_pre-iteration_mockup.png',
-        width:495,
-        height:1000,
+        width:371,
+        height:750,
     },
     image7:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/location_mockup.png',
-        width:495,
-        height:1000,
+        width:371,
+        height:750,
     },
     image8:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_pre-iteration_mockup.png',
-        width:495,
-        height:1000,
+        width:371,
+        height:750,
     },
     image9:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_selection_screen@2x.png',
-        width:495,
-        height:1000,
+        width:371,
+        height:750,
     },
     text1:"To maintain consistency throughout, I created a style guide and pattern library, consisting of reusable components and their states.",
     text2:"Designing buttons, cards and lists that can be rearranged and combined with other components; whilst keeping the same consistency.",

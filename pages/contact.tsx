@@ -174,18 +174,16 @@ const ContactPage: React.FC<Props> = ({}) => {
 
   const submitToApi = async () => {
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
-    const res = await fetch('api/send', {
+    const res = await fetch('api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(inputs),
+      body: JSON.stringify({ name: inputs.name }),
     })
     const text = await res.text()
     handleResponse(res.status, text)
   }
-
-  //TODO add email api stuff. see: https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now
 
   return (
     <div className={classes.root} id="contact-root">
@@ -200,6 +198,7 @@ const ContactPage: React.FC<Props> = ({}) => {
             id={'name'}
             label={contactStrings.nameString}
             name="name"
+            type="text"
             variant="outlined"
             onChange={handleInputChange}
             value={inputs.name}
@@ -217,6 +216,7 @@ const ContactPage: React.FC<Props> = ({}) => {
             id={'email'}
             label={contactStrings.email}
             name="email"
+            type="email"
             variant="outlined"
             onChange={handleInputChange}
             value={inputs.email}
@@ -228,6 +228,7 @@ const ContactPage: React.FC<Props> = ({}) => {
             id={'message'}
             label={contactStrings.message}
             name="message"
+            type="text"
             variant="outlined"
             onChange={handleInputChange}
             value={inputs.message}

@@ -15,3 +15,8 @@ npm run test
 ```
 npm run dev
 ```
+
+
+
+## Next/Image
+currently all main images imported with next/image are dropped in px from wire frame designs by 75%.

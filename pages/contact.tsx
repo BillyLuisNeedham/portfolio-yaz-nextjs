@@ -179,7 +179,11 @@ const ContactPage: React.FC<Props> = ({}) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name: inputs.name }),
+      body: JSON.stringify({
+        name: inputs.name,
+        email: inputs.email,
+        message: inputs.message,
+      }),
     })
     const text = await res.text()
     handleResponse(res.status, text)
@@ -237,8 +241,6 @@ const ContactPage: React.FC<Props> = ({}) => {
             rows={8}
           />
         </Grid>
-        {/* </Grid>
-      <Grid container className={classes.rightAlignedCont}> */}
         <Grid item className={classes.rightAlignedItem}>
           <Button
             id={'submit-button'}

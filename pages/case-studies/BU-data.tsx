@@ -67,18 +67,18 @@ export const RESEARCH_FINDINGS = {
 export const IDEATION ={
     image1:{
         imagesrc:'/assets/images/bottomsUp/Ideation/Image 9.png',
-        width:788,
-        height: 378,
+        width:1050,
+        height: 504,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Ideation/Image 10.png',
-        width:920,
-        height: 497,
+        width:1226,
+        height: 663,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/Ideation/Image 11@2x.png',
-        width:905,
-        height: 533,
+        width:1206,
+        height: 710,
     },
     text1:"Using my research finding, I came up with ten ideas for features.",
     text2:"Then with the help of an engineer, we discussed and sorted each feature idea into a value vs complexity quadrants graph. We did this so that we could discard and ideas that wouldn’t bring much value and complicated to build.",
@@ -94,8 +94,8 @@ export const WIREFRAME_LINK ="https://google.co.uk"
 export const WIREFRAMES ={
     image1:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 59.png',
-        width:911,
-        height: 619,
+        width:1212,
+        height: 824,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group -1.png',
@@ -131,55 +131,56 @@ export const WIREFRAMES ={
 export const VISUAL_DESIGN = {
     image1:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_home_mockup.png',
-        width:260,
-        height: 525,
+        width:347,
+        height: 700,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/location_mockup.png',
-        width:260,
-        height: 525,
+        width:347,
+        height: 700,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/Group 61.png',
-        width:462,
-        height: 465,
+        width:616,
+        height: 664,
     },
     image4:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/pattern_library@2x.png',
-        width:462,
-        height:709,
+        width:553,
+        height:945,
 
     },
     image5:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/Group 63.png',
-        width:450,
-        height:173,
+        width:600,
+        height:230,
     },
     image6:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/location_pre-iteration_mockup.png',
-        width:371,
-        height:750,
+        width:495,
+        height:1000,
     },
     image7:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/location_mockup.png',
-        width:371,
-        height:750,
+        width:495,
+        height:1000,
     },
     image8:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_pre-iteration_mockup.png',
-        width:371,
-        height:750,
+        width:495,
+        height:1000,
     },
     image9:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/drinks_selection_screen@2x.png',
-        width:371,
-        height:750,
+        width:495,
+        height:1000,
     },
     text1:"To maintain consistency throughout, I created a style guide and pattern library, consisting of reusable components and their states.",
     text2:"Designing buttons, cards and lists that can be rearranged and combined with other components; whilst keeping the same consistency.",
     text3:"Using lookback I conducted unmoderated user testing to get quantitative and qualitative data to identify and issues not indicated in the first round of user testing.",
     text4:"On conclusion of the results data, I decided that the Key Performance Indicator (KPI) I wanted to improve on was:",
-    text5:[<p>To decrease the amount of time taken to complete an order.</p>],
+    text5:[<p>To decrease the amount of time taken to complete <br/> an order.</p>],
+    text5b:[<p>To decrease the amount of time taken to complete an order.</p>],
     text6:"34% of confusion was users not know where to click on to select the pub. So I changed the way the information was presented by using a card system with other pubs nearby to make it clearer to the user that it is clickable. Plus it will give them the option to look at places nearby if there is no availability left.",
     text7:"67% of the users found it hard to find the filter button. Because of the wide variety of user ages I have decided to iterate the icon filter button to words. I have also added a search button so that it will be easier for the users to find the drink they want without stress and confusion.", 
 }

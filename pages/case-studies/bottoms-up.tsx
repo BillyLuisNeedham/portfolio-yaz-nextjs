@@ -161,6 +161,9 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: '4vw 0 0 0',
       lineHeight:"50px",
       border:"8px solid #EF3D4C",
+      [theme.breakpoints.down('lg')]: {
+        border:"5px solid #EF3D4C",
+      },
       [theme.breakpoints.down('sm')]: {
         border:"3px solid #EF3D4C",
         maxWidth: 'none',
@@ -307,6 +310,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height:"4vw",
       fontSize:"2vw",
       whiteSpace: "nowrap",
+      fontWeight:"bold",
       [theme.breakpoints.down('sm')]: {
         alignSelf:"flex-end",
         margin:"0 2rem 0 0",
@@ -423,6 +427,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width:"15vw",
       height:"4vw",
       fontSize:"1.5vw",
+      fontWeight:"bold",
       [theme.breakpoints.down('sm')]: {
         width:"10rem",
         height:"2.5rem",
@@ -491,9 +496,14 @@ const useStyles = makeStyles((theme: Theme) =>
         padding:"0 1rem 0 1rem",
       },
     },
+
+    divider:{
+      margin:"1vw 0 8vw 0",
+    },
     
     visualDesign4:{
-      
+      alignSelf:"center",
+      maxWidth:"50vw",
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:'center',
@@ -503,27 +513,35 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: "1em 2em 3em 2em",
       },
     },
-    visualDesign4textbox:{
-      maxWidth:"45vw",
-      padding:"2rem",
-      margin:"0 0 4rem 0",
-      [theme.breakpoints.down('sm')]: {
-        maxWidth:"90vw",
-        padding: "1rem",
-        margin:"0",
-      },
-    },
-    visualDesign4textboxtext:{
-      padding:"2rem",
-      margin:"0 0 2rem 0",
+    visualDesign4text:{
+      padding:"4vw",
       [theme.breakpoints.down('sm')]: {
         padding:"1rem",
         margin:"0",
       },
     },
-    visualDesign4text:{
-      maxWidth:"50vw",
-      margin:"2rem",
+    visualDesign4textred:{
+      margin:"0 0 8vw 0",
+      [theme.breakpoints.down('sm')]: {
+        padding:"1rem",
+        margin:"0",
+      },
+    },
+    visualDesign4redbox:{
+      margin:"7.5vw 0 8vw 0",
+      width:"60vw",
+      border:"8px solid #EF3D4C",
+      [theme.breakpoints.down('lg')]: {
+        border:"5px solid #EF3D4C",
+      },
+      [theme.breakpoints.down('sm')]: {
+        border:"3px solid #EF3D4C",
+      },
+
+    },
+    visualDesign4textbox:{
+      margin:"4vw",
+      
       [theme.breakpoints.down('sm')]: {
         maxWidth:"90vw",
         margin:"1rem",
@@ -532,6 +550,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     visualDesign4img:{
       margin:"4rem 0 4rem 0",
+      [theme.breakpoints.down('lg')]: {
+        margin:" 1rem 1rem 1rem 1rem"
+      },
       [theme.breakpoints.down('sm')]: {
         margin:"2rem 1rem 2rem 1rem",
       },
@@ -1029,26 +1050,24 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             
           </Box>
         </Box>
-
-        {Divider("Test and Iterate Again")}
+        <Box className={classes.divider}>
+        {Divider("Test and Iterate Again")}        
+        </Box>
+        
           
-        <Box >  
+        <Box display="flex" justifyContent="center" >  
           <Box className={classes.visualDesign4}>
-            <div className={classes.visualDesign4textbox}>
-              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4text} >
                 {VISUAL_DESIGN.text3}
               </Typography>
 
-              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4text} >
                 {VISUAL_DESIGN.text4}
               </Typography>
 
-              <Typography  align="center" variant="h5" color="secondary" className={classes.visualDesign4text}>
+              <Typography  align="center" variant="h5" color="secondary" className={classes.visualDesign4textred}>
                 {VISUAL_DESIGN.text5}
               </Typography>
-             
-
-            </div>
 
             <Box className={classes.visualDesign4img}>
               <Image
@@ -1061,8 +1080,8 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             
             
 
-            <Box border={8} borderColor="secondary.main">
-              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4text} >
+            <Box className={classes.visualDesign4redbox}>
+              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4textbox} >
                 {VISUAL_DESIGN.text6}
               </Typography>
             </Box>
@@ -1085,8 +1104,8 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 />
             </Box>
             
-            <Box border={8} borderColor="secondary.main">
-              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4text} >
+            <Box className={classes.visualDesign4redbox}>
+              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4textbox} >
                 {VISUAL_DESIGN.text7}
               </Typography>
             </Box>

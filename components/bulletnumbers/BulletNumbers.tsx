@@ -24,20 +24,28 @@ const BulletNumbers: React.FC<BulletNumbersProps> = ({number, color}) => {
           width:'10vw',
           height:'10vw',
           margin:'1vw',
-        [theme.breakpoints.down('sm')]: {
-          width:'40vw',
-          height:'40vw',
-          fontWeight:"bolder",
-        },
+          [theme.breakpoints.down('lg')]: {
+            width:'12vw',
+            height:'12vw',
+          },
+          [theme.breakpoints.down('sm')]: {
+            width:'40vw',
+            height:'40vw',
+            fontWeight:"bolder",
+          },
       },
       number:{
           color:`${color}`,
           fontSize:'5vw',
           fontFamily:"Raleway",
           fontWeight:600,
-        [theme.breakpoints.down('sm')]: {
-          fontSize:'30vw',
-        },
+          [theme.breakpoints.down('lg')]: {
+            fontSize:'8vw',
+          },
+          [theme.breakpoints.down('sm')]: {
+            fontSize:'30vw',
+          },
+        
       },
       
     })

@@ -179,7 +179,7 @@ export const VISUAL_DESIGN = {
     text2:"Designing buttons, cards and lists that can be rearranged and combined with other components; whilst keeping the same consistency.",
     text3:"Using lookback I conducted unmoderated user testing to get quantitative and qualitative data to identify and issues not indicated in the first round of user testing.",
     text4:"On conclusion of the results data, I decided that the Key Performance Indicator (KPI) I wanted to improve on was:",
-    text5:"To decrease the amount of time taken to complete an order.",
+    text5:[<p>To decrease the amount of time taken to complete an order.</p>],
     text6:"34% of confusion was users not know where to click on to select the pub. So I changed the way the information was presented by using a card system with other pubs nearby to make it clearer to the user that it is clickable. Plus it will give them the option to look at places nearby if there is no availability left.",
     text7:"67% of the users found it hard to find the filter button. Because of the wide variety of user ages I have decided to iterate the icon filter button to words. I have also added a search button so that it will be easier for the users to find the drink they want without stress and confusion.", 
 }

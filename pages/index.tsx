@@ -69,9 +69,9 @@ interface RouteProps{
   routeInitial: number
 }
 
-const Home: React.FC<RouteProps> = ({ routeInitial}) => {
+const Home = ({ routeInitial = 0}:RouteProps) => {
   const classes = useStyles()
-  const [route, setRoute] = useState(routeInitial= 0);
+  const [route, setRoute] = useState(routeInitial);
 
 
   function navigateToRoute(navRoutes: NavRoutes) {

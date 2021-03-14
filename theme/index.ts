@@ -104,6 +104,16 @@ const bottomsUpTheme = createMuiTheme({
     }
   },
 
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 1024,
+      xl: 1920,
+    },
+  },
+
   typography: {
     fontFamily: 'Raleway',
 
@@ -205,6 +215,16 @@ const psdsTheme = createMuiTheme({
 
   },
 
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 1024,
+      xl: 1920,
+    },
+  },
+
   typography: {
     fontFamily: 'Roboto',
     h1: {
@@ -304,6 +324,16 @@ const mobFooter = createMuiTheme({
     }
   },
 
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 1024,
+      xl: 1920,
+    },
+  },
+
 })
 
 const navtext = createMuiTheme({
@@ -321,6 +351,16 @@ const navtext = createMuiTheme({
       primary: '#707070',
       secondary: '#EA02B3'
     }
+  },
+  
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 1024,
+      xl: 1920,
+    },
   },
   typography:{
     h6: {

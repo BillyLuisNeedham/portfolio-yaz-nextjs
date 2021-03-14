@@ -166,12 +166,12 @@ const bottomsUpTheme = createMuiTheme({
       },
     },
     body1:{
-      fontSize:"1.5rem", 
-      lineHeight:"2.5em",
-      '@media (max-width:1024px)': {
-        fontSize: '1.2rem',
-        lineHeight:"1.75",
-      },
+      fontSize:"1.2vw", 
+      lineHeight:"2.6vw",
+      // '@media (max-width:1024px)': {
+      //   fontSize: '1.2rem',
+      //   lineHeight:"1.75",
+      // },
       '@media (max-width:576px)': {
         fontSize: '.9rem',
         lineHeight:"1.1rem",
@@ -352,7 +352,7 @@ const navtext = createMuiTheme({
       secondary: '#EA02B3'
     }
   },
-  
+
   breakpoints: {
     values: {
       xs: 0,

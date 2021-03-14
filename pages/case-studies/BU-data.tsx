@@ -7,7 +7,7 @@ export const THEME = bottomsUpTheme
 export const TITLE = {title:"/assets/images/bottomsUp/title/header_web@2x.png"}
 
 // Roll info
-export const ROLL_INFO = ["design research", "Prototype", "ui/ux design", "user testing"]
+export const ROLL_INFO = ["Design research", "Prototype", "UI/UX design", "User testing"]
 
 
 // tools used

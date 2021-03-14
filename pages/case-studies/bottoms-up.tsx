@@ -30,6 +30,15 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-between',
       background:(THEME.palette.background.default)
     },
+    logoImg:{
+      maxWidth:"3vw",
+    },
+    logoText:{
+      color:"#ffffff", 
+      textAlign:"left", 
+      fontStyle:"italic",
+      lineHeight:".8"
+    },
     BUimage:{
       maxHeight:'80vh',
     },
@@ -82,8 +91,9 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow:1,
     },
     listSubHeader:{
-      fontSize:"2.75rem", 
+      fontSize:"2.1vw", 
       fontStyle:"italic",
+      fontWeight:"bold",
       [theme.breakpoints.down('sm')]: {
         fontSize:"1.5rem",
       },
@@ -95,8 +105,13 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down('sm')]: {
         paddingLeft: '15vw',
         paddingRight: '1vw',
+      },       
+    },
+    ListItemText:{
+      fontSize:"1.2vw",
+      [theme.breakpoints.down('sm')]: {
+        fontSize:"4vw",
       },
-              
     },
     tooliconlist:{
       display: 'flex',
@@ -115,6 +130,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     challangeintro:{
+      maxWidth:"68vw",
       margin: '2vw 1.5rem 0 1.5rem ',
     },
     challangemain:{
@@ -138,6 +154,15 @@ const useStyles = makeStyles((theme: Theme) =>
         padding: '0',
         height:"auto",
         },
+    },
+    challangelargeimg:{
+      width:"89vw",
+      margin:"0 5vw 9vw 5vw",
+      [theme.breakpoints.down('sm')]: {
+        width:"100vw",
+        margin:"5vw 0 5vw 0",
+      },
+     
     },
     challangeimage:{
       [theme.breakpoints.down('sm')]: {
@@ -631,25 +656,30 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}/>
           ):(
-            <AppBar elevation={0} position="absolute" color="transparent">
-              <Toolbar>
-                <IconButton edge="start" color="inherit" href="/">
-                  <Image
-                  src="/Logo_White.png"
-                  width={37}
-                  height={48}
-                  />
-                </IconButton>
-                <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
-                  <Typography variant="body1">
-                    Yazmin Leigh Portfolio
-                  </Typography>
-                  <Typography variant="caption">
-                    UI / UX Designer
-                  </Typography>
-                </Box>
-              </Toolbar>
-            </AppBar>
+            
+              <AppBar elevation={0} position="absolute" color="transparent" >
+                <Toolbar>
+                  <IconButton edge="start" color="inherit" href="/">
+                    <Box className={classes.logoImg}>
+                      <Image
+                      src="/Logo_White.png"
+                      width={37}
+                      height={48}
+                      />
+                    </Box>
+                    
+                  </IconButton>
+                  <Box flexDirection="column" className={classes.logoText} >
+                    <Typography variant="body2" className={classes.logoText}>
+                      Yazmin Leigh Portfolio
+                    </Typography>
+                    <Typography variant="caption" className={classes.logoText} >
+                      UI / UX Designer
+                    </Typography>
+                  </Box>
+                </Toolbar>
+              </AppBar>
+            
           )}
        
           <Image
@@ -687,7 +717,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                         height="44"
                       />
                     </ListItemIcon>
-                    <ListItemText primary={info} />
+                    <Typography color="textPrimary" className={classes.ListItemText}>{info}</Typography>
                   </ListItem>))}
                 </div>
             </List>
@@ -711,7 +741,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                           height="44"
                         />
                     </ListItemIcon>
-                      <ListItemText primary={info} />
+                      <Typography color="textPrimary" className={classes.ListItemText}>{info}</Typography>
                   </ListItem>))}
               </div>
               
@@ -780,12 +810,15 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 
               
             </Box>
-            <Image
-              src={`${THE_CHALLANGE.image3.imagesrc}`} 
-              layout="intrinsic"    
-              width={`${THE_CHALLANGE.image3.width}`} 
-              height={`${THE_CHALLANGE.image3.height}`} 
-              />
+            <Box className={classes.challangelargeimg}>
+              <Image
+                  src={`${THE_CHALLANGE.image3.imagesrc}`} 
+                  layout="responsive"    
+                  width={`${THE_CHALLANGE.image3.width}`} 
+                  height={`${THE_CHALLANGE.image3.height}`} 
+                />
+            </Box>
+
           </Box>
 
           <Box className={classes.challange}>

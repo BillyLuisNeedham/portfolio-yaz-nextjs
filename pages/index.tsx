@@ -1,5 +1,5 @@
 
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent, useEffect, useState, ReactNode } from 'react'
 import { makeStyles, createStyles, Theme, ThemeProvider } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import AboutCard from '../components/aboutCard/AboutCard'
@@ -7,7 +7,8 @@ import { NavRoutes } from '../utils/constants/navRoutes'
 import Box from '@material-ui/core/Box'
 import { CaseStudyCards } from '../components/caseStudyCards/CaseStudyCards'
 import About from '../pages/about';
-import Blog from '../pages/blog'
+import Blog from '../pages/blog';
+import Contact from '../pages/contact';
 import { bottomsUpTheme } from '../theme'
 import Image from 'next/image'
 import MobileNavBar from '../components/mobileNavBar/MobileNavBar'
@@ -19,11 +20,16 @@ import { Button, Toolbar } from '@material-ui/core';
 import {mobFooter} from "../theme/index"
 
 
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
       minHeight: '90vh',
+      [theme.breakpoints.up('lg')]: {
+        maxWidth:"1440px",
+      },
+      
       
     },
     container: {
@@ -35,12 +41,20 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-around',
       height: 'auto',
     },
+    workBar:{
+      minWidth: '80vw'
+    },
     studycardsbox: {
       borderLeft: "1px solid black",
       background:"#F8F9FD",
-      margin:0,
-      padding:0,
+        margin:0,
+        padding:0,
+      [theme.breakpoints.down('lg')]: {
+        maxWidth:"64vw",
+        borderLeft: "1px solid black",
+      },
       [theme.breakpoints.down('sm')]: {
+        minWidth:"90vw",
         margin:"1rem",
         background:"none",
         borderLeft:"none",
@@ -49,12 +63,14 @@ const useStyles = makeStyles((theme: Theme) =>
     aboutcardbox:{
       margin:0,
       padding:0,
-
     }
   })
 )
+interface RouteProps{
+  routeInitial: number
+}
 
-const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 }) => {
+const Home = ({ routeInitial = 0}:RouteProps) => {
   const classes = useStyles()
   const [route, setRoute] = useState(routeInitial);
 
@@ -65,17 +81,11 @@ const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 })
     console.log(`navigate to navRoute (usestate) ${route}`)
   }
 
-
-  const x = true
-
-  
-  return SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
-    // mob site
+  const mobileSiteMain: ReactNode =(
     <div className={classes.mobile}>
       <MobileNavBar
         onNavigateCallback={navigateToRoute}
-        activeRoute={NavRoutes.Work}
-        
+        activeRoute={NavRoutes.Work} 
       />
       <Box>
         <Box className={classes.aboutcardbox}>
@@ -88,18 +98,16 @@ const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 })
           { route === NavRoutes.Work
             ? 
             <div>
-              <Box p={2}>
+              <Box className={classes.workBar}>
                 <Image
                   src="/assets/images/Group 68@2x.png"
-                  width={300}
-                  height={50}
+                  width={600}
+                  height={100}
                   layout="intrinsic"
                 />
               </Box>
               <CaseStudyCards />
             </div>
-            : route === NavRoutes.Contact
-            ?<Blog/>
             : route === NavRoutes.AboutMe
             ?<About/>
             :route === NavRoutes.Resume
@@ -111,9 +119,23 @@ const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 })
       </Box>
       <MobileFooter/>
     </div>
-  ) : ( 
-    // website
-    <div className={classes.root}>
+  )
+
+
+  const mobileSite :ReactNode =(
+    <div>
+      {route === NavRoutes.Contact
+      ?<Contact/>
+      : route === NavRoutes.Resume
+      ?<Blog/>
+      :mobileSiteMain   
+      }
+    </div>
+    
+  )
+  
+  const webSiteMain: ReactNode = (
+    <Box className={classes.root}>
       <Box display="flex">
         <Box flex={1}>
           <AboutCard
@@ -125,16 +147,33 @@ const Home:FunctionComponent<{ routeInitial?: number }> = ({ routeInitial = 0 })
           { route === NavRoutes.Work
           ? <CaseStudyCards/>
           : route === NavRoutes.Contact
-          ?<Blog/>
+          ?<Contact/>
           : route === NavRoutes.AboutMe
           ?<About/>
-          :route === NavRoutes.Resume
-          ?<Blog/>
           :null
           }
         </Box>
       </Box>
+    </Box>
+  )
+
+  const webSite :ReactNode =(
+    <div>
+      {route === NavRoutes.Resume
+      ?<Blog/>
+      :webSiteMain   
+      }
     </div>
+  )
+
+  return SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH ? (
+    // mob site
+    mobileSite
+  ) : ( 
+    // website
+    <Box display="flex" justifyContent="center">
+      {webSite}
+    </Box>
   )
 }
 

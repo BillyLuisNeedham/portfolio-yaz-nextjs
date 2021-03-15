@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
 import IconButton from '@material-ui/core/IconButton';
 import {EMAIL, LINKEDIN, INSTAGRAM} from '../../utils/constants/socials'
+import { Box } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -45,10 +46,8 @@ const useStyles = makeStyles((theme: Theme) =>
         flexFlow: "row nowrap",
         justifyContent: "center",
         fontFamily:"Gadugi",
-        fontSize:"1rem",
         [theme.breakpoints.down('sm')]: {
             flexFlow:"column nowrap",
-            fontSize:".7rem",
             padding:"0 2vw 0 4vw",
           },
     },
@@ -79,10 +78,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
         padding: "1.5rem 1.5rem 1.5rem 0",
-        fontSize:"1.5rem",
         [theme.breakpoints.down('sm')]: {
-            padding:"0",
-            fontSize:"1rem",
+            padding:".5rem 0 .5rem 0",
           },
       
     },
@@ -103,6 +100,12 @@ const useStyles = makeStyles((theme: Theme) =>
             padding:"0",
           },
       
+    },
+    casestudyimage:{
+        [theme.breakpoints.down('sm')]: {
+            maxWidth:"12vw",
+          },
+
     },
     casestudytitle: {
         display:"flex",
@@ -145,12 +148,12 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
                     />
                 </div>
                 <div className={classes.email}>
-                    <p style={{ fontWeight:"bold", color:"#402837",}}>
+                    <Typography variant="h6" style={{ fontWeight:"bold", color:"#402837",}}>
                        Or E-mail me on &nbsp;
                        <Link href={`mailto:${EMAIL}`} >
                             {EMAIL}
                         </Link>
-                    </p>
+                    </Typography>
                 </div>
                 <div className={classes.socialmedia}>
                     {/* media links css- flex box row*/}
@@ -188,23 +191,25 @@ const CaseStudyFooterBar: React.FC<Props>  = ({cardImage, cardImageHeight, cardI
             <div className={classes.right}>
                 
                 <div className={classes.title}>
-                    <p>
+                    <Typography variant="h4">
                         More of my work
-                    </p>
+                    </Typography>
                 </div>
                 <div className={classes.casestudycard}>
                     <div className={classes.casestudypic}>
                         <Link href={pageLink}>
-                            <Image 
-                                src={cardImage}
-                                width={`${cardImageWidth}`}
-                                height={`${cardImageHeight}`}
-                                layout="intrinsic"
-                            />
+                            <Box className={classes.casestudyimage}>
+                                <Image 
+                                    src={cardImage}
+                                    width={`${cardImageWidth}`}
+                                    height={`${cardImageHeight}`}
+                                    layout="intrinsic"
+                                />
+                            </Box>   
                         </Link>
                     </div>
                     <div className={classes.casestudytitle}>
-                        <div style={{alignSelf:"center"}}>
+                        <div style={{alignSelf:"center", paddingLeft:'6px'}}>
                             <Link href={pageLink}>
                                 <Typography variant="body1" align="center" style={{fontFamily:"PlayFair Display", fontWeight:"bold"}}>
                                     {cardTitle}

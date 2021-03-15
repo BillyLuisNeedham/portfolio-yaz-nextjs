@@ -30,7 +30,18 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-between',
       background:(THEME.palette.background.default)
     },
-
+    logoImg:{
+      maxWidth:"3vw",
+    },
+    logoText:{
+      color:"#ffffff", 
+      textAlign:"left", 
+      fontStyle:"italic",
+      lineHeight:".8"
+    },
+    BUimage:{
+      maxHeight:'80vh',
+    },
     dividerouter:{
       display: "flex", 
       alignItems: "center"
@@ -80,8 +91,9 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow:1,
     },
     listSubHeader:{
-      fontSize:"2.75rem", 
+      fontSize:"2.1vw", 
       fontStyle:"italic",
+      fontWeight:"bold",
       [theme.breakpoints.down('sm')]: {
         fontSize:"1.5rem",
       },
@@ -93,8 +105,13 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down('sm')]: {
         paddingLeft: '15vw',
         paddingRight: '1vw',
+      },       
+    },
+    ListItemText:{
+      fontSize:"1.2vw",
+      [theme.breakpoints.down('sm')]: {
+        fontSize:"4vw",
       },
-              
     },
     tooliconlist:{
       display: 'flex',
@@ -113,6 +130,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     challangeintro:{
+      maxWidth:"68vw",
       margin: '2vw 1.5rem 0 1.5rem ',
     },
     challangemain:{
@@ -137,6 +155,15 @@ const useStyles = makeStyles((theme: Theme) =>
         height:"auto",
         },
     },
+    challangelargeimg:{
+      width:"89vw",
+      margin:"0 5vw 9vw 5vw",
+      [theme.breakpoints.down('sm')]: {
+        width:"100vw",
+        margin:"5vw 0 5vw 0",
+      },
+     
+    },
     challangeimage:{
       [theme.breakpoints.down('sm')]: {
         width: '15rem',
@@ -159,6 +186,9 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: '4vw 0 0 0',
       lineHeight:"50px",
       border:"8px solid #EF3D4C",
+      [theme.breakpoints.down('lg')]: {
+        border:"5px solid #EF3D4C",
+      },
       [theme.breakpoints.down('sm')]: {
         border:"3px solid #EF3D4C",
         maxWidth: 'none',
@@ -242,7 +272,7 @@ const useStyles = makeStyles((theme: Theme) =>
     ideationrow:{
       display:"flex",
       flexFlow:"row nowrap",
-      justifyContent:"flex-start",
+      justifyContent:"flex-end",
       alignItems:"flex-start",
       padding:"5rem 5rem 5rem 0",
       [theme.breakpoints.down('sm')]: {
@@ -252,15 +282,32 @@ const useStyles = makeStyles((theme: Theme) =>
         padding:"0",
       },
     },
-    ideationrowimage:{
+    ideationtext1:{
+      width:"17vw",
+      margin:"0 5vw 0 0",
       [theme.breakpoints.down('sm')]: {
+        width:"85vw",
+        padding:"2rem 0 2rem 0"
+      },
+    },
+    ideationrowimage1:{
+      width:"55vw",
+      [theme.breakpoints.down('sm')]: {
+        width:"73vw",
         padding:"0 2rem 0 2rem"
       },
     },
-    ideationtext:{
-      maxWidth:"70rem",
-      padding:"0 10rem 0 10rem",
+    ideationtext2:{
+      width:"44vw",
       [theme.breakpoints.down('sm')]: {
+        width:"85vw",
+        padding:"2rem 0 2rem 0"
+      },
+    },
+    ideationtext3:{
+      maxWidth:"39vw",
+      [theme.breakpoints.down('sm')]: {
+        maxWidth:"85vw",
         padding:"2rem 0 2rem 0"
       },
     },
@@ -277,7 +324,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow: 'column nowrap',
       justifyContent:'center',
       alignItems: 'center',
-      margin:"10rem",
+      margin:"8vw 19vw 8vw 19vw",
       [theme.breakpoints.down('sm')]: {
         flexFlow: 'column nowrap',
         margin:'0 0 2.5rem 0',
@@ -300,59 +347,68 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     wireframebutton:{
-      width:"19rem",
-      height:"5rem",
-      fontSize:"2rem",
+      width:"15vw",
+      height:"4vw",
+      fontSize:"2vw",
+      whiteSpace: "nowrap",
+      fontWeight:"bold",
       [theme.breakpoints.down('sm')]: {
         alignSelf:"flex-end",
         margin:"0 2rem 0 0",
-        width:"10rem",
-        height:"2.5rem",
-        fontSize:"1rem",
+        width:"31vw",
+        height:"8vw",
+        fontSize:"3vw",
       },
     },
     wireframes1:{
       display:'flex',
       flexFlow: 'row-reverse wrap',
       justifyContent: "center",
+      width:"60vw",
       [theme.breakpoints.down('sm')]: {
+        flexFlow: 'column nowrap',
+        width:"85vw",
         margin:'1rem 0 1rem 0',
         justifyContent:"flex-end",
       },
     },
-    wireframes1text:{
-      margin:"0 2rem 0 2rem",
-      padding:"0 2rem 0 2rem",
-      maxWidth:"45vw",
+    wireframes1text:{ 
+      maxWidth:"30vw",
+      margin: "0",
       [theme.breakpoints.down('sm')]: {
-        margin:'1rem',
-        padding:'0',
         maxWidth:"none",
+        margin:"0 0 6vw 0",
       },
     },
     wireframes1img:{
-      margin:"2rem",
-      maxWidth:"45vw",
+      maxWidth:"21vw",
+      margin:"0 4vw 3.5vw 0",
       [theme.breakpoints.down('sm')]: {
-        margin:'0 0 0 2rem',
-        padding:'0',
-        maxWidth:"42vw",
+        margin:'0 0 0 10vw',
+        maxWidth:"39vw",
       },
     },
     wireframes1img2:{
+      margin:"0 0 8vw 4vw",
       [theme.breakpoints.down('sm')]: {
-        margin:'-.5rem 0 0 50vw',
+        margin: "0 10vw 6vw 0",
+        display:"flex",
+        alignSelf:"flex-end",
+        maxWidth:"39vw",
       },
     },
 
     wireframes2:{
-      margin:"4rem",
+      margin:"0 16vw 6vw 16vw",
       [theme.breakpoints.down('sm')]: {
-        margin:"0 1rem 0 1rem",
+        margin:0,
       },
     },
     wireframes2text:{
-      
+      width: "68vw",
+      [theme.breakpoints.down('sm')]: {
+        width:"85vw",
+      },
     },
 
     wireframes3:{
@@ -391,11 +447,16 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent:'center',
       alignItems: 'center',
       margin:'5rem 0 0 0',
+      [theme.breakpoints.down('sm')]: {
+        margin:"0 8vw 0 8vw"
+      },
     },
     visualDesignimg1:{
       padding:"0 1rem 15rem 1rem",
       [theme.breakpoints.down('sm')]: {
-        padding:"0 1rem 1rem 1rem"
+        width:"36vw",
+        padding:"0",
+        margin: "0 5vw 0 0",
       },
     },
     visualDesignImgbutton:{
@@ -405,6 +466,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems:'center',
       [theme.breakpoints.down('sm')]: {
         flexFlow:"column nowrap",
+        maxWidth:"36vw"
       },
     },
     visualDesignImg2:{
@@ -416,13 +478,14 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius:"3.5rem",
       boxShadow:"0 3px 6px #00000029",
       textTransform: "capitalize",
-      width:"19rem",
-      height:"5rem",
-      fontSize:"2rem",
+      width:"15vw",
+      height:"4vw",
+      fontSize:"1.5vw",
+      fontWeight:"bold",
       [theme.breakpoints.down('sm')]: {
-        width:"10rem",
-        height:"2.5rem",
-        fontSize:"1rem",
+        width:"36vw",
+        height:"8vw",
+        fontSize:"3vw",
         margin:"0 0 2rem 0",
       },
     },
@@ -431,6 +494,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow:"row nowrap",
       [theme.breakpoints.down('sm')]: {
         flexFlow:"row nowrap",
+        maxWidth:"77vw",
+        margin:"9vw 0 0 0",
       },
       
     },
@@ -442,6 +507,7 @@ const useStyles = makeStyles((theme: Theme) =>
       columnGap:"5vw",
       rowGap:"2vh",
       [theme.breakpoints.down('sm')]: {
+        margin:"8vw",
         display:"flex",
         flexFlow:"column nowrap",
       },
@@ -459,8 +525,10 @@ const useStyles = makeStyles((theme: Theme) =>
       padding:"4rem 0 4rem 0",
       gridColumn: "1 / span 1",
       gridRow:"3/span 1",
+      maxWidth:"32vw",
       [theme.breakpoints.down('sm')]: {
         padding:"1rem 0 1rem 0",
+        maxWidth:"85vw",
       },
     },
     visualDesign3img3:{
@@ -475,8 +543,10 @@ const useStyles = makeStyles((theme: Theme) =>
       padding:"5rem 0 5rem 0",
       gridColumn: "2 / span 1",
       gridRow:"1/span 1",
+      maxWidth:"32vw",
       [theme.breakpoints.down('sm')]: {
         padding:"1rem 0 1rem 0",
+        minWidth:"85vw",
       },
     },
 
@@ -487,51 +557,69 @@ const useStyles = makeStyles((theme: Theme) =>
         padding:"0 1rem 0 1rem",
       },
     },
+
+    divider:{
+      margin:"1vw 0 8vw 0",
+    },
     
     visualDesign4:{
-      
+      alignSelf:"center",
+      maxWidth:"50vw",
       display:"flex",
       flexFlow:"column nowrap",
       justifyContent:'center',
       alignItems: 'center',
       [theme.breakpoints.down('sm')]: {
+        minWidth:"85vw",
         flexFlow:"column wrap",
-        margin: "1em 2em 3em 2em",
-      },
-    },
-    visualDesign4textbox:{
-      maxWidth:"45vw",
-      padding:"2rem",
-      margin:"0 0 4rem 0",
-      [theme.breakpoints.down('sm')]: {
-        maxWidth:"90vw",
-        padding: "1rem",
-        margin:"0",
-      },
-    },
-    visualDesign4textboxtext:{
-      padding:"2rem",
-      margin:"0 0 2rem 0",
-      [theme.breakpoints.down('sm')]: {
-        padding:"1rem",
-        margin:"0",
+        margin: "0",
       },
     },
     visualDesign4text:{
-      maxWidth:"50vw",
-      margin:"2rem",
+      width:"42vw",
+      margin:"0 0 5vw 0",
+      [theme.breakpoints.down('sm')]: {
+        margin:"0 0 6vw 0",
+        width:"85vw",
+      },
+    },
+    visualDesign4textred:{
+      margin:"0 0 8vw 0",
+      width:"50vw",
+      whiteSpace: "nowrap",
+      [theme.breakpoints.down('sm')]: {
+        whiteSpace: "normal",
+        margin:"0 0 6vw 0",
+        width:"85vw",
+      },
+    },
+    br: {
+      display:"none"
+    },
+    visualDesign4redbox:{
+      margin:"0 0 8vw 0",
+      width:"60vw",
+      border:"8px solid #EF3D4C",
+      [theme.breakpoints.down('lg')]: {
+        border:"5px solid #EF3D4C",
+      },
+      [theme.breakpoints.down('sm')]: {
+        border:"3px solid #EF3D4C",
+        width:"85vw",
+      },
+
+    },
+    visualDesign4textbox:{
+      margin:"1vw",
       [theme.breakpoints.down('sm')]: {
         maxWidth:"90vw",
-        margin:"1rem",
+        margin:"2vw 0 2vw 0",
       },
       
     },
     visualDesign4img:{
-      margin:"4rem 0 4rem 0",
-      [theme.breakpoints.down('sm')]: {
-        margin:"2rem 1rem 2rem 1rem",
-      },
-
+      margin:"0 0 8vw 0"
+      
     },
     conclusion:{
       
@@ -570,6 +658,22 @@ interface Props {
 
 
 const BottomsUpPage: React.FC<Props> = ({}) => {
+
+  const visualRedTextSelection = () =>{
+    if (SCREEN_WIDTH() < MIN_LANDSCAPE_MOBILE_WIDTH) {
+      return(
+      <Typography   align="center" variant="h5" color="secondary" className={classes.visualDesign4textred} >
+        {VISUAL_DESIGN.text5b}
+      </Typography>
+      )
+    }else{
+      return(
+      <Typography   align="center" variant="h5" color="secondary" className={classes.visualDesign4textred} >
+        {VISUAL_DESIGN.text5}
+      </Typography>
+      )
+    }
+  }
   
   const classes = useStyles()
 
@@ -606,25 +710,30 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             onNavigateCallback={navigateToRoute}
             activeRoute={NavRoutes.Work}/>
           ):(
-            <AppBar elevation={0} position="absolute" color="transparent">
-              <Toolbar>
-                <IconButton edge="start" color="inherit" href="/">
-                  <Image
-                  src="/Logo_White.png"
-                  width={37}
-                  height={48}
-                  />
-                </IconButton>
-                <Box flexDirection="column" style={{color:"#ffffff", textAlign:"left", fontStyle:"italic"}}>
-                  <Typography variant="body1">
-                    Yazmin Leigh Portfolio
-                  </Typography>
-                  <Typography variant="caption">
-                    UI / UX Designer
-                  </Typography>
-                </Box>
-              </Toolbar>
-            </AppBar>
+            
+              <AppBar elevation={0} position="absolute" color="transparent" >
+                <Toolbar>
+                  <IconButton edge="start" color="inherit" href="/">
+                    <Box className={classes.logoImg}>
+                      <Image
+                      src="/Logo_White.png"
+                      width={37}
+                      height={48}
+                      />
+                    </Box>
+                    
+                  </IconButton>
+                  <Box flexDirection="column" className={classes.logoText} >
+                    <Typography variant="body2" className={classes.logoText}>
+                      Yazmin Leigh Portfolio
+                    </Typography>
+                    <Typography variant="caption" className={classes.logoText} >
+                      UI / UX Designer
+                    </Typography>
+                  </Box>
+                </Toolbar>
+              </AppBar>
+            
           )}
        
           <Image
@@ -662,7 +771,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                         height="44"
                       />
                     </ListItemIcon>
-                    <ListItemText primary={info} />
+                    <Typography color="textPrimary" className={classes.ListItemText}>{info}</Typography>
                   </ListItem>))}
                 </div>
             </List>
@@ -686,7 +795,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                           height="44"
                         />
                     </ListItemIcon>
-                      <ListItemText primary={info} />
+                      <Typography color="textPrimary" className={classes.ListItemText}>{info}</Typography>
                   </ListItem>))}
               </div>
               
@@ -755,12 +864,15 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 
               
             </Box>
-            <Image
-              src={`${THE_CHALLANGE.image3.imagesrc}`} 
-              layout="intrinsic"    
-              width={`${THE_CHALLANGE.image3.width}`} 
-              height={`${THE_CHALLANGE.image3.height}`} 
-              />
+            <Box className={classes.challangelargeimg}>
+              <Image
+                  src={`${THE_CHALLANGE.image3.imagesrc}`} 
+                  layout="responsive"    
+                  width={`${THE_CHALLANGE.image3.width}`} 
+                  height={`${THE_CHALLANGE.image3.height}`} 
+                />
+            </Box>
+
           </Box>
 
           <Box className={classes.challange}>
@@ -802,10 +914,10 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
           <Box className={classes.idedation} >
             <div className={classes.ideationmain} >
               <div className={classes.ideationrow}>
-                <Typography  color="textPrimary" align="left" variant="body1" className={classes.ideationtext}>
+                <Typography  color="textPrimary" align="left" variant="body1" className={classes.ideationtext1}>
                   {IDEATION.text1}
                 </Typography>
-                <div className={classes.ideationrowimage}>
+                <div className={classes.ideationrowimage1}>
                   <Image                  
                     layout="intrinsic"  
                     src={`${IDEATION.image1.imagesrc}`}   
@@ -815,7 +927,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 </div>
               </div>
               
-              <Typography color="textPrimary" align="left" variant="body1" className={classes.ideationtext}>
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.ideationtext2}>
                 {IDEATION.text2}
               </Typography>
               <div className={classes.ideationimage}>
@@ -826,7 +938,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                   height={`${IDEATION.image2.height}`} 
                   />
               </div>
-              <Typography color="textPrimary" align="left" variant="body1" className={classes.ideationtext}>
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.ideationtext3}>
                 {IDEATION.text3}
               </Typography>
               <div className={classes.ideationimage}>
@@ -1025,26 +1137,23 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             
           </Box>
         </Box>
-
-        {Divider("Test and Iterate Again")}
+        <Box className={classes.divider}>
+        {Divider("Test and Iterate Again")}        
+        </Box>
+        
           
-        <Box >  
+        <Box display="flex" justifyContent="center" >  
           <Box className={classes.visualDesign4}>
-            <div className={classes.visualDesign4textbox}>
-              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4text} >
                 {VISUAL_DESIGN.text3}
               </Typography>
 
-              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4textboxtext} >
+              <Typography color="textPrimary" align="left" variant="body1" className={classes.visualDesign4text} >
                 {VISUAL_DESIGN.text4}
               </Typography>
 
-              <Typography  align="center" variant="h5" color="secondary" className={classes.visualDesign4text}>
-                {VISUAL_DESIGN.text5}
-              </Typography>
-             
-
-            </div>
+              {visualRedTextSelection()}
+              
 
             <Box className={classes.visualDesign4img}>
               <Image
@@ -1057,8 +1166,8 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
             
             
 
-            <Box border={8} borderColor="secondary.main">
-              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4text} >
+            <Box className={classes.visualDesign4redbox}>
+              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4textbox} >
                 {VISUAL_DESIGN.text6}
               </Typography>
             </Box>
@@ -1081,8 +1190,8 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
                 />
             </Box>
             
-            <Box border={8} borderColor="secondary.main">
-              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4text} >
+            <Box className={classes.visualDesign4redbox}>
+              <Typography color="textPrimary" align="center" variant="body1" className={classes.visualDesign4textbox} >
                 {VISUAL_DESIGN.text7}
               </Typography>
             </Box>

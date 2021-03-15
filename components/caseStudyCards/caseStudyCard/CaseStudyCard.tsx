@@ -29,12 +29,21 @@ const CaseStudyCard: React.FC<Props> = ({
       backgroundColor: theme.palette.primary.main,
       borderRadius: "20px",
     },
+    image:{
+      [theme.breakpoints.down('lg')]: {
+        maxWidth:"15vw"
+      }
+
+    },
     column: {
       minHeight: '150px',
     },
     text: {
       color: theme.palette.background.default,
       whiteSpace:"nowrap",
+      [theme.breakpoints.down('lg')]: {
+        whiteSpace:"nowrap",
+      },
       [theme.breakpoints.down('sm')]: {
         whiteSpace:"normal"
       },
@@ -78,7 +87,7 @@ const CaseStudyCard: React.FC<Props> = ({
         xs
         className={classes.column}
       >
-        <Grid item>{image}</Grid>
+        <Grid item className={classes.image}>{image}</Grid>
       </Grid>
     </Grid>
   )
@@ -89,7 +98,7 @@ const CaseStudyCard: React.FC<Props> = ({
     direction="column"
     justify="center"
     alignItems="center">
-      <Grid item>
+      <Grid item >
         {image}
       </Grid>
       <Grid item>

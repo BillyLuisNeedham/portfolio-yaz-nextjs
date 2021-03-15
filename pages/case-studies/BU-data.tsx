@@ -7,7 +7,7 @@ export const THEME = bottomsUpTheme
 export const TITLE = {title:"/assets/images/bottomsUp/title/header_web@2x.png"}
 
 // Roll info
-export const ROLL_INFO = ["design research", "Prototype", "ui/ux design", "user testing"]
+export const ROLL_INFO = ["Design research", "Prototype", "UI/UX design", "User testing"]
 
 
 // tools used
@@ -30,18 +30,18 @@ export const THE_CHALLANGE ={
     subheading:"Starting From Scratch",
     image1:{
         imagesrc:'/assets/images/bottomsUp/Research image 2.png',
-        width:774,
-        height: 580,
+        width:581,
+        height: 435,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Reasearch image.png',
-        width:798,
-        height: 599,
+        width:599,
+        height: 449,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/Image 12.png',
-        width:1721,
-        height: 877,
+        width:1291,
+        height: 658,
     },
     text1:[
         <p>"I started researching on this project by wanting to understand the pains and frustrations of users. I conducted user interviews with people of different ages, to get a determine if they had the same pain points.  This allowed me to get a better overall view of the <span style={{color:'#EF3D4C', fontWeight:"bold"}}>Jobs-to-be-done</span>  I needed to include.</p>
@@ -94,23 +94,23 @@ export const WIREFRAME_LINK ="https://google.co.uk"
 export const WIREFRAMES ={
     image1:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 59.png',
-        width:1214,
-        height: 825,
+        width:1212,
+        height: 824,
     },
     image2:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group -1.png',
-        width:414,
-        height: 199,
+        width:311,
+        height: 149,
     },
     image3:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 15.png',
-        width:408,
-        height: 201,
+        width:306,
+        height: 151,
     },
     image4:{
         imagesrc:'/assets/images/bottomsUp/Wireframes/Group 58.png',
-        width:1219,
-        height: 844,
+        width:914,
+        height: 633,
 
     },
     text1:[
@@ -146,7 +146,7 @@ export const VISUAL_DESIGN = {
     },
     image4:{
         imagesrc:'/assets/images/bottomsUp/visualDesign/pattern_library@2x.png',
-        width:616,
+        width:553,
         height:945,
 
     },
@@ -179,7 +179,8 @@ export const VISUAL_DESIGN = {
     text2:"Designing buttons, cards and lists that can be rearranged and combined with other components; whilst keeping the same consistency.",
     text3:"Using lookback I conducted unmoderated user testing to get quantitative and qualitative data to identify and issues not indicated in the first round of user testing.",
     text4:"On conclusion of the results data, I decided that the Key Performance Indicator (KPI) I wanted to improve on was:",
-    text5:"To decrease the amount of time taken to complete an order.",
+    text5:[<p>To decrease the amount of time taken to complete <br/> an order.</p>],
+    text5b:[<p>To decrease the amount of time taken to complete an order.</p>],
     text6:"34% of confusion was users not know where to click on to select the pub. So I changed the way the information was presented by using a card system with other pubs nearby to make it clearer to the user that it is clickable. Plus it will give them the option to look at places nearby if there is no availability left.",
     text7:"67% of the users found it hard to find the filter button. Because of the wide variety of user ages I have decided to iterate the icon filter button to words. I have also added a search button so that it will be easier for the users to find the drink they want without stress and confusion.", 
 }

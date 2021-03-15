@@ -21,11 +21,22 @@ const useStyles = makeStyles((theme: Theme) =>
       display:'flex',
       flexDirection:"column",
       justifyContent:'space-around',
+      [theme.breakpoints.down('lg')]: {
+        padding:"0.5rem 1rem 0 2rem",
+      },
       [theme.breakpoints.down('sm')]: {
         minHeight:0,
-        marginTop: "3rem",
+        marginTop: "1rem",
         borderRight: "none",
+        minWidth: "100vw",
       },
+    },
+    logo: {
+      [theme.breakpoints.down('lg')]: {
+        margin:".5rem 0 1.5rem -1rem" ,
+        maxWidth:"1.5rem",
+      },
+      
     },
     footer: {
       bottom: 0,
@@ -33,18 +44,24 @@ const useStyles = makeStyles((theme: Theme) =>
     picture:{
       boxShadow: '-20px -20px 0px -6px #402837',
       borderRadius: 50,
+      [theme.breakpoints.down('lg')]: {
+        maxWidth:"18vw"
+      },
+      [theme.breakpoints.down('sm')]: {
+        maxWidth:"45vw"
+      },
     },
     bgimg:{
       overflow: "hidden",
       zIndex: -1,
       position: "fixed",
       opacity: 0.1,
-      left: "-164px" ,
-      top: "-220px" ,
+      left: "-11vw" ,
+      top: "-15vw" ,
       [theme.breakpoints.down('sm')]: {
         position: "absolute",
-        left: "-250px" ,
-        top: "-175px" ,
+        left: "-17vw" ,
+        top: "-12vw" ,
         maxWidth:"100vw",
       },
 
@@ -54,12 +71,12 @@ const useStyles = makeStyles((theme: Theme) =>
       zIndex: -1,
       position: "fixed",
       opacity: 0.1,
-      left: "250px" ,
-      bottom: "-200px" ,
+      left: "17vw" ,
+      bottom: "-14vw" ,
       [theme.breakpoints.down('sm')]: {
         position: "absolute",
         left: "0px" ,
-        bottom: "-700px" ,
+        bottom: "-34vw" ,
         maxWidth:"100vw",
       },
 
@@ -85,7 +102,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback 
         height={636}
         width={625}
         objectFit="cover"
-        layout="fixed"
+        layout="intrinsic"
         />
       </div>
       
@@ -133,7 +150,7 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback 
       </Box>
       :// web page
       <Box className={classes.root}>
-        <Box display="flex" justifyContent="flex-start">  
+        <Box display="flex" justifyContent="flex-start" className={classes.logo}>  
         <Image
           src="/assets/images/Asset 7.svg"
           alt="Logo Yazmin Leigh"
@@ -170,12 +187,12 @@ const AboutCard: React.FC<IAboutCardProps> = ({ activeRoute, onNavigateCallback 
           flexDirection="column"
           justifyContent="flex-start"
         >
-          <p style={{ fontWeight:"bold", color:"#402837",}}>
+          <Typography variant="body1" style={{ fontWeight:"bold", color:"#402837",}}>
             Or E-mail me on &nbsp;
             <Link href={`mailto:${EMAIL}`} >
                 {EMAIL}
             </Link>
-          </p>
+          </Typography>
           {spacer()}
           <NavBar 
           activeRoute={activeRoute}

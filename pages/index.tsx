@@ -24,11 +24,12 @@ import {mobFooter} from "../theme/index"
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      flexGrow: 1,
+      minHeight: '90vh',
       [theme.breakpoints.up('lg')]: {
         maxWidth:"1440px",
       },
-      flexGrow: 1,
-      minHeight: '90vh',
+      
       
     },
     container: {
@@ -170,7 +171,9 @@ const Home = ({ routeInitial = 0}:RouteProps) => {
     mobileSite
   ) : ( 
     // website
-    webSite
+    <Box display="flex" justifyContent="center">
+      {webSite}
+    </Box>
   )
 }
 

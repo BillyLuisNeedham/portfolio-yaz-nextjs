@@ -19,6 +19,7 @@ import MobileNavBar from '../../components/mobileNavBar/MobileNavBar';
 import { NavRoutes } from '../../utils/constants/navRoutes';
 import CaseStudyFooterBar from '../../components/caseStudyFooterBar/CaseStudyFooterBar';
 import clsx from 'clsx';
+import BackToTop from '../../components/backToTop/BackToTop';
 
 
 
@@ -1155,7 +1156,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
         />
 
       </Box>
-      
+      <BackToTop theme={THEME}/>
     </ThemeProvider>
   )
 }

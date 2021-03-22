@@ -1156,7 +1156,7 @@ const BottomsUpPage: React.FC<Props> = ({}) => {
         />
 
       </Box>
-      <BackToTop/>
+      <BackToTop theme={THEME}/>
     </ThemeProvider>
   )
 }

@@ -20,6 +20,7 @@ import Image from 'next/image'
 import MobileNavBar from '../../components/mobileNavBar/MobileNavBar';
 import { NavRoutes } from '../../utils/constants/navRoutes';
 import CaseStudyFooterBar from '../../components/caseStudyFooterBar/CaseStudyFooterBar';
+import BackToTop from '../../components/backToTop/BackToTop';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -900,7 +901,7 @@ const PSDSPage: React.FC<Props>= (props: Props) => {
         />
 
       </Box>
-      
+      <BackToTop theme={THEME}/>
     </ThemeProvider>
   )
 }

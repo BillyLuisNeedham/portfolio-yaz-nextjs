@@ -44,7 +44,11 @@ const bottomsUpTheme = createMuiTheme({
     text: {
       primary: '#525252',
       secondary: '#EF3D4C'
-    }
+    },
+    info:{
+      main:'#30553833',
+    },
+
   },
 
   typography: {
@@ -113,7 +117,10 @@ const psdsTheme = createMuiTheme({
     },
     text: {
       primary: '#7A7A7A',
-    }
+    },
+    info:{
+      main:'#87ABA933',
+    },
 
   },
 

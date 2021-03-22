@@ -38,10 +38,8 @@ const useStyles = makeStyles((theme: Theme) =>
     studycardsbox: {
       borderLeft: "1px solid black",
       background:"#F8F9FD",
-      margin:0,
-      padding:0,
       [theme.breakpoints.down('sm')]: {
-        margin:"1rem",
+        margin: theme.spacing(1),
         background:"none",
         borderLeft:"none",
       },

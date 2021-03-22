@@ -9,15 +9,8 @@ import { NavRoutes } from '../../utils/constants/navRoutes'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      margin:"3rem 4rem 2rem 4rem",
-      minheight:"100vh",
       display:"flex",
-      flexFlow:"column nowrap",
-      justifyContent:"flex-start",
-      [theme.breakpoints.down('sm')]: {
-        margin:"2rem 0 2rem 0",
-        
-    },
+      flexDirection:"column",
     },
   })
 )
@@ -58,7 +51,7 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
             image={
               <Image
                 src="/assets/images/psds/case_study.png"
-                alt="3 phones displaying bottoms up card"
+                alt="2 phones displaying Plain Sailing Driving School"
                 height={326}
                 width={326}
                 layout="intrinsic"

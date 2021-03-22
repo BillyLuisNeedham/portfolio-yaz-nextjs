@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
     },
+    imgCont: {
+      minHeight: 200,
+      minWidth: 200,
+    },
   })
 )
 
@@ -19,6 +23,10 @@ interface Props {}
 
 export const CaseStudyCards: React.FC<Props> = ({}) => {
   const classes = useStyles()
+
+  const imgWrapper = (children: JSX.Element): JSX.Element => {
+    return <Box className={classes.imgCont}>{children}</Box>
+  }
 
   return (
     <div className={classes.root}>
@@ -29,15 +37,15 @@ export const CaseStudyCards: React.FC<Props> = ({}) => {
         >
           <CaseStudyCard
             image={
-              <Box style={{ minWidth: 200 }}>
-                <Image
+               imgWrapper(
+               <Image
                   src="/assets/images/bottomsUp/3_phone_mockup.png"
                   alt="3 phones displaying bottoms up card"
-                  height={326}
-                  width={400}
+                  height={250}
+                  width={297}
                   layout="intrinsic"
                 />
-              </Box>
+               )
             }
             theme={bottomsUpTheme}
             title="Bottoms Up!"
@@ -53,15 +61,15 @@ export const CaseStudyCards: React.FC<Props> = ({}) => {
         >
           <CaseStudyCard
             image={
-              <Box style={{ minWidth: 200 }}>
+              imgWrapper(
                 <Image
                   src="/assets/images/psds/case_study.png"
                   alt="2 phones displaying Plain Sailing Driving School"
-                  height={326}
-                  width={326}
+                  height={286}
+                  width={286}
                   layout="intrinsic"
                 />
-              </Box>
+              )
             }
             theme={psdsTheme}
             title="Plain Sailing Driving School"

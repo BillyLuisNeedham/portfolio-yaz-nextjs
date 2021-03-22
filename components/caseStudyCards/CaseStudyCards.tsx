@@ -9,31 +9,35 @@ import { NavRoutes } from '../../utils/constants/navRoutes'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display:"flex",
-      flexDirection:"column",
+      display: 'flex',
+      flexDirection: 'column',
     },
   })
 )
 
-interface Props {
-}
+interface Props {}
 
-export const CaseStudyCards: React.FC<Props> = ({  }) => {
+export const CaseStudyCards: React.FC<Props> = ({}) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       <div>
-        <Link href="/case-studies/bottoms-up" style={{ textDecoration: 'none' }}>
+        <Link
+          href="/case-studies/bottoms-up"
+          style={{ textDecoration: 'none' }}
+        >
           <CaseStudyCard
             image={
-              <Image
-                src="/assets/images/bottomsUp/3_phone_mockup.png"
-                alt="3 phones displaying bottoms up card"
-                height={250}
-                width={297}
-                layout="intrinsic"
-              />
+              <Box style={{ minWidth: 200 }}>
+                <Image
+                  src="/assets/images/bottomsUp/3_phone_mockup.png"
+                  alt="3 phones displaying bottoms up card"
+                  height={326}
+                  width={400}
+                  layout="intrinsic"
+                />
+              </Box>
             }
             theme={bottomsUpTheme}
             title="Bottoms Up!"
@@ -41,7 +45,7 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
           />
         </Link>
       </div>
-    
+
       <div>
         <Link
           href="/case-studies/plain-sailing-driving-school"
@@ -49,13 +53,15 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
         >
           <CaseStudyCard
             image={
-              <Image
-                src="/assets/images/psds/case_study.png"
-                alt="2 phones displaying Plain Sailing Driving School"
-                height={326}
-                width={326}
-                layout="intrinsic"
-              />
+              <Box style={{ minWidth: 200 }}>
+                <Image
+                  src="/assets/images/psds/case_study.png"
+                  alt="2 phones displaying Plain Sailing Driving School"
+                  height={326}
+                  width={326}
+                  layout="intrinsic"
+                />
+              </Box>
             }
             theme={psdsTheme}
             title="Plain Sailing Driving School"
@@ -63,7 +69,6 @@ export const CaseStudyCards: React.FC<Props> = ({  }) => {
           />
         </Link>
       </div>
-      
     </div>
   )
 }
